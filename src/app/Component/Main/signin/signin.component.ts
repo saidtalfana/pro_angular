@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginRequest } from 'src/app/dto/LoginRequest';
@@ -52,7 +52,7 @@ export class SigninComponent implements OnInit {
           this.router.navigate(['/dashboard']);
         } 
         else if (decodedToken.roles.includes(Role.PROVIDER)) {
-          this.router.navigate(['/technician']);
+          this.router.navigate(['/provider']);
         } 
         else if (decodedToken.roles.includes(Role.USER)) {
           this.router.navigate(['/user']);
