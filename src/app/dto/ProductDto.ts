@@ -1,5 +1,6 @@
-import { Category } from "../enums1/Category";
-import { ProductStatus } from "../enums1/ProductStatus";
+import { Category } from "../enums/Category";
+import { ProductStatus } from "../enums/ProductStatus";
+
 
 export interface ProductDto {
     

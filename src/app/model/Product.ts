@@ -14,7 +14,7 @@ export interface Product{
     image:string;
 
     order:Order[]
-    provider:Provider;
+    enterprise:Enterprise;
     rating:Rating[];
 
 

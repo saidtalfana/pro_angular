@@ -1,5 +1,6 @@
 import { Time } from "@angular/common";
 import { Product } from "./Product";
+import { User } from "./User";
 
 
 export interface Order{

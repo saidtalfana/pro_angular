@@ -1,3 +1,5 @@
+import { Product } from "./Product";
+
 export interface Rating{
 
    ratingId:number;
