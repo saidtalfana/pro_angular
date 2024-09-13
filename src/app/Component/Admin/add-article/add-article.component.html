@@ -1,1 +1,33 @@
-<p>add-article works!</p>
+<div class="article-container">
+    <h2>Article Details</h2>
+    <form [formGroup]="formArticle" (ngSubmit)="onSubmit()">
+      
+      <div class="form-group">
+        <label for="articleTitle">Article Title:</label>
+        <input type="text" id="articleTitle" formControlName="articleTitle" placeholder="Enter Article Title" />
+      </div>
+  
+      <div class="form-group">
+        <label for="articleContent">Article Content:</label>
+        <textarea id="articleContent" formControlName="articleContent" placeholder="Enter Article Content"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="articleAuthor">Article Author:</label>
+        <input type="text" id="articleAuthor" formControlName="articleAuthor" placeholder="Enter Article Author" />
+      </div>
+  
+      <div class="form-group">
+        <label for="articleType">Article Type:</label>
+        <input type="text" id="articleType" formControlName="articleType" placeholder="Enter Article Type" />
+      </div>
+  
+      <div class="form-group">
+        <label for="articleImage">Article Image URL:</label>
+        <input type="text" id="articleImage" formControlName="articleImage" placeholder="Enter Image URL" />
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="formArticle.invalid">Submit Article</button>
+    </form>
+  </div>
+  

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logout',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  check = false
+
+  logout(check:boolean){
+if(check){
+  localStorage.removeItem("jwt")
+  localStorage.removeItem("enterprise_id")
+   this.router.navigateByUrl("")
+}
+else{
+  alert("something wrong")
+}
   }
 
 }

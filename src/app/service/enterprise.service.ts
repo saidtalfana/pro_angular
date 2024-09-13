@@ -26,8 +26,8 @@ export class EnterpriseService {
   
                      
                             //  <?--------------get ------------------->
-                     getEnterpriseById(enterprise_id  : number):Observable<EnterpriseDto>{
-                      return this.http.get<EnterpriseDto>(`${this.API_ENTERPRISE}/get_enterprise/${enterprise_id}`)
+                     getEnterpriseById(provider_id  : number):Observable<EnterpriseDto>{
+                      return this.http.get<EnterpriseDto>(`${this.API_ENTERPRISE}/get_enterprise/${provider_id}`)
                      }
   
   

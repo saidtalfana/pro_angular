@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ArticleDto } from 'src/app/dto/ArticleDto';
+import { ArticleService } from 'src/app/service/article.service';
 
 @Component({
   selector: 'app-add-article',
@@ -7,9 +10,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddArticleComponent implements OnInit {
 
-  constructor() { }
+      formArticle !: FormGroup;
+
+  constructor(private fb: FormBuilder , private service: ArticleService) { }
 
   ngOnInit(): void {
+  this.article()
+  
+  }
+
+  article(){
+    this.formArticle = this.fb.group({
+      articleTitle: ['', Validators.required],
+      articleContent: ['', Validators.required],
+      articleAuthor: ['', Validators.required],
+      articleType: ['', Validators.required],
+      articleImage: ['', Validators.required]
+    });
+  }
+
+  onSubmit() {
+    const value = this.formArticle.value
+   
+      this.service.addArticle(value).subscribe()
+      this.article()
+
+      console.log('Article submitted:', value);
+
+      if(value){
+        alert("article added")
+      }
+
+      
+
+      
   }
 
 }
+

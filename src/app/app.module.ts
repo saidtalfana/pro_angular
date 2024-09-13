@@ -21,7 +21,9 @@ import { AddOrderComponent } from './Component/User/add-order/add-order.componen
 import { ShowOrderComponent } from './Component/User/show-order/show-order.component';
 import { LogoutComponent } from './Component/Shared/logout/logout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { SignupComponent } from './Component/Main/signup/signup.component';
+import { Interciptor } from './interciptor/interciptor';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     ShowProductComponent,
     AddOrderComponent,
     ShowOrderComponent,
-    LogoutComponent
+    LogoutComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,12 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+        useClass: Interciptor,
+        multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

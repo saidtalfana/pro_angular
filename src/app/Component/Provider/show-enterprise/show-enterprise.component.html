@@ -1,1 +1,20 @@
-<p>show-enterprise works!</p>
+<div>affichage of enterprise</div>
+
+    <div   *ngIf="enterprise ; else noData">
+    
+        <h3>{{enterprise.enterpriseId}}</h3>
+        <h3>{{enterprise.enterpriseName}}</h3>
+        <h3>{{enterprise.enterpriseDescription}}</h3>
+        <h3>{{enterprise.enterpriseLogo}}</h3>
+        <h3>{{enterprise.activity}}</h3>
+        
+
+    
+        <button >update information</button>
+        <button></button>
+        
+    </div>
+    <ng-template #noData>
+        <p>No enterprise data available.</p>
+      </ng-template>
+    

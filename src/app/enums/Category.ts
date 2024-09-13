@@ -1,9 +1,9 @@
 
 export enum Category{
-    ELECTRONICS,
-    FASHION,
-    BEAUTY,
-    SPORTS,
-    CONSTRUCTION,
-    INDUSTRY
+    ELECTRONICS = "ELECTRONICS",
+    FASHION = "FASHION",
+    BEAUTY = "BEAUTY",
+    SPORTS = "SPORTS",
+    CONSTRUCTION = "CONSTRUCTION",
+    INDUSTRY = "INDUSTRY"
     }

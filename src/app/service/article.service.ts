@@ -21,14 +21,14 @@ export class ArticleService {
                     
                      //  <?--------------add  ------------------->
 
-                     addArticle(articleDto :ArticleDto,admin_id : number):Observable<ArticleDto>{
-                        return this.http.post<ArticleDto>(`${this.API_ARTICLE}/add_article/${admin_id}`,articleDto)
+                     addArticle(articleDto :ArticleDto):Observable<ArticleDto>{
+                        return this.http.post<ArticleDto>(`${this.API_ARTICLE}/add_article`,articleDto)
                           }
   
                          //  <?--------------fetch  ------------------->
 
-                   getAllArticlesByAdminId(admin_id:number):Observable<ArticleDto[]>{
-                              return this.http.get<ArticleDto[]>(`${this.API_ARTICLE}/get_articles_by_admin_id/${admin_id}`)                   
+                   getAllArticles():Observable<ArticleDto[]>{
+                              return this.http.get<ArticleDto[]>(`${this.API_ARTICLE}/get_articles`)                   
                              }
   
                          //  <?--------------delete  ------------------->

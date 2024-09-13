@@ -24,13 +24,13 @@ import { Product } from "../model/Product";
 
                       //  <?--------------add Product ------------------->
 
-                      addProduct(productDto : ProductDto){
-                        return this.http.post<ProductDto>(`${this.API_PRODUCT}/add_product`,productDto)}
+                      addProduct(productDto : ProductDto,enterprise_id : number){
+                        return this.http.post<ProductDto>(`${this.API_PRODUCT}/add_product?enterprise_id=${enterprise_id}`,productDto)}
 
                       //  <?--------------All Products ------------------->
-
-                      getAllProductByProvuderId(provider_id:number):Observable<ProductDto[]>{
-                        return this.http.get<ProductDto[]>(`${this.API_PRODUCT}/get_products_by_provider_id?provider_id=${provider_id}`)                   
+                      
+                      getAllProductByEnterpriseId(enterprise_id:number):Observable<ProductDto[]>{
+                        return this.http.get<ProductDto[]>(`${this.API_PRODUCT}/get_products_by_enterprise_id?enterprise_id=${enterprise_id}`)                   
                        }
                    //  <?--------------Delete Product ------------------->
 

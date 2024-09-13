@@ -1,1 +1,30 @@
-<p>show-article works!</p>
+<div class="container-fluid two">
+  <div class="article dark" *ngFor="let article of listArticle">
+    <div class="article-body">
+      <div class="article-info row">
+        <div class="col-xs-6">
+          <p>Title</p>
+          <h4>{{ article.articleTitle }}</h4>
+        </div>
+        <div class="col-xs-6">
+          <p>Author</p>
+          <h4>{{ article.articleAuthor }}</h4>
+        </div>
+      </div>
+      <div class="article-content">
+        <p>{{ article.articleContent }}</p>
+      </div>
+      <div class="article-image">
+        <img [src]="article.articleImage" alt="Article Image" />
+      </div>
+    </div>
+    <div class="footer">
+      <div class="disclaimer">{{ article.articleDate | date }}</div>
+      <div class="disclaimer">
+        <button (click)="delete(article.articleId)">Delete Article</button>
+
+
+      </div>
+    </div>
+  </div>
+</div>

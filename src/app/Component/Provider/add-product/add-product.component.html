@@ -1,1 +1,44 @@
-<p>add-product works!</p>
+<div class="article-container">
+    <h2>Add Product</h2>
+    <form [formGroup]="formProduct" (ngSubmit)="onSubmit()">
+      
+
+      <div class="form-group">
+        <label for="name">product name</label>
+        <input type="text" id="name" formControlName="name" />
+      </div>
+      <div class="form-group">
+        <label for="description">description</label>
+        <textarea id="description" formControlName="description" placeholder="Enter task description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="price">start price</label>
+        <input type="number" id="price" formControlName="price" />
+      </div>
+
+      <label for="category">Category</label>
+      <select id="category" formControlName="category" required>
+        <option value="ELECTRONICS">ELECTRONICS</option>
+        <option value="FASHION">FASHION</option>
+        <option value="BEAUTY">BEAUTY</option>
+        <option value="SPORTS">SPORTS</option>
+        <option value="CONSTRUCTION">CONSTRUCTION</option>
+        <option value="INDUSTRY">INDUSTRY</option>
+      </select> 
+   <label for="productStatus">product status</label>
+      <select id="productStatus" formControlName="productStatus" required>
+        <option value="AVAILABLE">AVAILABLE</option>
+        <option value="COMING_SOON">COMING_SOON</option>
+        <option value="OUT_OF_STOCK">OUT_OF_STOCK</option>
+      </select> 
+      <div class="form-group">
+        <label for="image">image</label>
+        <input type="file" id="image" formControlName="image" />
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="formProduct.invalid">Submit Product</button>
+    </form>
+  </div>
+                    
+  

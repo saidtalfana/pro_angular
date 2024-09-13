@@ -6,13 +6,16 @@ import { User } from "./User";
 export interface Order{
 
 
-      orderId:number;
-      orderDate:Date;
-      orderTime:Time ;
-      orderQuantity:number;
-      orderPrice:number;
-      orderTotal:number;
-
-      product:Product;
-      user : User
+      
+      orderId : number;
+      orderDate : Date;
+      orderTime :Time;
+      name : string;
+      address : string;
+      email:string;
+      phoneNumber :string;
+      customerRequest :string ;
+  
+      product : Product;
+     user :User
 }

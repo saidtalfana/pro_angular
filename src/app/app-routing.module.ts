@@ -3,13 +3,24 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddArticleComponent } from './Component/Admin/add-article/add-article.component';
 import { AddProductComponent } from './Component/Provider/add-product/add-product.component';
 import { AddOrderComponent } from './Component/User/add-order/add-order.component';
+import { DashboardAdminComponent } from './Component/Admin/dashboard-admin/dashboard-admin.component';
+import { ShowArticleComponent } from './Component/Admin/show-article/show-article.component';
+import { HomeComponent } from './Component/Main/home/home.component';
+import { AddEnterpriseComponent } from './Component/Provider/add-enterprise/add-enterprise.component';
+import { DashboardProviderComponent } from './Component/Provider/dashboard-provider/dashboard-provider.component';
+import { UserComponent } from './Component/User/user/user.component';
 
 const routes: Routes = [
 
-  { path: 'dashboard', component: AddArticleComponent },
-  { path: 'user', component: AddOrderComponent },
-  { path: 'provider', component: AddProductComponent },
-
+  { path: 'dashboard', component: DashboardAdminComponent },
+  { path: 'main', component: HomeComponent },
+  { path: 'edit-article/:id', component: AddArticleComponent},
+  { path: 'enterprise', component: AddEnterpriseComponent },
+  { path: 'product_id/:id', component: AddOrderComponent },
+  { path: 'user', component: UserComponent },
+  { path: 'provider', component: DashboardProviderComponent },
+  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: '**', redirectTo: '/main' }
 
 ];
 
