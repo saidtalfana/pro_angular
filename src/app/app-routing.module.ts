@@ -9,14 +9,17 @@ import { HomeComponent } from './Component/Main/home/home.component';
 import { AddEnterpriseComponent } from './Component/Provider/add-enterprise/add-enterprise.component';
 import { DashboardProviderComponent } from './Component/Provider/dashboard-provider/dashboard-provider.component';
 import { UserComponent } from './Component/User/user/user.component';
+import { ProductDatailsComponent } from './Component/Main/product-datails/product-datails.component';
 
 const routes: Routes = [
 
   { path: 'dashboard', component: DashboardAdminComponent },
   { path: 'main', component: HomeComponent },
   { path: 'edit-article/:id', component: AddArticleComponent},
+  { path: 'update_enterprise/:id', component: AddEnterpriseComponent },
   { path: 'enterprise', component: AddEnterpriseComponent },
   { path: 'product_id/:id', component: AddOrderComponent },
+  { path: 'datail_product_id/:id', component: ProductDatailsComponent },
   { path: 'user', component: UserComponent },
   { path: 'provider', component: DashboardProviderComponent },
   { path: '', redirectTo: '/main', pathMatch: 'full' },

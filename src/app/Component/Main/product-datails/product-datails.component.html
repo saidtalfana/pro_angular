@@ -1,0 +1,19 @@
+<div>product</div>
+    <div   *ngIf="productDetails ; else noData">
+        
+    
+        <h3>{{productDetails.productId}}</h3>
+        <h3>{{productDetails.name}}</h3>
+        <h3>{{productDetails.description}}</h3>
+        <h3>{{productDetails.price}}</h3>
+        <h3>{{productDetails.category}}</h3>
+        <h3>{{productDetails.productStatus}}</h3>
+        <img [src]="productDetails.image" alt="{{productDetails.name}}" style="width: 150px; height: auto;">
+
+        <button (click)="getProductId(productDetails.productId)">make order</button>
+        
+</div>
+
+<ng-template #noData>
+    <p>No enterprise data available.</p>
+  </ng-template>

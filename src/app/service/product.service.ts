@@ -43,4 +43,10 @@ import { Product } from "../model/Product";
                    getProductById(product_id  : number):Observable<ProductDto>{
                     return this.http.get<ProductDto>(`${this.API_PRODUCT}/get_product/${product_id}`)
                    }
+
+                   fetchAllProduct():Observable<ProductDto[]>{
+                     return this.http.get<ProductDto[]>(`${this.API_PRODUCT}/get_all_product`)
+                   }
   }
+
+

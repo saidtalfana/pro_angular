@@ -16,7 +16,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AddOrderComponent implements OnInit {
    formOrder !:FormGroup
    user_id !:number ;
-   id_product :number=256;
+   id_product !:number;
    product_id!:number ;
   constructor(private orderService :OrderService,private fb:FormBuilder,
     private route: ActivatedRoute,
@@ -24,9 +24,9 @@ export class AddOrderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.Order()
     this.getUserId()
     this.getProductId()
+    this.Order()
   }
 
   Order(){
@@ -45,7 +45,7 @@ export class AddOrderComponent implements OnInit {
      this.user_id = decodeToken.id
   }
   getProductId(): void {
-    this.route.params.subscribe(params => {
+      this.route.params.subscribe(params => {
       this.product_id = +params['id'];
       console.log(this.product_id);
     });
@@ -55,7 +55,7 @@ export class AddOrderComponent implements OnInit {
   const valid = this.formOrder.valid;
   if(valid){
     const value = this.formOrder.value
-    this.orderService.addOrder(value,this.id_product,this.user_id).subscribe()
+    this.orderService.addOrder(value,this.product_id,this.user_id).subscribe()
     console.log(value);
     
     this.formOrder.reset()

@@ -35,6 +35,10 @@ export class EnterpriseService {
                          updateEnterprise(enterpriseDto : EnterpriseDto):Observable<EnterpriseDto>{
                           return this.http.put<EnterpriseDto>(`${this.API_ENTERPRISE}/update_enterprise`,enterpriseDto)
                         }
+
+                        getEnterprise(enterprise_id:number){
+                        return this.http.get<EnterpriseDto>(`${this.API_ENTERPRISE}/get_enterprise?enterprise_id=${enterprise_id}`)
+                        }
   
                     
 

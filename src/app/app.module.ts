@@ -24,6 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './Component/Main/signup/signup.component';
 import { Interciptor } from './interciptor/interciptor';
+import { ProductComponent } from './Component/User/product/product.component';
+import { ProductDatailsComponent } from './Component/Main/product-datails/product-datails.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { Interciptor } from './interciptor/interciptor';
     AddOrderComponent,
     ShowOrderComponent,
     LogoutComponent,
-    SignupComponent
+    SignupComponent,
+    ProductComponent,
+    ProductDatailsComponent
   ],
   imports: [
     BrowserModule,

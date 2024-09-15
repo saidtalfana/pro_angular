@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
 import { EnterpriseDto } from 'src/app/dto/EnterpriseDto';
 import { EnterpriseService } from 'src/app/service/enterprise.service';
@@ -13,7 +14,9 @@ export class ShowEnterpriseComponent implements OnInit {
 
   provider_id !:number
 
-  constructor(private enterpriseService:EnterpriseService) { }
+  constructor(private enterpriseService:EnterpriseService
+    ,private router:Router
+  ) { }
 
   ngOnInit(): void {
     this.getProvider_id()
@@ -39,7 +42,9 @@ Enterprise(){
     console.log(res);
   })
 }
-// update(){
-//   this.enterpriseService.updateEnterprise()
-// }
+
+
+update(id:number){
+  this.router.navigate(['/update_enterprise',id]);
+   }
 }
