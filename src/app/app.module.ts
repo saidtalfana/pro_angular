@@ -26,7 +26,6 @@ import { SignupComponent } from './Component/Main/signup/signup.component';
 import { Interciptor } from './interciptor/interciptor';
 import { ProductComponent } from './Component/User/product/product.component';
 import { ProductDatailsComponent } from './Component/Main/product-datails/product-datails.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +57,9 @@ import { ProductDatailsComponent } from './Component/Main/product-datails/produc
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    AppRoutingModule,
+    AppRoutingModule
+    
+
     
   ],
   providers: [
