@@ -10,10 +10,14 @@ import { AddEnterpriseComponent } from './Component/Provider/add-enterprise/add-
 import { DashboardProviderComponent } from './Component/Provider/dashboard-provider/dashboard-provider.component';
 import { UserComponent } from './Component/User/user/user.component';
 import { ProductDatailsComponent } from './Component/Main/product-datails/product-datails.component';
+import { SignupComponent } from './Component/Main/signup/signup.component';
+import { SigninComponent } from './Component/Main/signin/signin.component';
 
 const routes: Routes = [
 
   { path: 'dashboard', component: DashboardAdminComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'signin', component: SigninComponent },
   { path: 'main', component: HomeComponent },
   { path: 'edit-article/:id', component: AddArticleComponent},
   { path: 'update_enterprise/:id', component: AddEnterpriseComponent },
