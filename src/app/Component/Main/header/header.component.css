@@ -18,6 +18,7 @@
 }
 .navbar>li{
 list-style-type: none;
+cursor: pointer;
 }
 #button{
     background-color: #23A6F0;

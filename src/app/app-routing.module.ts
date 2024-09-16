@@ -12,6 +12,7 @@ import { UserComponent } from './Component/User/user/user.component';
 import { ProductDatailsComponent } from './Component/Main/product-datails/product-datails.component';
 import { SignupComponent } from './Component/Main/signup/signup.component';
 import { SigninComponent } from './Component/Main/signin/signin.component';
+import { ProductComponent } from './Component/Main/product/product.component';
 
 const routes: Routes = [
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'edit-article/:id', component: AddArticleComponent},
   { path: 'update_enterprise/:id', component: AddEnterpriseComponent },
   { path: 'enterprise', component: AddEnterpriseComponent },
+  { path: 'shop', component: ProductComponent },
   { path: 'product_id/:id', component: AddOrderComponent },
   { path: 'datail_product_id/:id', component: ProductDatailsComponent },
   { path: 'user', component: UserComponent },
