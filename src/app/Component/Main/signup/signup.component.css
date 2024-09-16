@@ -14,14 +14,17 @@
     flex-direction: row-reverse;
     justify-content: space-between;
   border: 1px solid black;
+  box-shadow: 2px 3px 4px gray;
 }
 .right_img{
     background-color: gold;
     height: 100%;
     width: 40%;
-    /* background-image: url("src\assets\one.png");
+    background-image: url("src\assets\signup.jpg");
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size:cover;
+    background-position:right;
+background-origin: border-box;
 }
 .left_signup{
     background-color: #FAFAFA;

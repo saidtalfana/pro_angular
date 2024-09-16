@@ -24,4 +24,5 @@ list-style-type: none;
     border: none;
     padding: 7px 14px;
     color: white;
+    cursor: pointer;
 }
