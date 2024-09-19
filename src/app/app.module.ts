@@ -18,7 +18,6 @@ import { AddEnterpriseComponent } from './Component/Provider/add-enterprise/add-
 import { ShowEnterpriseComponent } from './Component/Provider/show-enterprise/show-enterprise.component';
 import { ShowProductComponent } from './Component/Provider/show-product/show-product.component';
 import { AddOrderComponent } from './Component/User/add-order/add-order.component';
-import { ShowOrderComponent } from './Component/User/show-order/show-order.component';
 import { LogoutComponent } from './Component/Shared/logout/logout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -28,6 +27,9 @@ import { ProductDatailsComponent } from './Component/Main/product-datails/produc
 import { ContactUsComponent } from './Component/Main/contact-us/contact-us.component';
 import { SearchComponent } from './Component/Main/search/search.component';
 import { ProductComponent } from './Component/Main/product/product.component';
+import { ShowOrderComponent } from './Component/Provider/show-order/show-order.component';
+import { OrderByUserComponent } from './Component/User/order-by-user/order-by-user.component';
+import { AllContactComponent } from './Component/Admin/all-contact/all-contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +55,9 @@ import { ProductComponent } from './Component/Main/product/product.component';
     ProductDatailsComponent,
     ContactUsComponent,
     SearchComponent,
-    ProductComponent
+    ProductComponent,
+    OrderByUserComponent,
+    AllContactComponent
   ],
   imports: [
     BrowserModule,

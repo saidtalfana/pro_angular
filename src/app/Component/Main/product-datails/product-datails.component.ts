@@ -38,7 +38,7 @@ export class ProductDatailsComponent implements OnInit{
     });
   }
 
-  getProductId(id:number){
+  productOrderId(id:number){
     this.router.navigate(['/product_id',id]);
      }
 

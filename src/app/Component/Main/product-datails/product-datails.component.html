@@ -1,7 +1,8 @@
 <div class="holder">
-    <div class="left">
+    <div class="wrapper">
+    <div class="left" *ngIf="productDetails ; else noData">
         <div class="product_img">
-          
+            <img [src]="'data:image/png;base64,'+productDetails.image" alt="" style="width: 100%; height: 100%;">
 
         </div>
         <div class="details"  *ngIf="productDetails ; else noData">
@@ -17,7 +18,8 @@
                     <h6>Start price : <span>{{productDetails.price}} <b>$</b></span></h6>
                     <h6>Status : <span>{{productDetails.productStatus}}</span></h6>
                 </div>
-                <div class="margin"></div>
+                <div class="margin">
+                </div>
 
                 <!-- <h3>Detailed Description</h3>
                 <h5>{{productDetails.description}}</h5> -->
@@ -28,24 +30,32 @@
                     {{productDetails.description}}
                 <!-- of all sizes, including social media management, search engine optimization (SEO), pay-per-click (PPC) advertising, email marketing, and analytics. --> 
                 </p>
-                <div></div>
+                
 
 
 
             </div>
 
         </div>
+        <button class="btn-order" (click)="productOrderId(productDetails.productId)">make order</button>
 
     </div>
     <div class="right">
+        <!-- <div class="order_div">
+        <app-add-order></app-add-order>
+        </div> -->
 
     </div>
 </div>
+</div>
+<ng-template #noData>
+    <p>No enterprise data available.</p>
+  </ng-template>
 
 
 
 
-<div>product</div>
+<!-- <div>product</div>
     <div   *ngIf="productDetails ; else noData">
         
     
@@ -55,12 +65,9 @@
         <h3>{{productDetails.price}}</h3>
         <h3>{{productDetails.category}}</h3>
         <h3>{{productDetails.productStatus}}</h3>
-        <img [src]="productDetails.image" alt="{{productDetails.name}}" style="width: 150px; height: auto;">
+        <img [src]="'data:image/png;base64,'+productDetails.image" alt="" style="width: 150px; height: auto;">
 
         <button (click)="getProductId(productDetails.productId)">make order</button>
         
-</div>
+</div> -->
 
-<ng-template #noData>
-    <p>No enterprise data available.</p>
-  </ng-template>

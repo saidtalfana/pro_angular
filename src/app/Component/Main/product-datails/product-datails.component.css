@@ -67,3 +67,32 @@
 
     
 }
+
+.wrapper{
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.right{
+    background-color: blue;
+    width: 34%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.order_div{
+    width: 500px;
+    height: 100vh;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-order{
+    width: 40%;
+    height: 33px;
+    color: #000;
+    background-color: cornflowerblue;
+}
