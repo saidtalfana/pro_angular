@@ -1,3 +1,50 @@
+<div class="holder">
+    <div class="left">
+        <div class="product_img">
+          
+
+        </div>
+        <div class="details"  *ngIf="productDetails ; else noData">
+
+            <div class="another_datail">
+                <h3 id="h3">General Specs about service</h3>
+                <div class="one">
+                    <h6>Tittle :  <span>{{productDetails.name}} </span></h6>
+                    <h6>Category : <span>{{productDetails.category}}
+                    </span></h6>
+                </div>
+                <div class="one">
+                    <h6>Start price : <span>{{productDetails.price}} <b>$</b></span></h6>
+                    <h6>Status : <span>{{productDetails.productStatus}}</span></h6>
+                </div>
+                <div class="margin"></div>
+
+                <!-- <h3>Detailed Description</h3>
+                <h5>{{productDetails.description}}</h5> -->
+
+            </div>
+            <div class="description">
+                <h3>Detailed Description</h3> <p>
+                    {{productDetails.description}}
+                <!-- of all sizes, including social media management, search engine optimization (SEO), pay-per-click (PPC) advertising, email marketing, and analytics. --> 
+                </p>
+                <div></div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="right">
+
+    </div>
+</div>
+
+
+
+
 <div>product</div>
     <div   *ngIf="productDetails ; else noData">
         

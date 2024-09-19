@@ -64,17 +64,26 @@
     border: 1px solid black;
 
 }
-.product_details{
+.product_detail{
     width: 250px;
-    height: 17%;
+    height: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 1px solid black;
+    background-color: red;
 
 }
-.product_details>h3{
-    margin: 0 20px;
+.product_detail>h3{
+}
+.product_details{
+    width: 250px;
+    height: 17%;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
 }
 .btn{
     width: 250px;
@@ -88,4 +97,12 @@
 .btn:hover{
     background-color: rgb(74, 128, 238);
     
+}
+.h6{
+    background-color: antiquewhite;
+    width: 250px;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -24,8 +24,22 @@ import { Product } from "../model/Product";
 
                       //  <?--------------add Product ------------------->
 
-                      addProduct(productDto : ProductDto,enterprise_id : number){
-                        return this.http.post<ProductDto>(`${this.API_PRODUCT}/add_product?enterprise_id=${enterprise_id}`,productDto)}
+                      // addProduct(productDto : ProductDto,enterprise_id : number){
+                      //   return this.http.post<ProductDto>(`${this.API_PRODUCT}/add_product?enterprise_id=${enterprise_id}`,productDto)}
+
+                      addProduct(productDto: ProductDto, enterprise_id: number, imageFile: File) {
+                        const formData = new FormData();
+                        formData.append('name', productDto.name);
+                        formData.append('description', productDto.description);
+                        formData.append('price', productDto.price.toString());
+                        formData.append('category', productDto.category);
+                        formData.append('productStatus', productDto.productStatus);
+                        formData.append('enterprise_id', enterprise_id.toString());
+                        formData.append('image', imageFile);
+                    
+                        return this.http.post<ProductDto>(`${this.API_PRODUCT}/add_product`, formData);
+                    }
+                    
 
                       //  <?--------------All Products ------------------->
                       

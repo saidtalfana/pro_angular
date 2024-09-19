@@ -10,7 +10,8 @@ import { ProductService } from 'src/app/service/product.service';
 export class AddProductComponent implements OnInit {
 
       formProduct !: FormGroup;
-      enterprise_id !: number
+      enterprise_id !: number;
+      selectedImage!: File;
   constructor(private productService:ProductService , private fb:FormBuilder) { }
 
   ngOnInit(): void {
@@ -37,16 +38,21 @@ getEnterpriseId(){
   console.log(this.enterprise_id);
   
 }
-
+onFileChange(event: any) {
+    if (event.target.files.length > 0) {
+      this.selectedImage = event.target.files[0]; // Get the actual File object
+    }
+  }
   onSubmit():void{
     const value = this.formProduct.value
-    this.productService.addProduct(value,this.enterprise_id).subscribe()
+    this.productService.addProduct(value,this.enterprise_id,this.selectedImage).subscribe()
     console.log(value);
     
     this.Product()
     if(value){
       alert("product added")
     }
+    this.Product()
   }
 
 }

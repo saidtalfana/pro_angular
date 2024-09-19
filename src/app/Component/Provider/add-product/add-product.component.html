@@ -1,44 +1,49 @@
 <div class="article-container">
-    <h2>Add Product</h2>
-    <form [formGroup]="formProduct" (ngSubmit)="onSubmit()">
-      
-
+  <h2>Add Product</h2>
+  <form [formGroup]="formProduct" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="name">product name</label>
-        <input type="text" id="name" formControlName="name" />
-      </div>
-      <div class="form-group">
-        <label for="description">description</label>
-        <textarea id="description" formControlName="description" placeholder="Enter task description"></textarea>
+          <label for="name">Product Name</label>
+          <input type="text" id="name" formControlName="name" required />
       </div>
 
       <div class="form-group">
-        <label for="price">start price</label>
-        <input type="number" id="price" formControlName="price" />
+          <label for="description">Description</label>
+          <textarea id="description" formControlName="description" placeholder="Enter product description" required></textarea>
       </div>
 
-      <label for="category">Category</label>
-      <select id="category" formControlName="category" required>
-        <option value="ELECTRONICS">ELECTRONICS</option>
-        <option value="FASHION">FASHION</option>
-        <option value="BEAUTY">BEAUTY</option>
-        <option value="SPORTS">SPORTS</option>
-        <option value="CONSTRUCTION">CONSTRUCTION</option>
-        <option value="INDUSTRY">INDUSTRY</option>
-      </select> 
-   <label for="productStatus">product status</label>
-      <select id="productStatus" formControlName="productStatus" required>
-        <option value="AVAILABLE">AVAILABLE</option>
-        <option value="COMING_SOON">COMING_SOON</option>
-        <option value="OUT_OF_STOCK">OUT_OF_STOCK</option>
-      </select> 
       <div class="form-group">
-        <label for="image">image</label>
-        <input type="file" id="image" formControlName="image" />
+          <label for="price">Start Price</label>
+          <input type="number" id="price" formControlName="price" required />
       </div>
-  
+
+      <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" formControlName="category" required>
+              <option value="" disabled>Select a category</option>
+              <option value="ELECTRONICS">ELECTRONICS</option>
+              <option value="FASHION">FASHION</option>
+              <option value="BEAUTY">BEAUTY</option>
+              <option value="SPORTS">SPORTS</option>
+              <option value="CONSTRUCTION">CONSTRUCTION</option>
+              <option value="INDUSTRY">INDUSTRY</option>
+          </select> 
+      </div>
+
+      <div class="form-group">
+          <label for="productStatus">Product Status</label>
+          <select id="productStatus" formControlName="productStatus" required>
+              <option value="" disabled>Select status</option>
+              <option value="AVAILABLE">AVAILABLE</option>
+              <option value="COMING_SOON">COMING_SOON</option>
+              <option value="OUT_OF_STOCK">OUT_OF_STOCK</option>
+          </select> 
+      </div>
+
+      <div class="form-group">
+          <label for="image">Image</label>
+          <input type="file" id="image" (change)="onFileChange($event)" formControlName="image" required />
+      </div>
+
       <button type="submit" class="btn btn-primary" [disabled]="formProduct.invalid">Submit Product</button>
-    </form>
-  </div>
-                    
-  
+  </form>
+</div>

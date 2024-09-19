@@ -7,7 +7,7 @@
         <h3>{{product.price}}</h3>
         <h3>{{product.category}}</h3>
         <h3>{{product.productStatus}}</h3>
-        <img [src]="product.image" alt="{{product.name}}" style="width: 150px; height: auto;">
+        <img [src]="'data:image/png;base64,'+product.image" alt="" style="width: 150px; height: auto;">
 
         <button >update information product</button>
         <button (click)="delete(product.productId)">delete</button>

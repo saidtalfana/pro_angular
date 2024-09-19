@@ -29,6 +29,8 @@ export class ShowProductComponent implements OnInit {
   fetchProduct(){
 this.productService.getAllProductByEnterpriseId(this.enterprise_id).subscribe((res:ProductDto[])=>{
   this.listProduct =res
+  console.log(res);
+  
 })
   }
 

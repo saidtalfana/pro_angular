@@ -24,8 +24,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './Component/Main/signup/signup.component';
 import { Interciptor } from './interciptor/interciptor';
-import { ProductComponent } from './Component/User/product/product.component';
 import { ProductDatailsComponent } from './Component/Main/product-datails/product-datails.component';
+import { ContactUsComponent } from './Component/Main/contact-us/contact-us.component';
+import { SearchComponent } from './Component/Main/search/search.component';
+import { ProductComponent } from './Component/Main/product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,8 +50,10 @@ import { ProductDatailsComponent } from './Component/Main/product-datails/produc
     ShowOrderComponent,
     LogoutComponent,
     SignupComponent,
-    ProductComponent,
-    ProductDatailsComponent
+    ProductDatailsComponent,
+    ContactUsComponent,
+    SearchComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
