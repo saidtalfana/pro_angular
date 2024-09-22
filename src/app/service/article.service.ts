@@ -21,8 +21,19 @@ export class ArticleService {
                     
                      //  <?--------------add  ------------------->
 
-                     addArticle(articleDto :ArticleDto):Observable<ArticleDto>{
-                        return this.http.post<ArticleDto>(`${this.API_ARTICLE}/add_article`,articleDto)
+                     addArticle(articleDto :ArticleDto,articleImage: File):Observable<ArticleDto>{
+
+
+                      const formData = new FormData();
+                      formData.append('articleTitle', articleDto.articleTitle);
+                      formData.append('articleContent', articleDto.articleContent);
+                      formData.append('articleAuthor', articleDto.articleAuthor);
+                      formData.append('articleType', articleDto.articleType);
+                      formData.append('articleImage',articleImage);
+                      
+
+
+                        return this.http.post<ArticleDto>(`${this.API_ARTICLE}/add_article`,formData)
                           }
   
                          //  <?--------------fetch  ------------------->

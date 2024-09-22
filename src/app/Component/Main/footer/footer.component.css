@@ -63,9 +63,29 @@ border: none;}
  background-size: contain;
  border: 0.5px solid black;
  background-position: center;
-
+cursor: pointer;
 
  
+}
+.i1{
+    background-image: url("src\assets\linkedin.png");
+background-repeat: no-repeat;
+    background-size:30px;
+}
+.i2{
+    background-image: url("src\assets\facebook.png");
+background-repeat: no-repeat;
+    background-size:30px;
+}
+.i3{
+    background-image: url("src\assets\twitter.png");
+background-repeat: no-repeat;
+    background-size:30px;
+}
+.i4{
+    background-image: url("src\assets\instagram.png");
+background-repeat: no-repeat;
+    background-size:30px;
 }
 #right{
     margin-top: 37px;

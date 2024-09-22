@@ -22,7 +22,7 @@ export class ContactService{
     }
 
     fetchAllContact():Observable<ContactDto[]>{
-        return this.http.get<ContactDto[]>(`${this.API_CONTACT}/get_all_contacts`)
+        return this.http.get<ContactDto[]>(`${this.API_CONTACT}/get_all_contact`)
     }
 
 

@@ -22,11 +22,11 @@
         <input type="text" id="articleType" formControlName="articleType" placeholder="Enter Article Type" />
       </div>
   
+    
       <div class="form-group">
-        <label for="articleImage">Article Image URL:</label>
-        <input type="text" id="articleImage" formControlName="articleImage" placeholder="Enter Image URL" />
-      </div>
-  
+        <label for="articleImage">Image</label>
+        <input type="file" id="articleImage" (change)="onFileChange($event)" formControlName="articleImage" required />
+    </div>
       <button type="submit" class="btn btn-primary" [disabled]="formArticle.invalid">Submit Article</button>
     </form>
   </div>

@@ -1,10 +1,13 @@
 .container{
     width: 100%;
     height: 100vh;
-    background-color: #F9F9FB;
+    background-color: #0000ff;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("src\assets\bg_cantactus.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .wrapper{
     width: 80%;

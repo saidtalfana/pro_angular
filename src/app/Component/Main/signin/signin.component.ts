@@ -49,15 +49,15 @@ export class SigninComponent implements OnInit {
         const decodedToken: any = jwtDecode(response.token);
 
         if (decodedToken.roles.includes(Role.ADMIN)) {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['admin']);
         } 
         else if (decodedToken.roles.includes(Role.PROVIDER)) {
-          this.router.navigate(['/provider']);
+          this.router.navigate(['provider']);
         } 
         else if (decodedToken.roles.includes(Role.USER)) {
-          this.router.navigate(['/user']);
+          this.router.navigate(['user']);
         } else {
-          this.router.navigate(['/main']);
+          this.router.navigate(['main']);
         }
 
        

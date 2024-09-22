@@ -10,7 +10,8 @@ import { ArticleService } from 'src/app/service/article.service';
 })
 export class AddArticleComponent implements OnInit {
 
-      formArticle !: FormGroup;
+      formArticle  !: FormGroup;
+      selectedImage !: File
 
   constructor(private fb: FormBuilder , private service: ArticleService) { }
 
@@ -29,10 +30,16 @@ export class AddArticleComponent implements OnInit {
     });
   }
 
+  onFileChange(event: any) {
+    if (event.target.files.length > 0) {
+      this.selectedImage = event.target.files[0]; // Get the actual File object
+    }
+  }
+
   onSubmit() {
     const value = this.formArticle.value
    
-      this.service.addArticle(value).subscribe()
+      this.service.addArticle(value,this.selectedImage).subscribe()
       this.article()
 
       console.log('Article submitted:', value);

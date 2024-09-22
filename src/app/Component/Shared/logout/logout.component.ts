@@ -1,29 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+// import { Component, OnInit } from '@angular/core';
+// import { Router } from '@angular/router';
 
-@Component({
-  selector: 'app-logout',
-  templateUrl: './logout.component.html',
-  styleUrls: ['./logout.component.css']
-})
-export class LogoutComponent implements OnInit {
+// @Component({
+//   selector: 'app-logout',
+//   templateUrl: './logout.component.html',
+//   styleUrls: ['./logout.component.css']
+// })
+// export class LogoutComponent implements OnInit {
 
-  constructor(private router : Router) { }
+//   constructor(private router : Router) { }
 
-  ngOnInit(): void {
-  }
+//   ngOnInit(): void {
+//   }
 
-  check = false
+//   check = false
 
-  logout(check:boolean){
-if(check){
-  localStorage.removeItem("jwt")
-  localStorage.removeItem("enterprise_id")
-   this.router.navigateByUrl("")
-}
-else{
-  alert("something wrong")
-}
-  }
+//   logout(check:boolean){
+// if(check){
+//   localStorage.removeItem("jwt")
+//   localStorage.removeItem("enterprise_id")
+//    this.router.navigateByUrl("")
+// }
+// else{
+//   alert("something wrong")
+// }
+//   }
 
-}
+// }
