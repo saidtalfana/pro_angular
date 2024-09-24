@@ -6,11 +6,12 @@ import { ShowArticleComponent } from './show-article/show-article.component';
 import { AllContactComponent } from './all-contact/all-contact.component';
 
 const routes: Routes = [
-  { path: 'admin', component: DashboardAdminComponent },
+  { path: '', component: DashboardAdminComponent,
+    children:[
   { path: 'add_article', component: AddArticleComponent },
   { path: 'show_article', component: ShowArticleComponent },
   { path: 'all_contact', component: AllContactComponent },
-  { path: 'edit-article/:id', component: AddArticleComponent},
+  { path: 'edit-article/:id', component: AddArticleComponent}]},
 
 
 

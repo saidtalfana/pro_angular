@@ -13,6 +13,7 @@ import { ShowEnterpriseComponent } from './show-enterprise/show-enterprise.compo
 import { ShowOrderComponent } from './show-order/show-order.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 
 @NgModule({
@@ -35,7 +36,9 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     ProviderRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MaterialModule, // Import MaterialModule here
+
   ]
 })
 export class ProviderModule { }

@@ -11,6 +11,7 @@ export class ShowOrderComponent implements OnInit {
 
   listOrder :OrderDto[]=[]
   enterprise_id!:number;
+  Column : string[] = ["id","date","time","name","address","email","phoneNumber","customerRequest"]
 
   constructor(private orderService:OrderService) { }
 

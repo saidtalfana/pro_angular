@@ -44,7 +44,7 @@ this.productService.fetchAllProduct().subscribe((res:ProductDto[])=>{
 
 
 showDetails(id:number){
-     this.router.navigate(['/product_details',id]);
+     this.router.navigate(['main/product_details',id]);
 }
 
 

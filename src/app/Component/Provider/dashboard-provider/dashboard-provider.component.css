@@ -1,0 +1,22 @@
+#navbar{
+    width: 100%;
+    height: 50px;
+}
+#maindashboard{
+display: flex;
+justify-content: space-between;
+}
+
+#sidebar{
+    width: 290px;
+    height: 90vh;
+}
+#routerlink{
+    width: 990px;
+    height: 90vh;
+    padding-top: 120px;
+    background-color: rgb(211, 211, 211);
+    display: flex;
+    justify-content: center;
+
+}

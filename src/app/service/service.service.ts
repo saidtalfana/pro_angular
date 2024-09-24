@@ -13,6 +13,7 @@ export class ServiceService {
 
   private     API_SIGNUP = 'http://localhost:1998/signup';
   private     API_SIGNIN = 'http://localhost:1998/signin';
+  private TOKEN_KEY = 'jwt';
 
   constructor(private http:HttpClient) { }
 
@@ -26,4 +27,11 @@ export class ServiceService {
                    //  <?--------------login up ------------------->
                  signin(loginRequest:LoginRequest):Observable<{ token: string, role: string }> {
                        return this.http.post<{ token: string, role: string }>(`${this.API_SIGNIN}`,loginRequest)}
+
+
+
+                       isAuthenticated(): boolean {
+                        const token = localStorage.getItem(this.TOKEN_KEY); 
+                        return !!token; 
+                      }
 }

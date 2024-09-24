@@ -9,6 +9,8 @@ import { AddArticleComponent } from './add-article/add-article.component';
 import { AllContactComponent } from './all-contact/all-contact.component';
 import { ShowArticleComponent } from './show-article/show-article.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MaterialModule } from 'src/app/shared/material.module';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AddArticleComponent,
     ShowArticleComponent,
     AllContactComponent,
-    NavbarComponent
+    NavbarComponent,
+    SideBarComponent
 
   ],
   imports: [
@@ -25,7 +28,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AdminRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
     
   ]
 })

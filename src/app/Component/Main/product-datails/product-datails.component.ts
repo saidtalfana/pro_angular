@@ -39,7 +39,7 @@ export class ProductDatailsComponent implements OnInit{
   }
 
   productOrderId(id:number){
-    this.router.navigate(['/product_id',id]);
+    this.router.navigate(['main/product_id',id]);
      }
 
 

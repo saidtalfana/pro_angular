@@ -1,0 +1,27 @@
+<div class="article-container">
+  <h4>Order</h4>    
+    <form [formGroup]="formOrder" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <input type="text" id="name" formControlName="name"  placeholder="name"/>
+      </div>
+      <div class="form-group">
+        <input type="text" id="address" formControlName="address" placeholder="adress"/>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" formControlName="email" placeholder="email" />
+      </div>
+      <div class="form-group">
+        <input type="tel" id="phoneNumber" formControlName="phoneNumber" placeholder="phone number"/>
+      </div>
+      <div class="form-group">
+        <textarea id="customerRequest" formControlName="customerRequest" placeholder="customerRequest"></textarea>
+      </div>
+
+      
+  
+      <button type="submit" class="btn btn-primary" [disabled]="formOrder.invalid">Submit Order</button>
+    </form>
+  </div>
+                    
+  
