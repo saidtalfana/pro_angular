@@ -15,8 +15,6 @@ export class ProductComponent implements OnInit {
   pageSize = 10;
   totalPages: number = 0;
 
-  products: any[] = [];
-  
   filter = {
     category: '',
     minPrice: null,
@@ -29,9 +27,6 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.loadProducts();
   }
-
-
-  
 
   loadProducts(): void {
     this.productService.getProducts(this.currentPage, this.pageSize).subscribe(data => {
@@ -53,13 +48,13 @@ export class ProductComponent implements OnInit {
     this.router.navigate(['main/product_details', id]);
   }
 
-  applyFilter() {
-    const params: any = {
-      category: this.filter.category,
-      minPrice: this.filter.minPrice,
-      maxPrice: this.filter.maxPrice,
-      name: this.filter.name
-    };}
-
-    
+  applyFilter(): void {
+    this.productService.filterProducts(this.filter.category, this.filter.minPrice, this.filter.maxPrice, this.filter.name)
+      .subscribe(data => {
+        this.listProduct = data; // Update the product list with filtered results
+        this.totalPages = Math.ceil(data.length / this.pageSize); // Update total pages based on the filtered results
+      }, error => {
+        console.error('Error filtering products:', error);
+      });
+  }
 }
