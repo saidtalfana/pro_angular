@@ -42,5 +42,7 @@ export class ProductDatailsComponent implements OnInit{
     this.router.navigate(['main/product_id',id]);
      }
 
-
+     showDetailsofArticle(id:number){
+      this.router.navigate(['main/article_details',id]);
+ }
 }

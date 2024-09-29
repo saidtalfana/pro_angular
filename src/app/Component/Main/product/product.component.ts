@@ -9,43 +9,57 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+  
+  listProduct!: ProductDto[];
+  currentPage = 0;
+  pageSize = 10;
+  totalPages: number = 0;
 
-  listProduct !: ProductDto[]
-  // enterprise_id !: number
-  constructor(private productService : ProductService , private router:Router) { }
+  products: any[] = [];
+  
+  filter = {
+    category: '',
+    minPrice: null,
+    maxPrice: null,
+    name: ''
+  };
+
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
-    // this.fetchEntrpriseId()
-    this.fetchProduct()
+    this.loadProducts();
   }
 
-  // fetchEntrpriseId(){
-  //   const id : any= localStorage.getItem("enterprise_id")
-  //   this.enterprise_id  = id
-  // }
 
-  fetchProduct(){
-this.productService.fetchAllProduct().subscribe((res:ProductDto[])=>{
-  this.listProduct =res
-  console.log(res);
   
-})
+
+  loadProducts(): void {
+    this.productService.getProducts(this.currentPage, this.pageSize).subscribe(data => {
+      this.listProduct = data.content;
+      this.totalPages = data.totalPages;
+    }, error => {
+      console.error('Error fetching products:', error);
+    });
   }
 
-  // delete(id : number){
-  //   this.productService.deleteProduct(id).subscribe()
-  //   this.fetchEntrpriseId()
-  // }
- 
-//   getProductId(id:number){
-//  this.router.navigate(['/product_id',id]);
-//  this.selectedProductId = this.selectedProductId === id ? null :id;
-//   }
+  onPageChange(newPage: number): void {
+    if (newPage >= 0 && newPage < this.totalPages) {
+      this.currentPage = newPage;
+      this.loadProducts();
+    }
+  }
 
+  showDetails(id: number): void {
+    this.router.navigate(['main/product_details', id]);
+  }
 
-showDetails(id:number){
-     this.router.navigate(['main/product_details',id]);
-}
+  applyFilter() {
+    const params: any = {
+      category: this.filter.category,
+      minPrice: this.filter.minPrice,
+      maxPrice: this.filter.maxPrice,
+      name: this.filter.name
+    };}
 
-
+    
 }

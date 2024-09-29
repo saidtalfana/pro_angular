@@ -15,6 +15,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { SearchComponent } from './search/search.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ProductComponent } from './product/product.component';
+import { AddOrderComponent } from './add-order/add-order.component';
+import { ArticleDetailesComponent } from './article-detailes/article-detailes.component';
 
 
 
@@ -31,7 +33,9 @@ import { ProductComponent } from './product/product.component';
     ContactUsComponent,
     SearchComponent,
     ArticlesComponent,
-    ProductComponent
+    ProductComponent,
+    AddOrderComponent,
+    ArticleDetailesComponent
     
   ],
   imports: [
