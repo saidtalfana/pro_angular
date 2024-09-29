@@ -1,20 +1,18 @@
 <div class="container">
-    <!-- Search Section -->
-    <!-- <div class="search">
-        <div class="child">
-            <input class="input" type="text" placeholder="Enter name" />
-            <input class="input" type="text" placeholder="Enter price" />
-            <input class="input" type="text" placeholder="Search" />
-            <button id="btn">Search</button>
-        </div>
-    </div> -->
 
     <form (ngSubmit)="applyFilter()">
-        <div>
+        <div class="form-group">
             <label for="category">Category:</label>
-            <input id="category" type="text" [(ngModel)]="filter.category" name="category" />
+            <select id="category" [(ngModel)]="filter.category" name="category" required>
+                <option value="">Select a category</option>
+                <option value="ELECTRONICS">ELECTRONICS</option>
+                <option value="FASHION">FASHION</option>
+                <option value="BEAUTY">BEAUTY</option>
+                <option value="SPORTS">SPORTS</option>
+                <option value="CONSTRUCTION">CONSTRUCTION</option>
+                <option value="INDUSTRY">INDUSTRY</option>
+            </select>
         </div>
-        
         <div>
             <label for="minPrice">Min Price:</label>
             <input id="minPrice" type="number" [(ngModel)]="filter.minPrice" name="minPrice" />
