@@ -1,6 +1,6 @@
 .holder{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #EFEFEF;
 }
 .left{
@@ -75,12 +75,94 @@
     
 }
 .right{
-    background-color: blue;
-    width: 34%;
+    background-color: rgb(156, 10, 134);
+    width: 40%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#enterprise{
+    background-color: #fff;
+    width: 98%;
+    height: 98%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+
+}
+#logo{
+    width: 80%;
+    height: 25%;
+    background-color: #f85151;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#logo_img{
+    width: 110px;
+    height: 110px;
+    background-color: #ffffff;
+    background-image: url("src\assets\facebook.png");
+    background-size: contain;
+
+
+}
+#enterprise_information{
+    width: 80%;
+    height: 60%;
+    background-color: #1d9012;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+#enterprise_details{
+    width: 97%;
+    height: 24%;
+    background-color: #bee4bb;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+#activity{
+    padding: 5px 10px;
+    border-radius: 7px;
+    background-color: #fff;
+}
+#enterprise_description{
+    width: 97%;
+    height: 70%;
+    background-color: #e2ede2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 6px;
+}
+#call_btn{
+width: 80%;
+height: 13%;
+background-color: #ffffff;
+display: flex;
+justify-content: center;
+border: 1px solid black;
+
+align-items: center;
+
+}
+#btn{
+    width: 77%;
+    height: 70%;
+    font-size: 21px;
+}
+.right{
+    background-color: rgb(156, 10, 134);
+    width: 40%;
+    height: 100vh;
 }
 .order_div{
     width: 500px;
@@ -95,4 +177,85 @@
     height: 33px;
     color: #000;
     background-color: cornflowerblue;
+}
+.recommend{
+    background-color: green;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.products{
+    width: 100%;
+    height: auto;
+    background-color: #F9F9FB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.product{
+    width: 200px;
+    height: 247px;
+    margin: 7px 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+
+}
+.product_image{
+    width: 100%;
+    border: 1px solid black;
+
+}
+.product_detail{
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.product_details{
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+.btn_view{
+    width: 70px;
+    height: 7%;
+    color: #000;
+    font-size: 7px;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    border-radius: none;
+    border: none;
+}
+.btn:hover{
+    background-color: rgb(9, 226, 246);
+    
+}
+.status{
+    /* background-color: red; */
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.h6{
+    background-color: antiquewhite;
+    width: 200px;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

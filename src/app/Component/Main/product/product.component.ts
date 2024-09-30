@@ -54,12 +54,14 @@ export class ProductComponent implements OnInit {
   }
 
   applyFilter() {
-    const params: any = {
-      category: this.filter.category,
-      minPrice: this.filter.minPrice,
-      maxPrice: this.filter.maxPrice,
-      name: this.filter.name
-    };}
+    this.productService.filterProducts(this.filter.category, this.filter.minPrice, this.filter.maxPrice, this.filter.name).subscribe(data => {
+      this.listProduct = data;
+      this.currentPage = 0; // Reset to first page
+    }, error => {
+      console.error('Error fetching filtered products:', error);
+    });
+  }
+  
 
     
 }

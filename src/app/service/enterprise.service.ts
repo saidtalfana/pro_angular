@@ -40,7 +40,9 @@ export class EnterpriseService {
                         return this.http.get<EnterpriseDto>(`${this.API_ENTERPRISE}/get_enterprise?enterprise_id=${enterprise_id}`)
                         }
   
-                    
+                        getEnterpriseByProductId(productId: number): Observable<EnterpriseDto> {
+                          return this.http.get<EnterpriseDto>(`${this.API_ENTERPRISE}/enterprise-by-product/${productId}`);
+                        }
 
 
 }

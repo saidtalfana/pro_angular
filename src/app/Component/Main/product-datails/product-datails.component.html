@@ -26,21 +26,66 @@
       </div>
   
       <div class="right">
-        <h3>Recommended Products</h3>
-        <div *ngIf="recommendedProducts && recommendedProducts.length > 0; else noRecommendations">
-          <div *ngFor="let product of recommendedProducts" class="recommended-product">
-            <img [src]="'data:image/png;base64,' + product.image" alt="" style="width: 100%; height: auto;">
-            <h4>{{ product.name }}</h4>
-            <p>Price: {{ product.price }} $</p>
-            <button (click)="showDetails(product.productId)">View Details</button>
-          </div>
+        <div id="enterprise"   *ngIf="enterpriseDetails; else noData">
+
+            <div id="logo">
+                <div id="logo_img">
+                    <!-- <img [src]="'data:image/png;base64,' + enterpriseDetails.enterpriseLogo" alt="" style="width: 100%; height: 100%"> -->
+                  </div>
+            </div>
+
+            <div id="enterprise_information">
+                <div id="enterprise_details">
+                 <h3>{{ enterpriseDetails.enterpriseName }}</h3>
+                 <h5 id="activity">{{ enterpriseDetails.activity }}</h5>
+                </div>
+                <div id="enterprise_description">
+                    <P>{{enterpriseDetails.enterpriseDescription}}</P>
+                </div>
+            </div>
+
+            <div id="call_btn">
+                <button id="btn">call</button>
+            </div>
+
+            </div>
+            <ng-template #noData>
+                <p>No enterprise data available.</p>
+              </ng-template>
+
         </div>
-        <ng-template #noRecommendations>
-          <p>No recommendations available.</p>
-        </ng-template>
       </div>
+    
+
+    <h3>Recommended Products</h3>
+    <div class="products"   *ngIf="recommendedProducts && recommendedProducts.length > 0; else noRecommendations">
+        <div class="product" *ngFor="let product of recommendedProducts">
+            <div class="product_image">
+                <img [src]="'data:image/png;base64,' + product.image" alt="{{product.name}}" style="width: 100%; height: auto;" />
+            </div>
+            <div class="product_details">
+                <div class="product_detail">
+                    <h3>{{product.name}}</h3>
+                </div>
+                <div class="status">
+                    <h3>{{product.price}} <span>$</span></h3>
+                    <h6>{{product.productStatus}}</h6>
+                </div>
+            </div>
+            <button class="btn_view" (click)="showDetails(product.productId)">Show Details</button>
+        </div>
     </div>
+
+
+
+
+    <ng-template #noRecommendations>
+      <p>No recommendations available.</p>
+    </ng-template>
+
+
   </div>
+  
   
   <ng-template #noData>
     <p>No enterprise data available.</p>

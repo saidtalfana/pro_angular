@@ -22,25 +22,5 @@ justify-content: space-between;
 }
 
 
-/* styles.css or app.component.css */
 
-/* Light mode styles */
-body.light-mode {
-    background-color: white;
-    color: black;
-  }
-  
-  /* Dark mode styles */
-  body.dark-mode {
-    background-color: black;
-    color: white;
-  }
-  
-  /* Optional: Add styles for your buttons */
-  button {
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
   

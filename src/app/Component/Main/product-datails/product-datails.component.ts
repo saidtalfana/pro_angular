@@ -1,7 +1,9 @@
 // product-datails.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { EnterpriseDto } from 'src/app/dto/EnterpriseDto';
 import { ProductDto } from 'src/app/dto/ProductDto';
+import { EnterpriseService } from 'src/app/service/enterprise.service';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -13,12 +15,13 @@ export class ProductDatailsComponent implements OnInit {
   productDetails: ProductDto | null = null;
   product_id!: number;
   recommendedProducts: ProductDto[] = []; // New property for recommendations
-
-  constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) {}
+  enterpriseDetails!:EnterpriseDto
+  constructor(private productService: ProductService,private enterpriseService:EnterpriseService ,private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.getProductDatailsId();
     this.detailsProduct();
+    this.loadEnterpriseDetails()
   }
 
   detailsProduct(): void {
@@ -62,4 +65,17 @@ export class ProductDatailsComponent implements OnInit {
       this.getProductDatailsId(); // Refresh product details after navigating
       this.detailsProduct();
     });}
+
+
+
+    loadEnterpriseDetails(): void {
+      this.enterpriseService.getEnterpriseByProductId(this.product_id).subscribe(
+        (data) => {
+          this.enterpriseDetails = data;
+        },
+        (error) => {
+          console.error('Error fetching enterprise:', error);
+        }
+      );
+    }
 }
