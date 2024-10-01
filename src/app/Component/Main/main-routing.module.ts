@@ -10,6 +10,7 @@ import { ProductDatailsComponent } from './product-datails/product-datails.compo
 import { AddOrderComponent } from './add-order/add-order.component';
 import { AuthGuard } from 'src/app/shared/auth.guard';
 import { ArticleDetailesComponent } from './article-detailes/article-detailes.component';
+import { ProductRatingComponent } from './product-rating/product-rating.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'contact_us', component: ContactUsComponent },
+  { path: 'rating', component: ProductRatingComponent },
   { path: 'shop', component: ProductComponent },
   { path: 'product_details', component: ProductDatailsComponent },
   { path: 'article_details', component: ArticleDetailesComponent },

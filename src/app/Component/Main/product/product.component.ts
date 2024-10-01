@@ -12,7 +12,7 @@ export class ProductComponent implements OnInit {
   
   listProduct!: ProductDto[];
   currentPage = 0;
-  pageSize = 10;
+  pageSize = 12;
   totalPages: number = 0;
 
   products: any[] = [];
@@ -62,6 +62,16 @@ export class ProductComponent implements OnInit {
     });
   }
   
+  resetFilter() {
+    // Resetting the filter object
+    this.filter = {
+      category: '',
+      minPrice: null,
+      maxPrice: null,
+      name: ''
+    };
+  }
 
+  
     
 }

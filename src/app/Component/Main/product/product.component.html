@@ -1,35 +1,69 @@
 <div class="container">
 
-    <form (ngSubmit)="applyFilter()">
-        <div class="form-group">
-            <label for="category">Category:</label>
-            <select id="category" [(ngModel)]="filter.category" name="category" required>
-                <option value="">Select a category</option>
-                <option value="ELECTRONICS">ELECTRONICS</option>
-                <option value="FASHION">FASHION</option>
-                <option value="BEAUTY">BEAUTY</option>
-                <option value="SPORTS">SPORTS</option>
-                <option value="CONSTRUCTION">CONSTRUCTION</option>
-                <option value="INDUSTRY">INDUSTRY</option>
-            </select>
+
+      
+    <section class="intro">
+        <div class="bg-image h-100" style="background-color: #d9eff5;">
+          <div class="mask d-flex align-items-center h-100">
+            <div class="container-fluid">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div class="card w-100">
+                    <div class="card-body p-4">
+                      <form (ngSubmit)="applyFilter()" class="d-flex flex-wrap align-items-end">
+                        <!-- Category Dropdown -->
+                        <div class="mb-3 me-3" style="flex: 1;">
+                          <label for="category">Category:</label>
+                          <select id="category" [(ngModel)]="filter.category" name="category" class="form-control">
+                            <option value="">Select a category</option>
+                            <option value="ELECTRONICS">ELECTRONICS</option>
+                            <option value="FASHION">FASHION</option>
+                            <option value="BEAUTY">BEAUTY</option>
+                            <option value="SPORTS">SPORTS</option>
+                            <option value="CONSTRUCTION">CONSTRUCTION</option>
+                            <option value="INDUSTRY">INDUSTRY</option>
+                          </select>
+                        </div>
+      
+                        <!-- Min Price -->
+                        <div class="mb-3 me-3" style="flex: 1;">
+                          <label for="minPrice">Min Price:</label>
+                          <input id="minPrice" type="number" [(ngModel)]="filter.minPrice" name="minPrice" class="form-control" />
+                        </div>
+      
+                        <!-- Max Price -->
+                        <div class="mb-3 me-3" style="flex: 1;">
+                          <label for="maxPrice">Max Price:</label>
+                          <input id="maxPrice" type="number" [(ngModel)]="filter.maxPrice" name="maxPrice" class="form-control" />
+                        </div>
+      
+                        <!-- Product Name -->
+                        <div class="mb-3 me-3" style="flex: 2;">
+                          <label for="name">Search:</label>
+                          <input id="name" type="text" [(ngModel)]="filter.name" name="name" class="form-control" />
+                        </div>
+      
+                        <!-- Reset Button -->
+                        <div class="mb-3 me-3">
+                          <button type="button" class="btn btn-link text-body" data-mdb-ripple-color="dark" (click)="resetFilter()">Reset</button>
+                        </div>
+      
+                        <!-- Search Button -->
+                        <div class="mb-3">
+                          <button type="submit" class="btn btn-info">Search</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-            <label for="minPrice">Min Price:</label>
-            <input id="minPrice" type="number" [(ngModel)]="filter.minPrice" name="minPrice" />
-        </div>
-        
-        <div>
-            <label for="maxPrice">Max Price:</label>
-            <input id="maxPrice" type="number" [(ngModel)]="filter.maxPrice" name="maxPrice" />
-        </div>
-        
-        <div>
-            <label for="name">Product Name:</label>
-            <input id="name" type="text" [(ngModel)]="filter.name" name="name" />
-        </div>
-        
-        <button type="submit">Search</button>
-    </form>
+      </section>
+      
+      
+      
       
 
     <!-- Products Section -->
@@ -47,27 +81,27 @@
                     <h6>{{product.productStatus}}</h6>
                 </div>
             </div>
-            <button class="btn_view" (click)="showDetails(product.productId)">Show Details</button>
+            <button class="btn_view " (click)="showDetails(product.productId)">Show Details</button>
         </div>
     </div>
 
     <!-- Pagination Section -->
      <div class="pagination">
     <nav aria-label="Page navigation example">
-        <ul class="pagination">
+        <ul class="pagination pag">
             <li class="page-item" [class.disabled]="currentPage === 0">
-                <a class="page-link" (click)="onPageChange(currentPage - 1)" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
+                <a class="page-link " (click)="onPageChange(currentPage - 1)" aria-label="Previous">
+                    <span aria-hidden="true">&laquo; Previous</span>
                 </a>
             </li>
             <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index">
-                <a class="page-link" (click)="onPageChange(i)" [class.active]="currentPage === i">
+                <a class="page-link pag_num" (click)="onPageChange(i)" [class.active]="currentPage === i">
                     {{ i + 1 }}
                 </a>
             </li>
             <li class="page-item" [class.disabled]="currentPage === totalPages - 1">
                 <a class="page-link" (click)="onPageChange(currentPage + 1)" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
+                    <span aria-hidden="true">Next &raquo;</span>
                 </a>
             </li>
         </ul>
