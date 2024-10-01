@@ -1,0 +1,14 @@
+.navbar{
+    padding: 0;
+}
+.container-fluid{
+    background-color: rgb(66, 185, 111);
+    width: 98%;
+}
+.logo{
+    width: 59px;
+    height:59px;
+    background-image: url("src\assets\luxury_service.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}

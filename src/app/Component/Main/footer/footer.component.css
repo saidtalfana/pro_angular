@@ -1,6 +1,10 @@
 footer{
-    background-color: #F9F9FB;
-    border: 1px solid black;
+    background-color: green;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    
 }
 .main_footer{
     display: flex;
@@ -10,11 +14,17 @@ footer{
     margin-bottom: 37px;
 
 }
+.container_main{
+    background-color: #56ce32;
+    width: 98%;
+    margin: 0;
+    padding: 0;
+}
 .part1, .part2  {
     display: flex;
     justify-content: space-evenly;
-    flex-direction: column;
-    height: 240px;
+  
+
 
 }
 .part3{
@@ -40,6 +50,22 @@ button{
     background-color: #23A6F0;
     color: white;
 }
+.part_1{
+    width: 300px;
+    height: 300px;
+    background-image: url("src\assets\luxury_service.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.part{
+    width: 270px;
+}
+.row{
+    background-color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 input{
 height: 70%;
 width: 82%;
@@ -55,18 +81,17 @@ border: none;}
     /* background-color: red; */
 
 }
+
 .icon{
- background-color: rgb(255, 255, 255);
  border-radius: 50%;
  width: 38px;
  height: 38px;
  border-image: url("src\assets\twitter.png");
  background-size: contain;
- border: 0.5px solid black;
+ /* border: 0.5px solid black; */
  background-position: center;
-cursor: pointer;
-
- 
+ box-shadow: 1px 3px 5px black;
+ cursor: pointer;
 }
 .i1{
     background-image: url("src\assets\linkedin.png");
@@ -91,4 +116,20 @@ background-repeat: no-repeat;
 #right{
     margin-top: 37px;
     text-align: center;
+}
+.list-unstyled{
+    color: gray;
+  
+}
+.list-unstyled>li>a{
+     text-decoration: none;
+     color: black !important;
+   
+}
+.list-unstyled{
+    width: 300px;
+    height: 170PX;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
 }

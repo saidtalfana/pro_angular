@@ -1,7 +1,11 @@
-.container{
+.parent{
     width: 100%;
     height: auto;
-    background-color: aliceblue;
+    background-color: rgb(219, 95, 95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px 14px;
 }
 .search{
     width: 100%;
@@ -41,16 +45,25 @@
     
 }
 .pagination{
-    margin: 0;
-    background-color: #F9F9FB;
- 
+    margin-top: 4px;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin-bottom: 24px;
+    margin-bottom: 2px;
+    padding: 0;
 }
+
+ .intro{
+    background-color: #9e1212;
+    width: 100%;
+    margin-bottom: 2px;
+}
+/* .mask{
+    width: 100%;
+    background-color: #31bc22;
+} */ 
 .pag{
     margin: 0;
  
@@ -61,10 +74,7 @@ margin: 0 7px;
 }
 .pag_num{
 border-radius: 50%;}
-.intro{
-    width: 100%;
-    background-color: #302b2b;
-}
+
 .products{
     width: 100%;
     height: auto;
@@ -75,8 +85,8 @@ border-radius: 50%;}
     flex-wrap: wrap;
 }
 .product{
-    width: 200px;
-    height: 247px;
+    width: 250px;
+    height: 350px;
     margin: 30px 14px;
     display: flex;
     align-items: center;
@@ -111,18 +121,25 @@ border-radius: 50%;}
     align-items: center;
 }
 .btn_view{
-    width: 70px;
-    height: 7%;
+    width: 200px;
+    height: 12%;
     color: #000;
     font-size: 7px;
-    background-color: #00ff00;
+    background-color: none;
+    border: 1px solid black;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 5px;
-    border-radius: none;
-    border: none;
+    border-radius: 1px;
+    font-size: 11px;
+margin-bottom: 14px;
+}
+.btn_view :hover{
+    box-shadow: 0 5px 11px rgba(0,0,0,0.3);
+    background-color: #302b2b;
+
 }
 .btn:hover{
     background-color: rgb(9, 226, 246);
