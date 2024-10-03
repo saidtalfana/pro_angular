@@ -8,7 +8,7 @@
     </div>
     <span>{{ article.articleAuthor }}</span>
     <h4 class="h4">{{ article.articleTitle }}</h4>
-    <button class="btn_article">View article</button>
+    <button class="btn_article" (click)="showDetails(article.articleId)">View article</button>
 
 </div>
 </div>

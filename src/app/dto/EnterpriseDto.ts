@@ -8,6 +8,7 @@ export interface EnterpriseDto{
     enterpriseDescription : string;
     enterpriseLogo : string;
     activity : Activity;
-
+    phoneNumber : string;
+    email:string
 
 }

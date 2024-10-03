@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'rating', component: ProductRatingComponent },
   { path: 'shop', component: ProductComponent },
   { path: 'product_details', component: ProductDatailsComponent },
+  { path: 'article_details/:id', component: ArticleDetailesComponent },
   { path: 'article_details', component: ArticleDetailesComponent },
   { path: 'add_order', component: AddOrderComponent },
   { path: 'product_id/:id', component: AddOrderComponent ,canActivate:[AuthGuard]},

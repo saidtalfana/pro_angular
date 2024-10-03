@@ -1,1 +1,18 @@
-<p>article-detailes works!</p>
+<div class="article-wrap">
+    <div class="content" *ngIf="article; else noData">
+      <div class="product_img">
+        <img [src]="'data:image/png;base64,' + article.articleImage" alt="" style="width: 100%; height: 100%">
+      </div>
+      <h1>{{ article.articleTitle }}</h1>
+      <h1>{{ article.articleContent }}</h1>
+      <h3>{{ article.articleAuthor }}</h3>
+      <h3>{{ article.articleDate }}</h3>
+      <h3>{{ article.articleType }}</h3>
+
+    </div>
+  
+    <ng-template #noData>
+      <p>No article data available.</p>
+    </ng-template> 
+    <!-- <div class="flap"></div> -->
+  </div>

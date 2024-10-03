@@ -36,4 +36,7 @@ export class ArticlesComponent implements OnInit {
   update(articleId: number): void {
     this.router.navigate(['/edit-article', articleId]);
   }
+  showDetails(id: number): void {
+    this.router.navigate(['main/article_details', id]);
+  }
 }

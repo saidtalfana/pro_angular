@@ -37,7 +37,9 @@ this.getIdProviderFromJwt()
       enterpriseDescription: ['', [Validators.required]],
       enterpriseLogo: ['', [Validators.required]],
       activityName: ['', [Validators.required]],
-      activityDescription: ['', [Validators.required]]
+      activityDescription: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required]],
+      email: ['', [Validators.required]]
     });
   }
 

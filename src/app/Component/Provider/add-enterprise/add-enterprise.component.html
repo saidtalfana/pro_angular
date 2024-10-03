@@ -1,52 +1,67 @@
-
-<div class="container">
-  <form [formGroup]="enterpriseForm" (ngSubmit)="onSubmit()">
-
-    <mat-form-field appearance="fill" class="input">
-      <mat-label>Enterprise Name</mat-label>
-      <input matInput formControlName="enterpriseName" placeholder="Enter Enterprise Name" />
-      <mat-error *ngIf="enterpriseForm.get('enterpriseName')?.invalid && enterpriseForm.get('enterpriseName')?.touched">
-        Enterprise Name is required.
-      </mat-error>
-    </mat-form-field>
-<br>
-    <mat-form-field appearance="fill" class="input">
-      <mat-label>Enterprise Description</mat-label>
-      <textarea matInput formControlName="enterpriseDescription" placeholder="Enter Enterprise Description"></textarea>
-      <mat-error *ngIf="enterpriseForm.get('enterpriseDescription')?.invalid && enterpriseForm.get('enterpriseDescription')?.touched">
-        Enterprise Description is required.
-      </mat-error>
-    </mat-form-field>
-    <br>
-
-    <mat-form-field appearance="fill" class="input">
-      <mat-label>Enterprise Logo URL</mat-label>
-      <input matInput formControlName="enterpriseLogo" placeholder="Enter Logo URL" />
-      <mat-error *ngIf="enterpriseForm.get('enterpriseLogo')?.invalid && enterpriseForm.get('enterpriseLogo')?.touched">
-        Logo URL is required.
-      </mat-error>
-    </mat-form-field>
-    <br>
-
-    <mat-form-field appearance="fill" class="input">
-      <mat-label>Activity</mat-label>
-      <input matInput formControlName="activityName" placeholder="Enter Activity Name" />
-      <mat-error *ngIf="enterpriseForm.get('activityName')?.invalid && enterpriseForm.get('activityName')?.touched">
-        Activity Name is required.
-      </mat-error>
-    </mat-form-field>
-    <br>
-
-    <mat-form-field appearance="fill" class="input">
-      <mat-label>Activity Description</mat-label>
-      <textarea matInput formControlName="activityDescription" placeholder="Enter Activity Description"></textarea>
-      <mat-error *ngIf="enterpriseForm.get('activityDescription')?.invalid && enterpriseForm.get('activityDescription')?.touched">
-        Activity Description is required.
-      </mat-error>
-    </mat-form-field>
-    <br>
-
-    <button mat-raised-button color="primary" [disabled]="enterpriseForm.invalid">Save Enterprise</button>
-
-  </form>
-</div>
+<form [formGroup]="enterpriseForm" (ngSubmit)="onSubmit()" class="wrap_form">
+  <div fxLayout="column" fxLayoutAlign="center center" class="column">
+    <div class="left">
+    <div fxFlex="50%">
+      <mat-form-field appearance="outline" class="form-field">
+        <input matInput formControlName="enterpriseName" placeholder="Enter Enterprise Name" required />
+        <mat-error *ngIf="enterpriseForm.get('enterpriseName')?.invalid && enterpriseForm.get('enterpriseName')?.touched">
+          Enterprise Name is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50%" class="div_input">
+      <mat-form-field appearance="outline" class="form-field">
+        <textarea matInput formControlName="enterpriseDescription" placeholder="Enter Enterprise Description" required></textarea>
+        <mat-error *ngIf="enterpriseForm.get('enterpriseDescription')?.invalid && enterpriseForm.get('enterpriseDescription')?.touched">
+          Enterprise Description is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50%">
+      <mat-form-field appearance="outline" class="form-field">
+        <input matInput formControlName="enterpriseLogo" placeholder="Enter Logo URL" required />
+        <mat-error *ngIf="enterpriseForm.get('enterpriseLogo')?.invalid && enterpriseForm.get('enterpriseLogo')?.touched">
+          Logo URL is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50%">
+      <mat-form-field appearance="outline" class="form-field">
+        <input matInput formControlName="activityName" placeholder="Enter Activity Name" required />
+        <mat-error *ngIf="enterpriseForm.get('activityName')?.invalid && enterpriseForm.get('activityName')?.touched">
+          Activity Name is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="right">
+    <div fxFlex="50%">
+      <mat-form-field appearance="outline" class="form-field">
+        <textarea matInput formControlName="activityDescription" placeholder="Enter Activity Description" required></textarea>
+        <mat-error *ngIf="enterpriseForm.get('activityDescription')?.invalid && enterpriseForm.get('activityDescription')?.touched">
+          Activity Description is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50%">
+      <mat-form-field appearance="outline" class="form-field">
+        <input matInput formControlName="phoneNumber" placeholder="Enter enterprise phone" required />
+        <mat-error *ngIf="enterpriseForm.get('phoneNumber')?.invalid && enterpriseForm.get('phoneNumber')?.touched">
+          Enterprise Phone is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50%">
+      <mat-form-field appearance="outline" class="form-field">
+        <input matInput formControlName="email" placeholder="Enter enterprise email" required />
+        <mat-error *ngIf="enterpriseForm.get('email')?.invalid && enterpriseForm.get('email')?.touched">
+          Enterprise email is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50%">
+      <button mat-stroked-button color="primary" type="submit" [disabled]="enterpriseForm.invalid">Save Enterprise</button>
+    </div>
+  </div>
+  </div>
+</form>

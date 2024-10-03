@@ -10,41 +10,46 @@ import { EnterpriseService } from 'src/app/service/enterprise.service';
   styleUrls: ['./show-enterprise.component.css']
 })
 export class ShowEnterpriseComponent implements OnInit {
-  enterprise : EnterpriseDto | null = null;
+  enterprise: EnterpriseDto | null = null;
+  provider_id!: number;
 
-  provider_id !:number
-
-  constructor(private enterpriseService:EnterpriseService
-    ,private router:Router
-  ) { }
+  constructor(
+    private enterpriseService: EnterpriseService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.getProvider_id()
-    this.Enterprise()
+    this.getProvider_id();
+    this.fetchEnterprise();
   }
 
-  getProvider_id(){
-    const token :any= localStorage.getItem("jwt")
+  private getProvider_id(): void {
+    const token = localStorage.getItem("jwt");
     
-      const decodeToken :any = jwtDecode(token)
-     this.provider_id=decodeToken.id;
-     console.log(this.provider_id);
-     
+    if (token) {
+      const decodeToken: any = jwtDecode(token);
+      this.provider_id = decodeToken.id;
+      console.log(this.provider_id);
+    } else {
+      console.error('JWT token not found in local storage.');
     }
+  }
 
-    
-  
+  private fetchEnterprise(): void {
+    this.enterpriseService.getEnterpriseById(this.provider_id).subscribe(
+      (res: EnterpriseDto) => {
+        this.enterprise = res;
+        localStorage.setItem("enterprise_id", String(res.enterpriseId));
+        console.log(res);
+      },
+      error => {
+        console.error('Error fetching enterprise data:', error);
+        // Optionally handle the error here (e.g., show a notification)
+      }
+    );
+  }
 
-Enterprise(){
-  this.enterpriseService.getEnterpriseById(this.provider_id).subscribe((res:EnterpriseDto)=>{
-    this.enterprise = res
-    localStorage.setItem("enterprise_id",String(res.enterpriseId))
-    console.log(res);
-  })
-}
-
-
-update(id:number){
-  this.router.navigate(['/update_enterprise',id]);
-   }
+  update(id: number): void {
+    this.router.navigate(['/update_enterprise', id]);
+  }
 }

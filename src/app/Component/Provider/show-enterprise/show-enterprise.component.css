@@ -1,0 +1,56 @@
+body {
+    background-color: #f8f9fa; /* Light background color for contrast */
+    font-family: Arial, sans-serif; /* General font style */
+  }
+  
+  .container {
+    position: relative; /* Allow absolute positioning for children */
+    margin: 50px auto; /* Center the container */
+    width: 600px; /* Set a fixed width for the container */
+    background: #ffffff; /* White background for the container */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    padding: 20px; /* Internal padding */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  
+  .content {
+    text-align: center; /* Center the text */
+    color: #333; /* Dark gray text color */
+  }
+  
+  .article-image {
+    margin-bottom: 15px; /* Space below the image */
+  }
+  
+  .logo-image {
+    width: 100px; /* Fixed width for the logo */
+    height: 100px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular logo */
+    border: 2px solid #e6ff01; /* Border around the logo */
+  }
+  
+  h1 {
+    font-size: 24px; /* Size of the main heading */
+    font-weight: 700; /* Bold font for the main heading */
+    margin: 15px 0; /* Margins around the heading */
+  }
+  
+  h3 {
+    font-size: 18px; /* Size of the subheadings */
+    font-weight: 400; /* Normal weight for subheadings */
+    margin: 10px 0; /* Margins around the subheadings */
+  }
+  
+  .flap {
+    width: 100%;
+    height: 10px; /* Height for the flap */
+    background-color: #ffd504; /* Color for the flap */
+    margin-top: 20px; /* Space above the flap */
+  }
+  
+  .ng-template {
+    text-align: center; /* Center the no data message */
+    color: #888; /* Gray color for the message */
+  }
+  

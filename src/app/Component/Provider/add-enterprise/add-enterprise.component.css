@@ -1,24 +1,17 @@
-.container{
-    background-color: red;
-    width: 50%;
-    height: 69vh;
-    align-self: center;
+.wrap_form{
+    width: 800px;
+    border: 1px solid black;
+    padding: 7px 0;
+    border-radius: 14px;
+    background-color: #ffffff;
+}
+.form-field{
+    width: 360px;
+    margin: 0 20px;
 }
 
-
-.container>form>input{
-    background-color: rgb(24, 24, 24);
-    width: 500px;
-    height: 31px;
-}
-.container>form{
-    background-color: rgb(21, 255, 0);
-    width: 500px;
-    height: 40vh;
+.column{
+    background-color: #ffffff;
     display: flex;
-    justify-content:space-around;
-    flex-direction: column;
 }
-.input{
-    background-color: red;
-}
+    

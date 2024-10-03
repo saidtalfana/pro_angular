@@ -40,52 +40,55 @@
 </form>
   </div> -->
   
-<div class="article-container">
-  <h2>Add Product</h2>
-  <form [formGroup]="formProduct" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-          <label for="name">Product Name</label>
-          <input type="text" id="name" formControlName="name" required />
-      </div>
-
-      <div class="form-group">
-          <label for="description">Description</label>
-          <textarea id="description" formControlName="description" placeholder="Enter product description" required></textarea>
-      </div>
-
-      <div class="form-group">
-          <label for="price">Start Price</label>
-          <input type="number" id="price" formControlName="price" required />
-      </div>
-
-      <div class="form-group">
-          <label for="category">Category</label>
-          <select id="category" formControlName="category" required>
-              <option value="" disabled>Select a category</option>
+  <div class="container mt-4">
+    <div class="article-container">
+      <h2 class="mb-4">Add Product</h2>
+      <form [formGroup]="formProduct" (ngSubmit)="onSubmit()">
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="name" class="form-label">Product Name</label>
+            <input type="text" id="name" class="form-control" formControlName="name" required />
+          </div>
+          <div class="col-md-4">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" class="form-control" formControlName="description" placeholder="Enter product description" required></textarea>
+          </div>
+          <div class="col-md-4">
+            <label for="price" class="form-label">Start Price</label>
+            <input type="number" id="price" class="form-control" formControlName="price" required />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="category" class="form-label">Category</label>
+            <select id="category" class="form-select" formControlName="category" required>
+              <option value="" disabled selected>Select a category</option>
               <option value="ELECTRONICS">ELECTRONICS</option>
               <option value="FASHION">FASHION</option>
               <option value="BEAUTY">BEAUTY</option>
               <option value="SPORTS">SPORTS</option>
               <option value="CONSTRUCTION">CONSTRUCTION</option>
               <option value="INDUSTRY">INDUSTRY</option>
-          </select> 
-      </div>
-
-      <div class="form-group">
-          <label for="productStatus">Product Status</label>
-          <select id="productStatus" formControlName="productStatus" required>
-              <option value="" disabled>Select status</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="productStatus" class="form-label">Product Status</label>
+            <select id="productStatus" class="form-select" formControlName="productStatus" required>
+              <option value="" disabled selected>Select status</option>
               <option value="AVAILABLE">AVAILABLE</option>
               <option value="COMING_SOON">COMING_SOON</option>
               <option value="OUT_OF_STOCK">OUT_OF_STOCK</option>
-          </select> 
-      </div>
-
-      <div class="form-group">
-          <label for="image">Image</label>
-          <input type="file" id="image" (change)="onFileChange($event)" formControlName="image" required />
-      </div>
-
-      <button type="submit" class="btn btn-primary" [disabled]="formProduct.invalid">Submit Product</button>
-  </form>
-</div>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" id="image" class="form-control" (change)="onFileChange($event)" formControlName="image" required />
+          </div>
+        </div>
+  
+        <button type="submit" class="btn btn-primary" [disabled]="formProduct.invalid">Submit Product</button>
+      </form>
+    </div>
+  </div>
+  

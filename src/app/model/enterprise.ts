@@ -11,11 +11,9 @@ export interface Enterprise{
     enterpriseDescription : string;
     enterpriseLogo : string;
     activity : Activity;
+    phoneNumber : string;
+    email:string
 
-
-    
     provider : Provider;
-
-
     products : Product[];
 }

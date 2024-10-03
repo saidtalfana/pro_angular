@@ -1,22 +1,19 @@
-<div class="main">
+<div class="container">
+    <div class="content" *ngIf="enterprise; else noData">
+      <div class="article-image"> 
+        <img [src]="enterprise.enterpriseLogo" alt="{{ enterprise.enterpriseName }} Logo" class="logo-image">
+      </div>
+      <h1>{{ enterprise.enterpriseName }}</h1>
+      <h3>{{ enterprise.enterpriseDescription }}</h3>
+      <h3>{{ enterprise.activity }}</h3>
+      <h3>{{ enterprise.phoneNumber }}</h3>
+      <h3>{{ enterprise.email }}</h3>
 
-</div>
-
-    <div   *ngIf="enterprise ; else noData">
-    
-        <h3>{{enterprise.enterpriseId}}</h3>
-        <h3>{{enterprise.enterpriseName}}</h3>
-        <h3>{{enterprise.enterpriseDescription}}</h3>
-        <h3>{{enterprise.enterpriseLogo}}</h3>
-        <h3>{{enterprise.activity}}</h3>
-        
-
-    
-        <button (click)="update(enterprise.enterpriseId)">update</button>
-        <button></button>
-        
     </div>
     <ng-template #noData>
-        <p>No enterprise data available.</p>
-      </ng-template>
-    
+      <p>No enterprise data available.</p>
+    </ng-template> 
+  
+    <div class="flap"></div>
+  </div>
+  
