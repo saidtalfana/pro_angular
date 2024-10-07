@@ -1,0 +1,32 @@
+<div class="product_info_all">
+    <div class="product_inf" *ngIf="numberOfProduct; else noData">
+      {{ numberOfProduct }}
+    </div>
+    <div class="product_inf"></div>
+    <div class="product_inf"></div>
+  </div>
+
+  <div class="chart-container">
+    <canvas id="productChart" width="400" height="200"></canvas>
+  </div>
+  
+  <div class="chart-container">
+    <canvas id="orderChart" width="400" height="200"></canvas>
+  </div>
+  <app-product-report></app-product-report>
+   <div class="all">
+    <h3>Product Counts</h3>
+    <ul>
+      <li>Available: {{ availableCount }}</li>
+      <li>Coming Soon: {{ comingSoonCount }}</li>
+      <li>Out of Stock: {{ outOfStockCount }}</li>
+    </ul>
+  </div> 
+  
+  <ng-template #noData>
+    <p>No data</p>
+  </ng-template>
+  
+  <!-- Chart Canvases -->
+ 
+  

@@ -1,0 +1,34 @@
+.product_info_all {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .product_inf {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Light background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .all {
+    text-align: left;
+    margin-bottom: 20px; /* Space below product counts */
+  }
+  
+  .chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  

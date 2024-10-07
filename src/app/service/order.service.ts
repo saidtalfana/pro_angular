@@ -19,8 +19,8 @@ export class OrderService {
                     
                                          //  <?--------------add ------------------->
 
-                     addOrder(orderDto :OrderDto,product_id : number ,user_id :number):Observable<OrderDto>{
-                        return this.http.post<OrderDto>(`${this.API_ORDER}/add_order?product_id=${product_id}&user_id=${user_id}`,orderDto)
+                     addOrder(orderDto :OrderDto,productId : number ,userId :number):Observable<OrderDto>{
+                        return this.http.post<OrderDto>(`${this.API_ORDER}/add_order?productId=${productId}&userId=${userId}`,orderDto)
                           }
   
                                          //  <?--------------fetch all by user ------------------->
@@ -61,7 +61,9 @@ export class OrderService {
                           return this.http.put<OrderDto>(`${this.API_ORDER}/update_order`,orderDto)
                         }
 
-
+                        getProductOrdersCount(enterpriseId: number): Observable<any[]> {
+                          return this.http.get<any[]>(`${this.API_ORDER}/count/${enterpriseId}`);
+                        }
 
 
 

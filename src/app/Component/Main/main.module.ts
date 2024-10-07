@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { MainRoutingModule } from './main-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -46,6 +47,7 @@ import { ProductRatingComponent } from './product-rating/product-rating.componen
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] 
 })
 export class MainModule { }

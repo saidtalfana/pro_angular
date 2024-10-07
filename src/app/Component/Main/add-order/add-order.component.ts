@@ -15,9 +15,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AddOrderComponent implements OnInit {
    formOrder !:FormGroup
-   user_id !:number ;
+   userId !:number ;
    id_product !:number;
-   product_id!:number ;
+   productId!:number ;
   constructor(private orderService :OrderService,private fb:FormBuilder,
     private route: ActivatedRoute,
 
@@ -42,12 +42,12 @@ export class AddOrderComponent implements OnInit {
   getUserId(){
      const token :any= localStorage.getItem("jwt")
      const decodeToken :any= jwtDecode(token)
-     this.user_id = decodeToken.id
+     this.userId = decodeToken.id
   }
   getProductId(): void {
       this.route.params.subscribe(params => {
-      this.product_id = +params['id'];
-      console.log(this.product_id);
+      this.productId = +params['id'];
+      console.log(this.productId);
     });
   }
 
@@ -55,7 +55,7 @@ export class AddOrderComponent implements OnInit {
   const valid = this.formOrder.valid;
   if(valid){
     const value = this.formOrder.value
-    this.orderService.addOrder(value,this.product_id,this.user_id).subscribe()
+    this.orderService.addOrder(value,this.productId,this.userId).subscribe()
     console.log(value);
     
     this.formOrder.reset()

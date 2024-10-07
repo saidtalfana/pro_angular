@@ -1,27 +1,87 @@
-.article-wrap{
+.article-detail {
     width: 100%;
-    height: auto;
-    background-color: #d2d3d2;
+    padding: 40px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    padding: 25px 0;
+    align-items: flex-start;
+    background-color: #f9f9f9; /* لون خلفية فاتح */
+    margin-top: 20px;
 }
-.content{
-   
-    width: 60%;
-    height: auto;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 
+.content {
+    width: 80%;
+    max-width: 800px; /* أقصى عرض للحاوية */
+    background-color: #ffffff; /* لون خلفية المقالة */
+    border-radius: 12px; /* حواف مستديرة */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ظل */
+    padding: 40px; /* حشوة داخلية */
+    position: relative; /* لجعل عناصر الطفل تتداخل */
 }
-.product_img{
-    width: 420px;
-    height: 420px;
 
+.product_img {
+    width: 100%;
+    height: 300px; /* ارتفاع الصورة */
+    margin-bottom: 30px;
+    overflow: hidden; /* مخفي ما يتجاوز حدود الصورة */
+    border-radius: 10px; /* حواف مستديرة */
+}
+
+.product_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ملء الحاوية */
+    transition: transform 0.5s; /* تأثير عند التمرير */
+}
+
+.product_img:hover img {
+    transform: scale(1.05); /* تكبير الصورة عند التمرير */
+}
+
+h1 {
+    font-size: 32px; /* حجم عنوان المقالة */
+    margin: 20px 0;
+    color: #333; /* لون النص */
+    text-align: center; /* محاذاة النص في الوسط */
+    font-family: 'Arial', sans-serif; /* خط مخصص */
+}
+
+p {
+    font-size: 18px; /* حجم النص */
+    line-height: 1.6; /* تباعد الأسطر */
+    color: #555; /* لون النص */
+    margin: 15px 0;
+    text-align: justify; /* محاذاة النص */
+}
+
+h3 {
+    font-size: 16px; /* حجم العناوين الفرعية */
+    color: #777; /* لون النص */
+    margin: 10px 0;
+    font-weight: 600; /* سمك النص */
+}
+
+.footer {
+    margin-top: 20px; /* مسافة فوق الفوتر */
+    border-top: 1px solid #e0e0e0; /* خط فاصل */
+    padding-top: 15px; /* حشوة فوق الفوتر */
+    text-align: center; /* محاذاة النص في الوسط */
+    color: #999; /* لون النص */
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        width: 95%; /* عرض أصغر للهواتف */
+    }
+
+    .product_img {
+        height: 200px; /* ارتفاع أصغر للصورة */
+    }
+
+    h1 {
+        font-size: 26px; /* حجم أصغر للعناوين */
+    }
+
+    p {
+        font-size: 16px; /* حجم أصغر للنصوص */
+    }
 }

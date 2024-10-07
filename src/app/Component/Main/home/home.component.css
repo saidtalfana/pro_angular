@@ -1,144 +1,221 @@
-.main{
+/* Main Section */
+.main {
     width: 100%;
-    height: 100%;
-    background-image: url("src\assets\bg3.jpg");
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-position: center;
+    height: 100vh;
+    background-image: url("src/assets/bg3.jpg");
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.container{
+
+.container {
     width: 80%;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.left{
-    width: 50%;
-    height: 44vh;
-    display: flex;
-  flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-
-}
-.left>h1{
-    margin-right: 121px;
-    font-size: 37px;
-}
-.left>p{
-    margin-right: 65px;
-}
-.btn{
-    width: 102px;
-    height: 34px;
-    background-color: rgb(55, 55, 245);
-    margin-right: 250px;
-    font-size: 12px;
-    color: white;
-    border-radius: 12px;
-    border: none;
-
-}
-.right{
-    width: 50%;
-    height: 100%;
-    /* background-image: url("src\assets\3-removebg-preview.png"); */
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.part1{
-    width: 100%;
-    height: 360px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 1px 2px 3px black;
-    margin: 5px 0px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-.part_left{
+
+.left {
     width: 50%;
-    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.left p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 120px;
+    padding: 10px;
+    background-color: rgb(0, 123, 255);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.right {
+    width: 800px;
+    height: 410px ;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.part_left>p{
-   font-size: 26px;
-   line-height: 1.6;
-   text-align: center;
-}
-.part_right{
-    width: 50%;
-    height: 360px;
-    background-image: url("src\assets\part_1.png");
-    background-size:contain;
+    background-image: url("src\assets\main.png");
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
-
-}
-#part2{
-    flex-direction: row-reverse;
-}
-#part_right1{
-
-    background-image: url("src\assets\part_2.png");
 }
 
-
-#part_right3{
-
-    background-image: url("src\assets\part_3.png");
-}
-
-.service{
-    width: 100%;
-    height: 223px;
+/* Card Section */
+.card-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    margin: 40px 24px;
+    background-color: #ffffff;
 }
-.service1{
-    width: 121px;
-    height: 121px;
-    margin: 0 120px;
+
+.card {
+    width: 30%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+#part_right1 {
+    background-image: url("src\assets\buy.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid gold;
+
+}
+
+#part_right2 {
+    background-image: url("src\assets\web.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid gold;
+}
+
+#part_right3 {
+    background-image: url("src\assets\seller.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid gold;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-content p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Service Section */
+.service {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.service1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#network{
-    margin-top: 5px;
-    width: 121px;
-    height: 115px;
-    background-image: url("src\assets\network.png");
-    background-size:contain;
-    background-repeat: no-repeat;
+
+.service1 p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Icons */
+#network {
+    width: 80px;
+    height: 80px;
+    background-image: url("src/assets/network.png");
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
+}
+
+#quality {
+    width: 80px;
+    height: 80px;
+    background-image: url("src/assets/quality.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#guarantee {
+    width: 80px;
+    height: 80px;
+    background-image: url("src/assets/guarantee.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
-#quality{
-    margin-top: 5px;
-    width: 121px;
-    height: 115px;
-    background-image: url("src\assets\quality.png");
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    
+.about-us {
+    width: 100%;
+    background-color: #f8f9fa; /* Light background for contrast */
+    padding: 40px 0;
+    text-align: center;
 }
-#guarantee{
-    margin-top: 5px;
-    width: 121px;
-    height: 115px;
-    background-image: url("src\assets\guarantee.png");
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position: center;
+
+.about-us h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-description {
+    flex: 2;
+    padding: 20px;
+}
+.about-image{
+background-color: #ffffff;
+border-radius: 50%;
+border: 1px solid gold;
+width: 400px;
+height: 400px;
+background-repeat: no-repeat;
+background-image: url("src\assets\about-us.jpg");
+background-size: contain;
 
 }
+.about-description p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+

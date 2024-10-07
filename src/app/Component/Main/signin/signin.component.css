@@ -12,7 +12,8 @@
     width: 800px;
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    border: 1px solid gold;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 .left_signup{
     background-color: #FAFAFA;
@@ -38,14 +39,14 @@ form{
     flex-direction: column;
 }
 .right_img{
-    background-color: gold;
+    background-color: #00008B;
     height: 100%;
     width: 40%;
-    background-image: url("src\assets\signin.jpg");
+    /* background-image: url("src\assets\signin.jpg");
     background-repeat: no-repeat;
     background-size:cover;
     background-position:left;
-background-origin: border-box;
+    background-origin: border-box; */
 }
 
 input{

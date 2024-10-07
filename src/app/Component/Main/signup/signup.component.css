@@ -13,18 +13,18 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-  border: 1px solid black;
-  box-shadow: 2px 3px 4px gray;
+    border: 1px solid gold;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 .right_img{
-    background-color: gold;
+    background-color: #00008B;
     height: 100%;
     width: 40%;
-    background-image: url("src\assets\signup.jpg");
+    /* background-image: url("src\assets\signup.jpg");
     background-repeat: no-repeat;
     background-size:cover;
     background-position:right;
-background-origin: border-box;
+    background-origin: border-box; */
 }
 .left_signup{
     background-color: #FAFAFA;
@@ -74,6 +74,7 @@ select{
     border-radius: 34px;
     border: 1px solid black;
     cursor: pointer;
+    color: black;
 
 }
 a{

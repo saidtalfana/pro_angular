@@ -6,6 +6,7 @@ import { ShowProductComponent } from './show-product/show-product.component';
 import { AddEnterpriseComponent } from './add-enterprise/add-enterprise.component';
 import { ShowEnterpriseComponent } from './show-enterprise/show-enterprise.component';
 import { ShowOrderComponent } from './show-order/show-order.component';
+import { ProductChartComponent } from './product-chart/product-chart.component';
 
 const routes: Routes = [
   {path: 'provider', component: DashboardProviderComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
     {path: 'add_enterprise', component: AddEnterpriseComponent},
     {path: 'show_enterprise', component: ShowEnterpriseComponent},
     {path: 'show_order', component: ShowOrderComponent},
-    { path: 'update_enterprise/:id', component: AddEnterpriseComponent }]},
+    { path: 'update_enterprise/:id', component: AddEnterpriseComponent },
+    { path: 'product_inf', component: ProductChartComponent }]},
 
     { path: '', redirectTo: '/provider', pathMatch: 'full' },
     { path: '**', redirectTo: '/provider' }

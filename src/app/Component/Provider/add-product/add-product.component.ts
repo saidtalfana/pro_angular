@@ -87,7 +87,7 @@ import { ProductService } from 'src/app/service/product.service';
 export class AddProductComponent implements OnInit {
 
       formProduct !: FormGroup;
-      enterprise_id !: number;
+      enterpriseId !: number;
       selectedImage!: File;
   constructor(private productService:ProductService , private fb:FormBuilder) { }
 
@@ -111,8 +111,8 @@ export class AddProductComponent implements OnInit {
   }
 getEnterpriseId(){
   const id : any= localStorage.getItem("enterprise_id")
-  this.enterprise_id =id
-  console.log(this.enterprise_id);
+  this.enterpriseId =id
+  console.log(this.enterpriseId);
   
 }
 onFileChange(event: any) {
@@ -122,7 +122,7 @@ onFileChange(event: any) {
   }
   onSubmit():void{
     const value = this.formProduct.value
-    this.productService.addProduct(value,this.enterprise_id,this.selectedImage).subscribe()
+    this.productService.addProduct(value,this.enterpriseId,this.selectedImage).subscribe()
     console.log(value);
     
     this.Product()

@@ -5,12 +5,9 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { Interciptor } from './interciptor/interciptor';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MaterialModule } from './shared/material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     MaterialModule,
     NgbModule,
+    NgChartsModule // Add NgChartsModule to imports
+
 
     
   ],

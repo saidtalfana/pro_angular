@@ -5,6 +5,8 @@ import { Observable, Subject } from "rxjs";
 import { tap } from "rxjs/operators"; 
 import { Product } from "../model/Product";
 import { EnterpriseDto } from "../dto/EnterpriseDto";
+import { ProductStatus } from "../enums/ProductStatus";
+import { ProductCount } from "../enums/ProductsCount";
 
 @Injectable({
     providedIn: 'root'
@@ -17,14 +19,14 @@ export class ProductService {
     constructor(private http: HttpClient) {}
 
     /** Add a new product */
-    addProduct(productDto: ProductDto, enterprise_id: number, imageFile: File): Observable<ProductDto> {
+    addProduct(productDto: ProductDto, enterpriseId: number, imageFile: File): Observable<ProductDto> {
         const formData = new FormData();
         formData.append('name', productDto.name);
         formData.append('description', productDto.description);
         formData.append('price', productDto.price.toString());
         formData.append('category', productDto.category);
         formData.append('productStatus', productDto.productStatus);
-        formData.append('enterprise_id', enterprise_id.toString());
+        formData.append('enterpriseId', enterpriseId.toString());
         formData.append('image', imageFile);
 
         return this.http.post<ProductDto>(`${this.API_PRODUCT}/add_product`, formData).pipe(
@@ -102,4 +104,13 @@ export class ProductService {
   
       return this.http.get<ProductDto[]>(`${this.API_PRODUCT}/recommend`, { params });
     }
+
+    fetchNumberOfNumber(enterprise_id : number):Observable<ProductDto>{
+     return this.http.get<ProductDto>(`${this.API_PRODUCT}/countByEnterprise/${enterprise_id}`)
+    }
+
+    getProductsCountByStatus(enterpriseId: number): Observable<ProductCount> {
+        return this.http.get<ProductCount>(`${this.API_PRODUCT}/count/status/${enterpriseId}`);
+    }
+    
 }

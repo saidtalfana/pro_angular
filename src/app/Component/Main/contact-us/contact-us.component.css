@@ -1,13 +1,12 @@
-.container{
+.container_inf{
     width: 100%;
     height: 100vh;
-    background-color: #0000ff;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("src\assets\bg_cantactus.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+    border: 1px solid gold;
+ 
 }
 .wrapper{
     width: 80%;
@@ -15,6 +14,8 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
+    border: 1px solid gold;
+
 
 }
 .right{
@@ -23,10 +24,12 @@
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    box-shadow: 1px 2px 2px gray  ;
-    border: 1px solid gray;
+    border-radius: 5%;
+    padding-left: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border: 1px solid gold;
 
 }
 .info{
@@ -68,8 +71,9 @@ textarea{
     justify-content: center;
     justify-items: center;
     padding: 0 19px;
-    box-shadow: 1px 2px 2px gray ;
-    border: 1px solid gray;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border: 1px solid gold;
+    border-radius: 5%;
 }
 
 .titles{

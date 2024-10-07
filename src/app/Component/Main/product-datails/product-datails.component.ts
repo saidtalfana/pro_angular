@@ -13,7 +13,7 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ProductDatailsComponent implements OnInit {
   productDetails: ProductDto | null = null;
-  product_id!: number;
+  productId!: number;
   recommendedProducts: ProductDto[] = []; // New property for recommendations
   enterpriseDetails!:EnterpriseDto
   constructor(private productService: ProductService,private enterpriseService:EnterpriseService ,private route: ActivatedRoute, private router: Router) {}
@@ -25,7 +25,7 @@ export class ProductDatailsComponent implements OnInit {
   }
 
   detailsProduct(): void {
-    this.productService.getProductById(this.product_id).subscribe((res: ProductDto) => {
+    this.productService.getProductById(this.productId).subscribe((res: ProductDto) => {
       this.productDetails = res;
       this.loadRecommendations(); // Fetch recommendations after fetching product details
     });
@@ -33,7 +33,7 @@ export class ProductDatailsComponent implements OnInit {
 
   getProductDatailsId(): void {
     this.route.params.subscribe(params => {
-      this.product_id = +params['id'];
+      this.productId = +params['id'];
     });
   }
 
@@ -69,7 +69,7 @@ export class ProductDatailsComponent implements OnInit {
 
 
     loadEnterpriseDetails(): void {
-      this.enterpriseService.getEnterpriseByProductId(this.product_id).subscribe(
+      this.enterpriseService.getEnterpriseByProductId(this.productId).subscribe(
         (data) => {
           this.enterpriseDetails = data;
         },

@@ -1,61 +1,63 @@
-
-
 .container-fluid {
     margin-top: 50px;
-    background-color: gray;
+    background-color: #f8f9fa; /* خلفية فاتحة لتحسين التباين */
 }
-.border-top{
-    
+
+.footer-top {
+    padding: 30px 0;
+
 }
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .footer-copyright {
     margin-top: 13px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0; /* padding لتحسين المظهر */
+    background-color: #e9ecef; /* لون خلفية مختلف للقسم السفلي */
 }
-.logo-footer{
-    /* width: 190px;
-    height: 190px; */
-    background-image: url("src\assets\luxury (2).png");
-    background-size:contain ;
-    background-repeat: no-repeat;
 
-}
-.row{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.logo-footer {
+    background-image: url("src/assets/luxury (2).png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 50px; /* تعديل الارتفاع ليكون مناسب */
 }
 
 a {
     text-decoration: none !important;
-    color: #777a7c
+    color: #007bff; /* لون أزرق للروابط */
 }
 
 .description {
-    font-size: 12px
+    font-size: 14px; /* زيادة حجم الخط قليلاً */
+    color: #6c757d; /* لون رمادي فاتح للنص */
 }
 
-.fa-facebook-f {
-    color: #3b5999
-}
-
-.fa-instagram {
-    color: #e4405f
-}
-
-.fa-youtube {
-    color: #cd201f
-}
-
-.fa-twitter {
-    color: #55acee
-}
-
-.logo-footer{
-    height:30px;
+.btn-icon {
+    color: #fff; /* لون النص للأزرار */
 }
 
 .footer-copyright p {
-    margin-top: 10px
+    margin-top: 10px;
+    font-size: 12px; /* حجم خط أصغر للقسم السفلي */
+}
+
+/* ألوان الأيقونات الاجتماعية */
+[data-feather="facebook"] {
+    color: #3b5999;
+}
+[data-feather="instagram"] {
+    color: #e4405f;
+}
+[data-feather="youtube"] {
+    color: #cd201f;
+}
+[data-feather="twitter"] {
+    color: #55acee;
 }
