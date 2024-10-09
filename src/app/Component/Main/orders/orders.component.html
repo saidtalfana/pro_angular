@@ -1,1 +1,34 @@
-<p>orders works!</p>
+
+
+<div class="content">
+    <div class="container-fluid">
+      <div class="ticket dark" *ngFor="let order of orders">
+        <div class="ticket-body">
+          <div class="passenger">
+            <p>command ID</p>
+            <h4>{{ order.commandId }}</h4>
+          </div>
+
+          <div class="passenger">
+            <p>name </p>
+            <h4>{{ order.name }}</h4>
+          </div>
+          <div class="passenger">
+            <p>Price </p>
+            <h4>{{ order.price | currency:'EUR' }}</h4>
+          </div>
+          <div class="flight-info row">
+            <div class="col-xs-6">
+              <p>Date</p>
+              <h4>{{ order.orderDate | date:'dd/MM/yyyy' }}</h4>
+            </div>
+          </div>
+          <div class="barcode"></div>
+        </div>
+        <div class="footer">
+          <div class="disclaimer">{{ order.address }}</div>
+
+        </div>
+      </div>
+    </div>
+  </div>

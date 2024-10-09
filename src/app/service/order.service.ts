@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { OrderDto } from '../dto/OrderDto';
+import { CommandDTO } from '../dto/CommandDTO';
 
 
 @Injectable({
@@ -64,9 +65,9 @@ export class OrderService {
                         getProductOrdersCount(enterpriseId: number): Observable<any[]> {
                           return this.http.get<any[]>(`${this.API_ORDER}/count/${enterpriseId}`);
                         }
-                        
-                        getOrdersByUserId(userId: number): Observable<Order[]> {
-                          return this.http.get<Order[]>(`${this.apiUrl}/user/${userId}`);
+
+                        getOrdersByUserId(userId: number): Observable<CommandDTO[]> {
+                          return this.http.get<CommandDTO[]>(`${this.API_ORDER}/user/${userId}`);
                         }
 
 
