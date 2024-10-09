@@ -11,6 +11,8 @@ import { AddOrderComponent } from './add-order/add-order.component';
 import { AuthGuard } from 'src/app/shared/auth.guard';
 import { ArticleDetailesComponent } from './article-detailes/article-detailes.component';
 import { RatingComponent } from './rating/rating.component';
+import { ProfileComponent } from './profile/profile.component';
+import { OrdersComponent } from './orders/orders.component';
 
 
 const routes: Routes = [
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'contact_us', component: ContactUsComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'orders', component: OrdersComponent },
   { path: 'shop', component: ProductComponent },
   { path: 'product_details', component: ProductDatailsComponent },
   { path: 'article_details/:id', component: ArticleDetailesComponent },

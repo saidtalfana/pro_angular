@@ -27,10 +27,19 @@
                 </a>
             </div>
 
-            <!-- Right-aligned (Login) -->
+            <!-- Right-aligned (Login/Logout/Order/Profile) -->
             <div class="navbar-nav ms-auto">
-                <a routerLink="signin" class="nav-item nav-link">
+                <a *ngIf="!isLoggedIn" routerLink="signin" class="nav-item nav-link">
                     <i class="fas fa-user"></i> Login
+                </a>
+                <a *ngIf="isLoggedIn" routerLink="profile" class="nav-item nav-link">
+                    <i class="fas fa-user-circle"></i> Profile
+                </a>
+                <a *ngIf="isLoggedIn" routerLink="orders" class="nav-item nav-link">
+                    <i class="fas fa-box"></i> Orders
+                </a>
+                <a *ngIf="isLoggedIn" class="nav-item nav-link" (click)="onLogout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
                 </a>
             </div>
         </div>

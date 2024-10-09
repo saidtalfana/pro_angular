@@ -1,32 +1,34 @@
 <div class="product_info_all">
-    <div class="product_inf" *ngIf="numberOfProduct; else noData">
-      {{ numberOfProduct }}
-    </div>
-    <div class="product_inf"></div>
-    <div class="product_inf"></div>
+  <div class="product_inf" *ngIf="numberOfProduct; else noData">
+      <h4><i class="fas fa-box"></i> Total Products</h4>
+      <p>{{ numberOfProduct }}</p>
   </div>
+  <div class="product_inf">
+      <h4><i class="fas fa-check-circle"></i> Available</h4>
+      <p>{{ availableCount }}</p>
+  </div>
+  <div class="product_inf">
+      <h4><i class="fas fa-clock"></i> Coming Soon</h4>
+      <p>{{ comingSoonCount }}</p>
+  </div>
+  <div class="product_inf">
+      <h4><i class="fas fa-times-circle"></i> Out of Stock</h4>
+      <p>{{ outOfStockCount }}</p>
+  </div>
+</div>
 
-  <div class="chart-container">
-    <canvas id="productChart" width="400" height="200"></canvas>
-  </div>
-  
-  <div class="chart-container">
-    <canvas id="orderChart" width="400" height="200"></canvas>
-  </div>
-  <app-product-report></app-product-report>
-   <div class="all">
-    <h3>Product Counts</h3>
-    <ul>
-      <li>Available: {{ availableCount }}</li>
-      <li>Coming Soon: {{ comingSoonCount }}</li>
-      <li>Out of Stock: {{ outOfStockCount }}</li>
-    </ul>
-  </div> 
-  
-  <ng-template #noData>
-    <p>No data</p>
-  </ng-template>
-  
-  <!-- Chart Canvases -->
- 
-  
+<div class="chart-container">
+  <h3><i class="fas fa-chart-bar"></i> Product Chart</h3>
+  <canvas id="productChart" width="800" height="400"></canvas>
+</div>
+
+<div class="chart-container">
+  <h3><i class="fas fa-chart-line"></i> Order Chart</h3>
+  <canvas id="orderChart" width="800" height="400"></canvas>
+</div>
+
+<app-product-report></app-product-report>
+
+<ng-template #noData>
+  <p class="no-data-message">No data available</p>
+</ng-template>

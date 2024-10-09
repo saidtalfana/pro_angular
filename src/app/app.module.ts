@@ -8,10 +8,10 @@ import { Interciptor } from './interciptor/interciptor';
 import { MaterialModule } from './shared/material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
-    AppComponent,
-
+    AppComponent // Remove LogoutComponent from here
   ],
   imports: [
     BrowserModule,
@@ -21,16 +21,14 @@ import { NgChartsModule } from 'ng2-charts';
     FormsModule,
     MaterialModule,
     NgbModule,
-    NgChartsModule // Add NgChartsModule to imports
-
-
-    
+    NgChartsModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-        useClass: Interciptor,
-        multi: true}
+      useClass: Interciptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

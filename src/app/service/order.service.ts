@@ -64,7 +64,10 @@ export class OrderService {
                         getProductOrdersCount(enterpriseId: number): Observable<any[]> {
                           return this.http.get<any[]>(`${this.API_ORDER}/count/${enterpriseId}`);
                         }
-
+                        
+                        getOrdersByUserId(userId: number): Observable<Order[]> {
+                          return this.http.get<Order[]>(`${this.apiUrl}/user/${userId}`);
+                        }
 
 
 }

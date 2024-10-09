@@ -19,6 +19,8 @@ import { ProductComponent } from './product/product.component';
 import { AddOrderComponent } from './add-order/add-order.component';
 import { ArticleDetailesComponent } from './article-detailes/article-detailes.component';
 import { RatingComponent } from './rating/rating.component';
+import { ProfileComponent } from './profile/profile.component';
+import { OrdersComponent } from './orders/orders.component';
 
 
 
@@ -39,6 +41,8 @@ import { RatingComponent } from './rating/rating.component';
     AddOrderComponent,
     ArticleDetailesComponent,
     RatingComponent,
+    ProfileComponent,
+    OrdersComponent,
     
   ],
   imports: [

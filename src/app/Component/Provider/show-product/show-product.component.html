@@ -1,16 +1,19 @@
-<div>product</div>
-    <div   *ngFor="let product of listProduct">
-    
-        <h3>{{product.productId}}</h3>
-        <h3>{{product.name}}</h3>
-        <h3>{{product.description}}</h3>
-        <h3>{{product.price}}</h3>
-        <h3>{{product.category}}</h3>
-        <h3>{{product.productStatus}}</h3>
-        <img [src]="'data:image/png;base64,'+product.image" alt="" style="width: 150px; height: auto;">
-
-        <button >update information product</button>
-        <button (click)="delete(product.productId)">delete</button>
-        <button (click)="getProductId(product.productId)">make order</button>
-        
+<div class="product-container">
+    <div *ngFor="let product of listProduct" class="product-card">
+        <div class="product-details">
+            <h3 class="product-id">Product ID: {{product.productId}}</h3>
+            <h3 class="product-name">Name: {{product.name}}</h3>
+            <p class="product-description">Description: {{product.description}}</p>
+            <p class="product-price">Price: ${{product.price}}</p>
+            <p class="product-category">Category: {{product.category}}</p>
+            <p class="product-status">Status: {{product.productStatus}}</p>
+        </div>
+        <div class="product-image-container">
+            <img [src]="'data:image/png;base64,'+product.image" alt="{{product.name}} image" class="product-image">
+        </div>
+        <div class="button-g">
+            <button class="btn btn-outline-primary">Update</button>
+            <button class="btn btn-outline-danger" (click)="delete(product.productId)">Delete</button>
+        </div>
     </div>
+</div>

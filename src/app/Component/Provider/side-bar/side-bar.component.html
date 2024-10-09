@@ -2,18 +2,16 @@
     <div class="side_bar_top">
         <h2 class="sidebar_title">Menu</h2> <!-- Optional Title -->
         <ul>
-            <li routerLink="/provider/add_product"><i class="fas fa-plus"></i> Add Product</li>
+            <li routerLink="/provider/add_product"><i class="fas fa-plus-circle"></i> Add Product</li>
             <li routerLink="/provider/add_enterprise"><i class="fas fa-building"></i> Add Enterprise</li>
-            <li routerLink="/provider/show_enterprise"><i class="fas fa-box-open"></i> Show Enterprise</li>
-            <li routerLink="/provider/show_order"><i class="fas fa-clipboard-list"></i> All Orders</li>
-            <li routerLink="/provider/show_product"><i class="fas fa-clipboard-list"></i> Product</li>
-            <li routerLink="/provider/product_inf"><i class="fas fa-clipboard-list"></i> Product Info</li>
+            <li routerLink="/provider/show_enterprise"><i class="fas fa-industry"></i> Show Enterprise</li>
+            <li routerLink="/provider/show_order"><i class="fas fa-receipt"></i> All Orders</li>
+            <li routerLink="/provider/show_product"><i class="fas fa-box"></i> Product</li>
+            <li routerLink="/provider/product_inf"><i class="fas fa-info-circle"></i> Product Info</li>
         </ul>
     </div>
     
     <div class="side_bar_bottom">
-        <ul>
-            <li><i class="fas fa-sign-out-alt"></i> Log Out</li>
-        </ul>
+       <app-logout></app-logout>
     </div>
 </div>

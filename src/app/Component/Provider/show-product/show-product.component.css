@@ -1,0 +1,103 @@
+.product-container {
+    gap: 10px; /* Space between cards */
+    width: 800px;
+    border: 1px solid gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px; /* Padding around the container */
+  }
+
+.product-card {
+    background-color: #fff; /* Fond blanc pour un meilleur contraste */
+    border-radius: 12px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée */
+    padding: 15px; /* Padding intérieur */
+    width: 240px; /* Largeur fixe des cartes */
+    text-align: center; /* Centrer le texte */
+    transition: transform 0.3s, box-shadow 0.3s; /* Effet de transformation plus fluide */
+    display: flex;
+    flex-direction: column; /* Empilement vertical des éléments */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Légère translation vers le haut au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus intense au survol */
+}
+
+.product-image-container {
+    display: flex;
+    justify-content: center; /* Centre l'image horizontalement */
+    align-items: center; /* Centre l'image verticalement */
+    margin-bottom: 15px; /* Espace en dessous de l'image */
+}
+
+.product-image {
+    width: 150px; /* Largeur fixe des images */
+    height: auto; /* Maintien du rapport hauteur/largeur */
+    border-radius: 8px; /* Coins arrondis pour les images */
+}
+
+.product-details {
+    flex-grow: 1; /* Permet aux détails de prendre l'espace restant */
+}
+
+.product-name {
+    margin: 8px 0; /* Marge pour le titre */
+    font-size: 1.2em; /* Taille de police légèrement plus grande */
+    color: #212529; /* Couleur de texte plus sombre */
+}
+
+.product-id,
+.product-price,
+.product-category,
+.product-status {
+    margin: 5px 0; /* Marge pour les détails du produit */
+    font-weight: 600; /* Texte en gras */
+}
+
+.product-description {
+    font-size: 0.9em; /* Taille de police pour la description */
+    color: #6c757d; /* Couleur grise pour la description */
+    margin: 5px 0; /* Marge pour la description */
+}
+
+.button-g {
+    display: flex;
+    justify-content: space-between; /* Espace entre les boutons */
+    margin-top: 10px;
+    background-color: #ffffff;
+}
+
+.button-group button {
+    background-color: #007bff; /* Couleur du bouton principal */
+    border: none; /* Pas de bordure */
+    color: white; /* Couleur du texte */
+    padding: 10px; /* Padding intérieur des boutons */
+    border-radius: 6px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de pointeur au survol */
+    transition: background-color 0.3s; /* Transition de couleur fluide */
+    flex: 1; /* Permet aux boutons de croître également */
+    margin: 0 5px; /* Marge entre les boutons */
+}
+
+.button-group button:hover {
+    background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+.delete-button {
+    background-color: #dc3545; /* Couleur rouge pour le bouton de suppression */
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Rouge plus foncé au survol */
+}
+
+.order-button {
+    background-color: #28a745; /* Couleur verte pour le bouton de commande */
+}
+
+.order-button:hover {
+    background-color: #218838; /* Vert plus foncé au survol */
+}

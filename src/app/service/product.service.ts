@@ -63,9 +63,9 @@ export class ProductService {
     }
 
     /** Fetch all products by enterprise ID */
-    getAllProductByEnterpriseId(enterprise_id: number): Observable<ProductDto[]> {
+    getAllProductByEnterpriseId(enterpriseId: number): Observable<ProductDto[]> {
         return this.http.get<ProductDto[]>(`${this.API_PRODUCT}/get_products_by_enterprise_id`, {
-            params: { enterprise_id: enterprise_id.toString() }
+            params: { enterpriseId: enterpriseId.toString() }
         });
     }
 

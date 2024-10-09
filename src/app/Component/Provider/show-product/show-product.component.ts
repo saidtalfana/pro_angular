@@ -12,7 +12,7 @@ import { ProductService } from 'src/app/service/product.service';
 export class ShowProductComponent implements OnInit {
 
   listProduct !: ProductDto[]
-  enterprise_id !: number
+  enterpriseId !: number
   selectedProductId: number | null = null; 
   constructor(private productService : ProductService , private router:Router) { }
 
@@ -23,11 +23,11 @@ export class ShowProductComponent implements OnInit {
 
   fetchEntrpriseId(){
     const id : any= localStorage.getItem("enterprise_id")
-    this.enterprise_id  = id
+    this.enterpriseId  = id
   }
 
   fetchProduct(){
-this.productService.getAllProductByEnterpriseId(this.enterprise_id).subscribe((res:ProductDto[])=>{
+this.productService.getAllProductByEnterpriseId(this.enterpriseId).subscribe((res:ProductDto[])=>{
   this.listProduct =res
   console.log(res);
   
@@ -38,6 +38,7 @@ this.productService.getAllProductByEnterpriseId(this.enterprise_id).subscribe((r
     this.productService.deleteProduct(id).subscribe()
     this.fetchEntrpriseId()
   }
+
  
   getProductId(id:number){
  this.router.navigate(['/product_id',id]);

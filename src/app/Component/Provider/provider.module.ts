@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { ProviderRoutingModule } from './provider-routing.module';
 import { AddProductComponent } from './add-product/add-product.component';
 import { DashboardProviderComponent } from './dashboard-provider/dashboard-provider.component';
@@ -17,8 +16,8 @@ import { MaterialModule } from 'src/app/shared/material.module';
 import { ProductChartComponent } from './product-chart/product-chart.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgChartsModule } from 'ng2-charts';
-import { ProductReportComponent } from './product-report/product-report.component'; // Ensure you have this import
-
+import { ProductReportComponent } from './product-report/product-report.component';
+import { LogoutComponent } from '../Shared/logout/logout.component'; // Import LogoutComponent
 
 @NgModule({
   declarations: [
@@ -26,8 +25,6 @@ import { ProductReportComponent } from './product-report/product-report.componen
     AddProductComponent,
     DashboardProviderComponent,
     ShowProductComponent,
-    SidebarComponent,
-    DashboardProviderComponent,
     AddEnterpriseComponent,
     ShowEnterpriseComponent,
     ShowOrderComponent,
@@ -35,7 +32,7 @@ import { ProductReportComponent } from './product-report/product-report.componen
     SideBarComponent,
     ProductChartComponent,
     ProductReportComponent,
-
+    LogoutComponent // Declare it here
   ],
   imports: [
     CommonModule,
@@ -45,7 +42,7 @@ import { ProductReportComponent } from './product-report/product-report.componen
     FormsModule,
     MaterialModule,
     NgbModule,
-    NgChartsModule // Add NgChartsModule to imports
+    NgChartsModule
   ]
 })
 export class ProviderModule { }
