@@ -1,50 +1,184 @@
-.side_bar{
-    width: 290px;
-    height: 90vh;
-    background-color: rgb(186, 184, 186);
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
+/* Styles globaux pour la barre latérale */
+body {
     margin: 0;
-    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Utilisation de la police Poppins */
+    background-color: #F0F2F5; /* Couleur de fond douce */
 }
-.side_bar_top{
-    width: 190px;
-    height: 50vh;
+
+.side_bar {
+    width: 250px; /* Largeur fixe pour la barre latérale */
+    height: 100vh; /* Hauteur complète */
+    background-color:gray; /* Couleur sombre pour la barre latérale */
+    color: #FFFFFF; /* Texte en blanc pour un bon contraste */
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
+    position: fixed; /* Fixer la barre latérale */
+    z-index: 1000; /* Au-dessus des autres éléments */
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3); /* Ombre pour la profondeur */
 }
-ul{
-    width: 190px;
-    height: 50vh;
+
+/* Section supérieure de la barre latérale */
+.side_bar_top {
+    flex-grow: 1; /* Permet de s'étendre */
+    padding: 20px; /* Espacement interne */
+}
+
+/* Styles de la liste */
+.side_bar_top ul {
+    list-style-type: none; /* Suppression des puces */
+    padding: 0; /* Suppression du padding par défaut */
+}
+
+.side_bar_top li {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
+    align-items: center; /* Alignement des icônes et du texte */
+    padding: 15px 20px; /* Espacement interne */
+    cursor: pointer; /* Changer le curseur au survol */
+    border-radius: 8px; /* Coins arrondis */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce */
+}
+
+.side_bar_top li:hover {
+    background-color: #007BFF; /* Couleur de fond au survol */
+    color: #FFFFFF; /* Texte en blanc au survol */
+}
+
+/* Styles des icônes */
+.side_bar_top li i {
+    margin-right: 15px; /* Espace entre l'icône et le texte */
+    font-size: 20px; /* Taille d'icône agrandie */
+    transition: transform 0.3s ease; /* Transition pour l'icône */
+}
+
+.side_bar_top li:hover i {
+    transform: rotate(15deg); /* Effet de rotation au survol */
+}
+
+/* Section inférieure de la barre latérale */
+.side_bar_bottom {
+    padding: 20px; /* Espacement interne */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Bordure supérieure pour la séparation */
+}
+
+/* Styles de la liste pour la section inférieure */
+.side_bar_bottom ul {
+    list-style-type: none; /* Suppression des puces */
+    padding: 0; /* Suppression du padding par défaut */
+}
+
+.side_bar_bottom li {
+    display: flex;
+    align-items: center; /* Alignement des icônes et du texte */
+    padding: 10px 20px; /* Espacement interne */
+    cursor: pointer; /* Changer le curseur au survol */
+    transition: background-color 0.3s ease; /* Transition douce */
+}
+
+.side_bar_bottom li:hover {
+    background-color: #DC3545; /* Couleur de fond au survol pour déconnexion */
+}
+
+/* Styles des liens actifs */
+.side_bar_top li.active {
+    background-color: /* Styles globaux pour la barre latérale */
+body {
     margin: 0;
-    padding: 0;
-   
+    font-family: 'Poppins', sans-serif; /* Utilisation de la police Poppins */
+    background-color: #F0F2F5; /* Couleur de fond douce */
 }
-li{
-    width: 100%;
-    height: 34px;
-    list-style: none;
-    border-bottom: 1px solid rgb(255, 255, 255);
+
+.side_bar {
+    width: 250px; /* Largeur fixe pour la barre latérale */
+    height: 100vh; /* Hauteur complète */
+    background-color: #343A40; /* Couleur sombre pour la barre latérale */
+    color: #FFFFFF; /* Texte en blanc pour un bon contraste */
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    cursor: pointer;
-    
- }
-.side_bar_bottom{
-    width: 190px;
-    height: 30vh;
-    display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
-    /* border: 1px solid white; */
+    position: fixed; /* Fixer la barre latérale */
+    z-index: 1000; /* Au-dessus des autres éléments */
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3); /* Ombre pour la profondeur */
+}
+
+/* Section supérieure de la barre latérale */
+.side_bar_top {
+    flex-grow: 1; /* Permet de s'étendre */
+    padding: 20px; /* Espacement interne */
+}
+
+/* Styles de la liste */
+.side_bar_top ul {
+    list-style-type: none; /* Suppression des puces */
+    padding: 0; /* Suppression du padding par défaut */
+}
+
+.side_bar_top li {
+    display: flex;
+    align-items: center; /* Alignement des icônes et du texte */
+    padding: 15px 20px; /* Espacement interne */
+    cursor: pointer; /* Changer le curseur au survol */
+    border-radius: 8px; /* Coins arrondis */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce */
+}
+
+.side_bar_top li:hover {
+    background-color: #007BFF; /* Couleur de fond au survol */
+    color: #FFFFFF; /* Texte en blanc au survol */
+}
+
+/* Styles des icônes */
+.side_bar_top li i {
+    margin-right: 15px; /* Espace entre l'icône et le texte */
+    font-size: 20px; /* Taille d'icône agrandie */
+    transition: transform 0.3s ease; /* Transition pour l'icône */
+}
+
+.side_bar_top li:hover i {
+    transform: rotate(15deg); /* Effet de rotation au survol */
+}
+
+/* Section inférieure de la barre latérale */
+.side_bar_bottom {
+    padding: 20px; /* Espacement interne */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Bordure supérieure pour la séparation */
+}
+
+/* Styles de la liste pour la section inférieure */
+.side_bar_bottom ul {
+    list-style-type: none; /* Suppression des puces */
+    padding: 0; /* Suppression du padding par défaut */
+}
+
+.side_bar_bottom li {
+    display: flex;
+    align-items: center; /* Alignement des icônes et du texte */
+    padding: 10px 20px; /* Espacement interne */
+    cursor: pointer; /* Changer le curseur au survol */
+    transition: background-color 0.3s ease; /* Transition douce */
+}
+
+.side_bar_bottom li:hover {
+    background-color: #007BFF; /* Couleur de fond au survol pour déconnexion */
+}
+
+/* Styles des liens actifs */
+.side_bar_top li.active {
+    background-color: #007BFF; /* Couleur différente pour le lien actif */
+    color: #FFFFFF; /* Texte en blanc */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .side_bar {
+        width: 200px; /* Réduction de la largeur sur les écrans plus petits */
+    }
+}
+; /* Couleur différente pour le lien actif */
+    color: #FFFFFF; /* Texte en blanc */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .side_bar {
+        width: 200px; /* Réduction de la largeur sur les écrans plus petits */
+    }
 }

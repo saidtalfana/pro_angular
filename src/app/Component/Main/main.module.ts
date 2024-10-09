@@ -18,7 +18,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { ProductComponent } from './product/product.component';
 import { AddOrderComponent } from './add-order/add-order.component';
 import { ArticleDetailesComponent } from './article-detailes/article-detailes.component';
-import { ProductRatingComponent } from './product-rating/product-rating.component';
+import { RatingComponent } from './rating/rating.component';
 
 
 
@@ -38,7 +38,7 @@ import { ProductRatingComponent } from './product-rating/product-rating.componen
     ProductComponent,
     AddOrderComponent,
     ArticleDetailesComponent,
-    ProductRatingComponent
+    RatingComponent,
     
   ],
   imports: [

@@ -112,5 +112,9 @@ export class ProductService {
     getProductsCountByStatus(enterpriseId: number): Observable<ProductCount> {
         return this.http.get<ProductCount>(`${this.API_PRODUCT}/count/status/${enterpriseId}`);
     }
+
+    getAverageStars(productId: number): Observable<number> {
+        return this.http.get<number>(`${this.API_PRODUCT}/average-stars/${productId}`);
+      }
     
 }

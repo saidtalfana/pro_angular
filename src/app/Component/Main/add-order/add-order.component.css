@@ -1,33 +1,38 @@
-.article-container{
-    background-color: gold;
+/* Order form container */
+.order-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Modal styling */
+  .modal {
+    display: block; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
     width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-form{
-    background-color: rgb(102, 0, 255);
-    width: 350px;
-    height: 80vh;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-}
-input{
-    width: 269px;
-    height: 33px;
-}
-textarea{
-    width: 269px;
-    height: 150px;
-}
-.btn{
-    width: 111px;
-    height: 37px;
-    background-color: #23A6F0;
-    border-radius: 7px;
-}
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+  }
+  
+  .modal-content {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  

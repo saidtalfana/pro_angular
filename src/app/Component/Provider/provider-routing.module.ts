@@ -19,6 +19,7 @@ const routes: Routes = [
     {path: 'add_enterprise', component: AddEnterpriseComponent},
     {path: 'show_enterprise', component: ShowEnterpriseComponent},
     {path: 'show_order', component: ShowOrderComponent},
+    {path: 'show_product', component: ShowProductComponent},
     { path: 'update_enterprise/:id', component: AddEnterpriseComponent },
     { path: 'product_inf', component: ProductChartComponent }]},
 

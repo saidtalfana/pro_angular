@@ -16,13 +16,18 @@ export class RatingService {
   constructor(private http:HttpClient) { }
 
 
-  submitRating(rating: Rating): Observable<Rating> {
-    return this.http.post<Rating>(`${this.API_RATING}/add`, rating);
-}
+  submitRating(rating: Rating, productId: number, userId: number): Observable<Rating> {
+    return this.http.post<Rating>(`${this.API_RATING}/add`, rating, {
+      params: {
+        productId: productId.toString(),
+        userId: userId.toString()
+      }
+    });
+  }
 
-getRatingsByProduct(productId: number): Observable<Rating[]> {
-    return this.http.get<Rating[]>(`${this.API_RATING}/get_rating_by_product/${productId}`);
-}
+  getRatingsByProductId(productId: number): Observable<Rating[]> {
+    return this.http.get<Rating[]>(`${this.API_RATING}/product/${productId}`);
+  }
   
                      
 }

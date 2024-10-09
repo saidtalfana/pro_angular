@@ -1,103 +1,127 @@
-.main{
+/* Main container styling */
+.main {
     width: 100%;
-    height: 50px;
-    background-color: #E7E7E7;
+    height: 47px; /* Ajustement de la hauteur pour une meilleure esthétique */
+    background-color: #F9F9F9; /* Couleur de fond douce */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px; /* Espacement latéral */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre douce */
 }
-#logo{
-    width: 20%;
+
+/* Logo styling */
+#logo {
     text-align: center;
-    margin-top: 16px;
+    font-weight: bold;
+    font-size: 26px; /* Taille de police agrandie */
+    color: #333; /* Couleur sombre pour le logo */
 }
 
-#search{
-    width: 64%;
-    height: 70px;
+/* Search bar styling */
+#search {
+    flex-grow: 1; /* Permet au champ de recherche de prendre l'espace restant */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 255, 255);
-    
 }
-#search_input_btn{
-    /* border: 1px solid black; */
+
+/* Search input and button */
+#search_input_btn {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: row-reverse;
-    border-radius: 12px;
-    border: 1px solid black;
-
-  
+    border-radius: 20px; /* Coins arrondis pour un look moderne */
+    border: 1px solid #ccc; /* Couleur de bordure douce */
+    background-color: #ffffff; /* Fond blanc pour le champ de recherche */
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* Ombre pour le champ de recherche */
+    transition: border-color 0.3s;
 }
 
-#right{
-    width: 40%;
-    height: 50px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    
+#search_input_btn:hover {
+    border-color: #007BFF; /* Bordure bleue au survol */
 }
 
-.i{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 34px;
-   height: 34px;
-   border-radius: 50%;
-   /* border: 1px solid black; */
-   background-color: white;
-   cursor: pointer;
-}
-
-#profile{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 42%;
-    background-color: #ffffff;
-    border-bottom: 3px solid gold;
-}
-.search_btn{
-    width: 47px;
-    height: 39px;
+.search_input {
+    width: 250px; /* Largeur fixe */
+    height: 40px; /* Ajustement de la hauteur */
     border: none;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 0 15px; /* Espacement interne */
+    font-size: 16px; /* Taille de police pour le texte */
+}
+
+.search_btn {
+    width: 50px; /* Largeur fixe pour le bouton */
+    height: 40px; /* Ajustement de la hauteur */
+    border: none;
+    border-top-right-radius: 20px; /* Coins arrondis à droite */
+    border-bottom-right-radius: 20px;
+    background-color: #007BFF; /* Couleur de fond bleue */
+    color: white; /* Texte blanc */
     cursor: pointer;
-}
-.search_input{
-    width: 252px;
-    height: 39px;
-    border: none;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 0 0 0 10px;
-   
+    transition: background-color 0.3s;
 }
 
+.search_btn:hover {
+    background-color: #0056b3; /* Couleur bleue foncée au survol */
+}
 
-/* styles.css or app.component.css */
+/* Right section styling */
+#right {
+    display: flex;
+    align-items: center;
+}
+
+/* Icon styling */
+.i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px; /* Légèrement plus grand pour le confort */
+    height: 36px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    margin-left: 15px; /* Espacement entre les icônes */
+    transition: background-color 0.3s;
+}
+
+.i:hover {
+    background-color: #E0E0E0; /* Couleur de fond au survol */
+}
+
+/* Profile styling */
+#profile {
+    display: flex;
+    align-items: center;
+    margin-left: 15px; /* Espacement entre les icônes */
+}
+
+/* Welcome message styling */
+#welc {
+    font-weight: 600; /* Texte en gras */
+    color: #333; /* Couleur du texte */
+    margin-left: 8px; /* Espacement entre l'icône et le texte */
+}
 
 /* Light mode styles */
 body.light-mode {
     background-color: white;
     color: black;
-  }
-  
-  /* Dark mode styles */
-  body.dark-mode {
+}
+
+/* Dark mode styles */
+body.dark-mode {
     background-color: black;
     color: white;
-  }
-  /* Optional: Add styles for your buttons */
-  button {
+}
+
+/* Optional: Button styles */
+button {
     padding: 10px 15px;
     border: none;
     cursor: pointer;
     font-size: 16px;
-  }
+}

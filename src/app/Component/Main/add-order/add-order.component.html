@@ -1,27 +1,55 @@
-<div class="article-container">
-  <h4>Order</h4>    
-    <form [formGroup]="formOrder" (ngSubmit)="onSubmit()">
+<div class="order-container">
+  <h2>Place Your Order</h2>
+  <form [formGroup]="formOrder" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" class="form-control" />
+    </div>
 
-      <div class="form-group">
-        <input type="text" id="name" formControlName="name"  placeholder="name"/>
-      </div>
-      <div class="form-group">
-        <input type="text" id="address" formControlName="address" placeholder="adress"/>
-      </div>
-      <div class="form-group">
-        <input type="email" id="email" formControlName="email" placeholder="email" />
-      </div>
-      <div class="form-group">
-        <input type="tel" id="phoneNumber" formControlName="phoneNumber" placeholder="phone number"/>
-      </div>
-      <div class="form-group">
-        <textarea id="customerRequest" formControlName="customerRequest" placeholder="customerRequest"></textarea>
-      </div>
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input id="address" formControlName="address" class="form-control" />
+    </div>
 
-      
-  
-      <button type="submit" class="btn btn-primary" [disabled]="formOrder.invalid">Submit Order</button>
-    </form>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number:</label>
+      <input id="phoneNumber" formControlName="phoneNumber" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="customerRequest">Customer Request:</label>
+      <textarea id="customerRequest" formControlName="customerRequest" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="formOrder.invalid">Submit Order</button>
+  </form>
+
+  <!-- Rating Modal -->
+  <div class="modal" *ngIf="isRatingModalOpen">
+    <div class="modal-content">
+      <span class="close" (click)="closeRatingModal()">&times;</span>
+      <h2>Rate Your Order</h2>
+      <form [formGroup]="ratingForm" (ngSubmit)="submitRating()">
+        <div class="form-group">
+          <label for="stars">Rate the product:</label>
+          <select id="stars" formControlName="stars" class="form-control">
+            <option value="0" disabled>Select stars</option>
+            <option *ngFor="let star of [1, 2, 3, 4, 5]" [value]="star">{{ star }} Star(s)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="comment">Leave a comment:</label>
+          <textarea id="comment" formControlName="comment" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="ratingForm.invalid">Submit Rating</button>
+      </form>
+    </div>
   </div>
-                    
-  
+</div>

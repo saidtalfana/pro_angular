@@ -9,14 +9,13 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  
+
   listProduct!: ProductDto[];
+  averageStars: { [key: number]: number } = {}; // Store average stars for each product
   currentPage = 0;
   pageSize = 12;
   totalPages: number = 0;
 
-  products: any[] = [];
-  
   filter = {
     category: '',
     minPrice: null,
@@ -30,13 +29,17 @@ export class ProductComponent implements OnInit {
     this.loadProducts();
   }
 
-
-  
-
   loadProducts(): void {
     this.productService.getProducts(this.currentPage, this.pageSize).subscribe(data => {
       this.listProduct = data.content;
       this.totalPages = data.totalPages;
+
+      // Fetch average stars for each product
+      this.listProduct.forEach(product => {
+        this.productService.getAverageStars(product.productId).subscribe(stars => {
+          this.averageStars[product.productId] = stars;
+        });
+      });
     }, error => {
       console.error('Error fetching products:', error);
     });
@@ -53,15 +56,34 @@ export class ProductComponent implements OnInit {
     this.router.navigate(['main/product_details', id]);
   }
 
+  getStars(rating: number): string[] {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 >= 0.5;
+    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+    return [
+      ...Array(fullStars).fill('fas fa-star'),
+      ...(halfStar ? ['fas fa-star-half-alt'] : []),
+      ...Array(emptyStars).fill('far fa-star')
+    ];
+  }
+  
   applyFilter() {
     this.productService.filterProducts(this.filter.category, this.filter.minPrice, this.filter.maxPrice, this.filter.name).subscribe(data => {
       this.listProduct = data;
       this.currentPage = 0; // Reset to first page
+
+      // Fetch average stars for each filtered product
+      this.listProduct.forEach(product => {
+        this.productService.getAverageStars(product.productId).subscribe(stars => {
+          this.averageStars[product.productId] = stars;
+        });
+      });
     }, error => {
       console.error('Error fetching filtered products:', error);
     });
   }
-  
+
   resetFilter() {
     // Resetting the filter object
     this.filter = {
@@ -71,7 +93,4 @@ export class ProductComponent implements OnInit {
       name: ''
     };
   }
-
-  
-    
 }

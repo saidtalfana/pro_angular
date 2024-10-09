@@ -1,96 +1,114 @@
 <div class="holder">
-    <div class="wrapper">
-      <div class="left" *ngIf="productDetails; else noData">
-        <div class="product_img">
-          <img [src]="'data:image/png;base64,' + productDetails.image" alt="" style="width: 100%; height: 100%">
-        </div>
-        <div class="details" *ngIf="productDetails; else noData">
-          <div class="another_datail">
-            <h3 id="h3">General Specs about service</h3>
-            <div class="one">
-              <h6>Title: <span>{{ productDetails.name }}</span></h6>
-              <h6>Category: <span>{{ productDetails.category }}</span></h6>
-            </div>
-            <div class="one">
-              <h6>Start price: <span>{{ productDetails.price }} <b>$</b></span></h6>
-              <h6>Status: <span>{{ productDetails.productStatus }}</span></h6>
-            </div>
-            <div class="margin"></div>
-          </div>
-          <div class="description">
-            <h3>Detailed Description</h3>
-            <p>{{ productDetails.description }}</p>
-          </div>
-        </div>
-        <button class="btn-order" (click)="productOrderId(productDetails.productId)">Make Order</button>
-
+  <div class="wrapper">
+    <div class="left" *ngIf="productDetails; else noData">
+      <div class="product_img">
+        <img [src]="'data:image/png;base64,' + productDetails.image" alt="" style="width: 100%; height: 100%">
       </div>
-  
-      <div class="right">
-        <div id="enterprise"   *ngIf="enterpriseDetails; else noData">
-
-            <div id="logo">
-                <div id="logo_img">
-                    <!-- <img [src]="'data:image/png;base64,' + enterpriseDetails.enterpriseLogo" alt="" style="width: 100%; height: 100%"> -->
-                  </div>
-            </div>
-
-            <div id="enterprise_information">
-                <div id="enterprise_details">
-                 <h3>{{ enterpriseDetails.enterpriseName }}</h3>
-                 <h5 id="activity">{{ enterpriseDetails.activity }}</h5>
-                </div>
-                <div id="enterprise_description">
-                    <P>{{enterpriseDetails.enterpriseDescription}}</P>
-                </div>
-            </div>
-
-            <div id="call_btn">
-                <div id="phone">{{enterpriseDetails.phoneNumber}}</div>
-                <div id="email">{{enterpriseDetails.email}}</div>
-            </div>
-
-            </div>
-            <ng-template #noData>
-                <p>No enterprise data available.</p>
-              </ng-template>
-
+      <div class="details" *ngIf="productDetails; else noData">
+        <div class="another_datail">
+          <h3 id="h3">General Specs about service</h3>
+          <div class="one">
+            <h6>Title: <span>{{ productDetails.name }}</span></h6>
+            <h6>Category: <span>{{ productDetails.category }}</span></h6>
+          </div>
+          <div class="one">
+            <h6>Start price: <span>{{ productDetails.price }} <b>$</b></span></h6>
+            <h6>Status: <span>{{ productDetails.productStatus }}</span></h6>
+          </div>
+          <div class="margin"></div>
+        </div>
+        <div class="description">
+          <h3>Detailed Description</h3>
+          <p>{{ productDetails.description }}</p>
         </div>
       </div>
-    
-
-    <h3>Recommended Products</h3>
-    <div class="products"   *ngIf="recommendedProducts && recommendedProducts.length > 0; else noRecommendations">
-        <div class="product" *ngFor="let product of recommendedProducts">
-            <div class="product_image">
-                <img [src]="'data:image/png;base64,' + product.image" alt="{{product.name}}" style="width: 100%; height: auto;" />
-            </div>
-            <div class="product_details">
-                <div class="product_detail">
-                    <h3>{{product.name}}</h3>
-                </div>
-                <div class="status">
-                    <h3>{{product.price}} <span>$</span></h3>
-                    <h6>{{product.productStatus}}</h6>
-                </div>
-            </div>
-            <button class="btn_view" (click)="showDetails(product.productId)">Show Details</button>
+      <div class="average-stars" *ngIf="averageStars[productDetails.productId] !== undefined">
+        <div class="stars">
+          <ng-container *ngFor="let star of getStars(averageStars[productDetails.productId])">
+            <i [ngClass]="star"></i>
+          </ng-container>
         </div>
-    </div>
-
-
-
-
-    <ng-template #noRecommendations>
-      <p>No recommendations available.</p>
-    </ng-template>
-
-
+      </div>
+      <div class="div-comment">
+        <button class="btn" (click)="goToRatings()">
+          {{ showRatings ? 'Hide Ratings' : 'Show Ratings' }}
+        </button>
+<div *ngIf="showRatings" class="showRate">
+  <div *ngIf="ratings.length > 0; else noRatings" class="showRate1">
+    <ul>
+      <li *ngFor="let rating of ratings"  class="one-rating">
+        <strong>Stars:</strong> {{ rating.stars }}<br />
+        <strong>Comment:</strong> {{ rating.comment }}<br />
+        <hr />
+      </li>
+    </ul>
   </div>
   
-  
-  <ng-template #noData>
-    <p>No enterprise data available.</p>
+  <ng-template #noRatings>
+    <p>No ratings available for this product.</p>
   </ng-template>
-  
+  </div>
+      </div>
+      <div class="div-order">
+        <button class="btn-order" (click)="productOrderId(productDetails.productId)">Make Order</button>
+      </div>
+      
+    </div>
 
+    <div class="right">
+      <div id="enterprise" *ngIf="enterpriseDetails; else noData">
+        <div id="logo">
+          <div id="logo_img">
+            <!-- <img [src]="'data:image/png;base64,' + enterpriseDetails.enterpriseLogo" alt="" style="width: 100%; height: 100%"> -->
+          </div>
+        </div>
+
+        <div id="enterprise_information">
+          <div id="enterprise_details">
+            <h3>{{ enterpriseDetails.enterpriseName }}</h3>
+            <h5 id="activity">{{ enterpriseDetails.activity }}</h5>
+          </div>
+          <div id="enterprise_description">
+            <p>{{ enterpriseDetails.enterpriseDescription }}</p>
+          </div>
+        </div>
+        <div id="call_btn">
+          <div id="phone">{{enterpriseDetails.phoneNumber}}</div>
+          <div id="email">{{enterpriseDetails.email}}</div>
+        </div>
+      </div>
+
+      <ng-template #noData>
+        <p>No enterprise data available.</p>
+      </ng-template>
+    </div>
+  </div>
+
+  <h3>Recommended Products</h3>
+  <div class="products" *ngIf="recommendedProducts && recommendedProducts.length > 0; else noRecommendations">
+    <div class="product" *ngFor="let product of recommendedProducts">
+      <div class="product_image">
+        <img [src]="'data:image/png;base64,' + product.image" alt="{{product.name}}" style="width: 100%; height: auto;" />
+      </div>
+      <div class="product_details">
+        <div class="product_detail">
+          <h3>{{product.name}}</h3>
+        </div>
+        <div class="status">
+          <h3>{{product.price}} <span>$</span></h3>
+          <h6>{{product.productStatus}}</h6>
+        </div>
+      </div>
+      <button class="btn_view" (click)="showDetails(product.productId)">Show Details</button>
+      
+    </div>
+  </div>
+
+  <ng-template #noRecommendations>
+    <p>No recommendations available.</p>
+  </ng-template>
+</div>
+
+<ng-template #noData>
+  <p>No data available.</p>
+</ng-template>
