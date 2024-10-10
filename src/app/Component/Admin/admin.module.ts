@@ -11,6 +11,7 @@ import { ShowArticleComponent } from './show-article/show-article.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from 'src/app/shared/material.module';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { LogoutModule } from '../Shared/logout/logout.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     ShowArticleComponent,
     AllContactComponent,
     NavbarComponent,
-    SideBarComponent
+    SideBarComponent,
+
 
   ],
   imports: [
@@ -29,7 +31,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    LogoutModule
     
   ]
 })

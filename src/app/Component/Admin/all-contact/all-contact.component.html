@@ -1,7 +1,9 @@
-<div *ngFor="let order of listContact">
-    <p>{{order.name}}</p>
-    <p>{{order.email}}</p>
-    <p>{{order.phone}}</p>
-    <p>{{order.message}}</p>
+<div class="contact-list">
+    <div *ngFor="let order of listContact" class="contact-card">
+      <p><strong>Name:</strong> {{order.name}}</p>
+      <p><strong>Email:</strong> {{order.email}}</p>
+      <p><strong>Phone:</strong> {{order.phone}}</p>
+      <p><strong>Message:</strong> {{order.message}}</p>
+    </div>
+  </div>
   
-</div>

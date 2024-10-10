@@ -1,6 +1,11 @@
 <div class="container-fluid two">
   <div class="article dark" *ngFor="let article of listArticle">
     <div class="article-body">
+      <!-- Move image to the top -->
+      <div class="article-image"> 
+        <img [src]="'data:image/png;base64,'+article.articleImage" alt="" style="width: 100%; height: 100%;">
+      </div>
+
       <div class="article-info row">
         <div class="col-xs-6">
           <p>Title</p>
@@ -11,23 +16,12 @@
           <h4>{{ article.articleAuthor }}</h4>
         </div>
       </div>
-      <div class="article-content">
-        <p>{{ article.articleContent }}</p>
-      </div>
-      <!-- <div class="article-image">
-        <img [src]="article.articleImage" alt="Article Image" />
-      </div> -->
-      <div class="article-image"> 
-        <img [src]="'data:image/png;base64,'+article.articleImage" alt="" style="width: 100%; height: 100%;">
-
-   </div>
     </div>
+
     <div class="footer">
       <div class="disclaimer">{{ article.articleDate | date }}</div>
       <div class="disclaimer">
         <button (click)="delete(article.articleId)">Delete Article</button>
-
-
       </div>
     </div>
   </div>

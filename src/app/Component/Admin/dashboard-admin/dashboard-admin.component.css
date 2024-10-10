@@ -1,0 +1,38 @@
+/* Navbar */
+#navbar {
+    width: 100%; /* Prend toute la largeur */
+    height: 50px; /* Hauteur fixe */
+    background-color: gold; /* Couleur de fond de la barre de navigation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Tableau de bord principal */
+#maindashboard {
+    display: flex; /* Alignement en flex */
+    justify-content: space-between; /* Espacement entre les éléments */
+    height: calc(100vh - 50px); /* Prend toute la hauteur de l'écran, moins la navbar */
+}
+
+/* Barre latérale */
+.sidebar {
+    width: 330px; /* Largeur fixe */
+    height: 100%; /* Prend toute la hauteur */
+    background-color: #343A40; /* Couleur sombre */
+    color: white; /* Texte blanc */
+    padding: 20px; /* Espacement interne */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Ombre pour la profondeur */
+}
+
+/* Contenu principal */
+#routerlink {
+    flex-grow: 1; /* Prend tout l'espace restant */
+    height: 100%; /* Prend toute la hauteur */
+    padding-top: 27px; /* Espacement en haut */
+    background-color: #FFF0E5; /* Couleur de fond douce */
+    display: flex; /* Utilisation de flexbox */
+    justify-content: center; /* Centre horizontalement */
+    align-items: flex-start; /* Aligne le contenu en haut */
+    overflow-y: auto; /* Ajoute un défilement si le contenu déborde */
+}
+
+  

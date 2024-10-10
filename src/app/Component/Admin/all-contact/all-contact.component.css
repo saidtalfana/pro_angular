@@ -1,0 +1,47 @@
+/* Container for the contact list */
+.contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Evenly space the cards */
+    gap: 20px; /* Space between cards */
+    padding: 20px; /* Add padding to the overall container */
+  }
+  
+  /* Each contact card */
+  .contact-card {
+    background-color: #fff; /* White background for the "paper" effect */
+    border-radius: 12px; /* Softer rounded corners */
+    padding: 20px; /* Inner padding */
+    width: 100%; /* Full width on smaller screens */
+    max-width: 350px; /* Slightly bigger card width */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.05); /* Soft shadow for a "paper" feel */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover animation */
+    border: 1px solid #e6e6e6; /* Light border for definition */
+  }
+  
+  /* Contact card hover effect */
+  .contact-card:hover {
+    transform: translateY(-8px); /* Lift the card slightly on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.1); /* Add deeper shadow on hover */
+  }
+  
+  /* Style for the text in the card */
+  .contact-card p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* Text color */
+    font-family: 'Arial', sans-serif; /* Clean, modern font */
+  }
+  
+  /* Bold labels inside the card */
+  .contact-card p strong {
+    font-weight: 600;
+    color: #444; /* Slightly darker color for emphasis */
+  }
+  
+  /* Add some breathing space between contact details */
+  .contact-card p {
+    margin-bottom: 10px;
+  }
+  

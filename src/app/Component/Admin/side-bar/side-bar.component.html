@@ -1,19 +1,16 @@
 <div class="side_bar">
-
     <div class="side_bar_top">
+        <h2 class="sidebar_title">Menu</h2> <!-- Optional Title -->
         <ul>
-            <li routerLink="/admin/add_article"><i class="fas fa-plus fa-lg"></i> Add Article</li>
-            <li routerLink="/admin/show_article"><i class="fas fa-box-open fa-lg"></i> show Article</li> <!-- Added icon -->
-            <li routerLink="/provider/show_order"><i class="fas fa-clipboard-list fa-lg" ></i> All Orders</li> <!-- Added icon -->
+            <li routerLink="/admin/add_article"><i class="fas fa-plus-circle"></i> Add Article</li>
+            <li routerLink="/admin/show_article"><i class="fas fa-building"></i> show Article</li>
+            <li routerLink="/admin/all_contact"><i class="fas fa-industry"></i> Show all contact</li>
         </ul>
-        
     </div>
     
     <div class="side_bar_bottom">
-        <ul>
-            <li>add product</li>
-            <li><i class="fas fa-sign-out-alt" ></i> Log Out</li>
-        </ul>
+       <app-logout></app-logout>
     </div>
-      
 </div>
+        
+    

@@ -11,8 +11,9 @@
 
 /* Logo size adjustment */
 .navbar-brand .logo {
-    width: 50px;
+    width: 75px;
     height: 50px;
+    background-color: #1b642a;
     background-image: url("src/assets/luxury_service.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -30,14 +31,14 @@
 }
 
 .navbar-nav .nav-link:hover {
-    color: gold; /* لون أخضر عند التمرير */
+    color: black; /* لون أخضر عند التمرير */
     background-color: rgba(255, 255, 255, 0.15); /* خلفية شفافة عند التمرير */
 }
 
 /* Navbar Links - Active */
 .navbar-nav .nav-link.active {
-    color: #FFFFFF; /* لون ثابت للروابط النشطة */
-    background-color: #2980B9; /* خلفية زرقاء داكنة */
+    color: black; /* لون ثابت للروابط النشطة */
+    background-color: white; /* خلفية زرقاء داكنة */
 }
 
 /* Icon Styling */

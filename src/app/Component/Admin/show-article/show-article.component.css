@@ -1,0 +1,92 @@
+/* Container for the articles */
+.container-fluid.two {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px;
+    width: 800px;
+  }
+  
+  /* Each article */
+  .article {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    max-width: 350px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Article body */
+  .article-body {
+    margin-bottom: 10px;
+  }
+  
+  /* Move image to the top */
+  .article-image {
+    margin-bottom: 15px; /* Add margin between image and content */
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .article-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Article info (title and author) */
+  .article-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .article-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .article-info h4 {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  /* Article content */
+  .article-content {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer .disclaimer {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .footer button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .footer button:hover {
+    background-color: #c9302c;
+  }
+  

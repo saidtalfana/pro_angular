@@ -12,12 +12,13 @@ import { ShowEnterpriseComponent } from './show-enterprise/show-enterprise.compo
 import { ShowOrderComponent } from './show-order/show-order.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
-import { MaterialModule } from 'src/app/shared/material.module';
 import { ProductChartComponent } from './product-chart/product-chart.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgChartsModule } from 'ng2-charts';
 import { ProductReportComponent } from './product-report/product-report.component';
 import { LogoutComponent } from '../Shared/logout/logout.component'; // Import LogoutComponent
+import { LogoutModule } from '../Shared/logout/logout.module';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,6 @@ import { LogoutComponent } from '../Shared/logout/logout.component'; // Import L
     SideBarComponent,
     ProductChartComponent,
     ProductReportComponent,
-    LogoutComponent // Declare it here
   ],
   imports: [
     CommonModule,
@@ -40,9 +40,10 @@ import { LogoutComponent } from '../Shared/logout/logout.component'; // Import L
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    MaterialModule,
     NgbModule,
-    NgChartsModule
+    NgChartsModule,
+    MaterialModule,
+    LogoutModule
   ]
 })
 export class ProviderModule { }
