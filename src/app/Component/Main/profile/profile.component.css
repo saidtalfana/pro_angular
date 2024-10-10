@@ -1,0 +1,66 @@
+.user-profile {
+    background-color: #ffffff; /* Fond blanc */
+    border: 1px solid #dcdcdc; /* Bordure légère */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 20px; /* Espacement interne */
+    max-width: 400px; /* Largeur maximale */
+    margin: 20px auto; /* Centrer le profil avec marges */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre pour profondeur */
+    transition: box-shadow 0.3s ease; /* Effet de transition pour l'ombre */
+}
+
+.user-profile:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+}
+
+.profile-title {
+    color: #333; /* Couleur du titre */
+    font-size: 26px; /* Taille du titre */
+    margin-bottom: 15px; /* Espacement sous le titre */
+    text-align: center; /* Centrer le titre */
+    font-weight: bold; /* Mettre en gras */
+}
+
+.profile-info {
+    border-top: 2px solid #4CAF50; /* Ligne décorative au-dessus des informations */
+    padding-top: 15px; /* Espacement au-dessus de l'information */
+    margin-bottom: 20px; /* Espacement en bas */
+}
+
+.profile-info p {
+    color: #555; /* Couleur du texte */
+    font-size: 16px; /* Taille du texte */
+    margin: 8px 0; /* Espacement entre les paragraphes */
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: space-between; /* Espacement entre les boutons */
+}
+
+.btn {
+    padding: 10px 15px; /* Espacement interne des boutons */
+    border: none; /* Enlever la bordure par défaut */
+    border-radius: 5px; /* Coins arrondis pour les boutons */
+    font-size: 14px; /* Taille de la police */
+    cursor: pointer; /* Curseur pointer pour les boutons */
+    transition: background-color 0.3s; /* Transition pour la couleur de fond */
+}
+
+.edit-btn {
+    background-color: #4CAF50; /* Couleur verte */
+    color: white; /* Couleur du texte en blanc */
+}
+
+.edit-btn:hover {
+    background-color: #45a049; /* Couleur au survol */
+}
+
+.logout-btn {
+    background-color: #f44336; /* Couleur rouge */
+    color: white; /* Couleur du texte en blanc */
+}
+
+.logout-btn:hover {
+    background-color: #e53935; /* Couleur au survol */
+}

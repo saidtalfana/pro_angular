@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { jwtDecode } from 'jwt-decode';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -9,11 +10,13 @@ import { UserService } from 'src/app/service/user.service';
 export class ProfileComponent implements OnInit {
   user: any;
 
+  userId!:number
+
   constructor(private userProfileService: UserService) { }
 
   ngOnInit(): void {
-    const userId = 1; // Example ID, you can get it dynamically
-    this.userProfileService.getUserProfile(userId).subscribe(
+    this.getId()
+    this.userProfileService.getUserProfile(this.userId).subscribe(
       (data) => {
         this.user = data;
       },
@@ -21,5 +24,16 @@ export class ProfileComponent implements OnInit {
         console.error('Error fetching user profile', error);
       }
     );
+  }
+
+
+  getId(){
+    const value :any= localStorage.getItem('jwt')
+
+    const decodeJwt : any = jwtDecode(value)
+
+     this.userId = decodeJwt.id
+     console.log(decodeJwt);
+     
   }
 }
