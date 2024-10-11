@@ -13,6 +13,7 @@ import { ArticleDetailesComponent } from './article-detailes/article-detailes.co
 import { RatingComponent } from './rating/rating.component';
 import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
+import { ServiceComponent } from './service/service.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'shop', component: ProductComponent },
+  { path: 'service', component: ServiceComponent },
   { path: 'product_details', component: ProductDatailsComponent },
   { path: 'article_details/:id', component: ArticleDetailesComponent },
   { path: 'article_details', component: ArticleDetailesComponent },

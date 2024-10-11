@@ -21,6 +21,7 @@ import { ArticleDetailesComponent } from './article-detailes/article-detailes.co
 import { RatingComponent } from './rating/rating.component';
 import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
+import { ServiceComponent } from './service/service.component';
 
 
 
@@ -43,6 +44,7 @@ import { OrdersComponent } from './orders/orders.component';
     RatingComponent,
     ProfileComponent,
     OrdersComponent,
+    ServiceComponent,
     
   ],
   imports: [

@@ -1,0 +1,57 @@
+.services-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 300px; /* Fixed width for cards */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h2 {
+    color: #333;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.how-it-works {
+    margin-top: 30px;
+}
+
+.testimonials {
+    margin-top: 30px;
+}
+
+.contact-support {
+    margin-top: 30px;
+    text-align: center;
+}
