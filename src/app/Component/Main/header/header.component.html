@@ -2,7 +2,9 @@
     <div class="container-fluid">
         <!-- Logo -->
         <a routerLink="home" class="navbar-brand">
-            <div class="logo"></div>
+            <div class="logo">
+                Luxury Service
+            </div>
         </a>
 
         <!-- Toggler for Mobile View -->
@@ -13,30 +15,44 @@
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <a routerLink="home" class="nav-item nav-link active">
+                <a routerLink="home" 
+                   class="nav-item nav-link" 
+                   [ngClass]="{'active': activeLink === 'home', 'clicked': activeLink === 'home'}" 
+                   (click)="setActiveLink('home')">
                     <i class="fas fa-home"></i> Home
                 </a>
-                <a routerLink="shop" class="nav-item nav-link">
-                    <i class="fas fa-store"></i> Shop
+                <a routerLink="shop" 
+                class="nav-item nav-link" 
+                [ngClass]="{'active': activeLink === 'shop', 'clicked': activeLink === 'shop'}" 
+                (click)="setActiveLink('shop')">
+                 <i class="fas fa-lightbulb"></i> Our Offerings
+             </a>
+             
+             
+                <a routerLink="service" 
+                   class="nav-item nav-link" 
+                   [ngClass]="{'active': activeLink === 'service', 'clicked': activeLink === 'service'}" 
+                   (click)="setActiveLink('service')">
+                    <i class="fas fa-wrench"></i> Our Services
                 </a>
-                <a routerLink="service" class="nav-item nav-link">
-                    <i class="fas fa-concierge-bell"></i> Services
-                </a>
-                <a routerLink="contact_us" class="nav-item nav-link">
-                    <i class="fas fa-envelope-open-text"></i> Contact
+                <a routerLink="contact_us" 
+                   class="nav-item nav-link" 
+                   [ngClass]="{'active': activeLink === 'contact_us', 'clicked': activeLink === 'contact_us'}" 
+                   (click)="setActiveLink('contact_us')">
+                    <i class="fas fa-paper-plane"></i> Contact
                 </a>
             </div>
 
             <!-- Right-aligned (Login/Logout/Order/Profile) -->
             <div class="navbar-nav ms-auto">
-                <a *ngIf="!isLoggedIn" routerLink="signin" class="nav-item nav-link">
-                    <i class="fas fa-user"></i> Login
+                <a *ngIf="!isLoggedIn" routerLink="signin" class="nav-item nav-link" (click)="setActiveLink('signin')">
+                    <i class="fas fa-user-circle"></i> Login
                 </a>
-                <a *ngIf="isLoggedIn" routerLink="profile" class="nav-item nav-link">
-                    <i class="fas fa-user-circle"></i> Profile
+                <a *ngIf="isLoggedIn" routerLink="profile" class="nav-item nav-link" (click)="setActiveLink('profile')">
+                    <i class="fas fa-user"></i> Profile
                 </a>
-                <a *ngIf="isLoggedIn" routerLink="orders" class="nav-item nav-link">
-                    <i class="fas fa-box"></i> Orders
+                <a *ngIf="isLoggedIn" routerLink="orders" class="nav-item nav-link" (click)="setActiveLink('orders')">
+                    <i class="fas fa-box-open"></i> Orders
                 </a>
                 <a *ngIf="isLoggedIn" class="nav-item nav-link" (click)="onLogout()">
                     <i class="fas fa-sign-out-alt"></i> Logout

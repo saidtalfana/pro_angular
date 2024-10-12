@@ -42,11 +42,11 @@ form{
     background-color: #00008B;
     height: 100%;
     width: 40%;
-    /* background-image: url("src\assets\signin.jpg");
+    background-image: url("src\assets\sign.jpg");
     background-repeat: no-repeat;
     background-size:cover;
-    background-position:left;
-    background-origin: border-box; */
+    background-position:center;
+    background-origin: border-box;
 }
 
 input{

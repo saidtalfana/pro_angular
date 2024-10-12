@@ -13,14 +13,15 @@ export class SignupComponent implements OnInit {
 
   signUpForm!: FormGroup;
 
- constructor(private fb: FormBuilder,
-  private service: ServiceService,
-  private router: Router){
+  constructor(
+    private fb: FormBuilder,
+    private service: ServiceService,
+    private router: Router
+  ) {}
 
- }
   ngOnInit(): void {
-   this.signUpForm = this.fb.group({
-    role: ['', Validators.required],
+    this.signUpForm = this.fb.group({
+      role: ['', Validators.required],
       name: ['', Validators.required],
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -28,23 +29,26 @@ export class SignupComponent implements OnInit {
     });
   }
 
-
   signUp() {
     if (this.signUpForm.valid) {
       const signUpRequest: SignUpRequest = this.signUpForm.value;
       const role = this.signUpForm.value.role;
-      this.service.signup(role, signUpRequest).subscribe(() => {
+
+      this.service.signup(role, signUpRequest).subscribe({
+        next: () => {
+          // Optionally navigate to another page or show success message
+          console.log('Sign up successful');
+          this.router.navigate(['/main/signin']); // Redirecting to sign-in page after successful signup
+        },
+        error: (error) => {
+          console.error('Sign up failed', error);
+          // Optionally display an error message to the user
+        }
       });
-      console.log(signUpRequest)
+      
+      console.log(signUpRequest);
+      // Reset the form after successful submission
+      this.signUpForm.reset();
     }
-
-    this.signUpForm = this.fb.group({
-      role: ['', Validators.required],
-        name: ['', Validators.required],
-        username: ['', Validators.required],
-        email: ['', [Validators.required, Validators.email]],
-        password: ['', Validators.required]
-      });
-
   }
 }

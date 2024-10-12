@@ -2,7 +2,7 @@
 .main {
     width: 100%;
     height: 100vh;
-    background-image: url("src/assets/bg3.jpg");
+    background-image: url("src\assets\main02.jpg");
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -47,17 +47,11 @@
 
 .right {
     width: 800px;
-    height: 410px ;
+    height: 410px;
     display: flex;
-    justify-content:end;
+    justify-content: end;
 }
-#img_main{
-    width: 400px;
-    height: 400px ;
-    background-image: url("src\assets\principale.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
+
 
 /* Card Section */
 .card-container {
@@ -88,22 +82,21 @@
 }
 
 #part_right1 {
-    background-image: url("src\assets\buy.jpg");
+    background-image: url("src/assets/buy.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     border: 1px solid gold;
-
 }
 
 #part_right2 {
-    background-image: url("src\assets\web.jpg");
+    background-image: url("src/assets/web.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     border: 1px solid gold;
 }
 
 #part_right3 {
-    background-image: url("src\assets\seller.jpg");
+    background-image: url("src/assets/seller.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     border: 1px solid gold;
@@ -166,8 +159,8 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-
 }
+
 .about-us {
     width: 100%;
     background-color: #f8f9fa; /* Light background for contrast */
@@ -194,31 +187,24 @@
     min-width: 300px;
 }
 
-.about-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.about-image {
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 1px solid gold;
+    width: 400px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-image: url("src/assets/about-us.jpg");
+    background-size: contain;
 }
 
 .about-description {
     flex: 2;
     padding: 20px;
 }
-.about-image{
-background-color: #ffffff;
-border-radius: 50%;
-border: 1px solid gold;
-width: 400px;
-height: 400px;
-background-repeat: no-repeat;
-background-image: url("src\assets\about-us.jpg");
-background-size: contain;
 
-}
 .about-description p {
     font-size: 16px;
     color: #555;
     line-height: 1.5;
 }
-

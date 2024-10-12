@@ -16,15 +16,20 @@
     border: 1px solid gold;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
+.error {
+    color: red;
+    font-size: 0.8rem;
+  }
+  
 .right_img{
     background-color: #00008B;
     height: 100%;
     width: 40%;
-    /* background-image: url("src\assets\signup.jpg");
+    background-image: url("src\assets\sign.jpg");
     background-repeat: no-repeat;
     background-size:cover;
-    background-position:right;
-    background-origin: border-box; */
+    background-position:center;
+    background-origin: border-box;
 }
 .left_signup{
     background-color: #FAFAFA;

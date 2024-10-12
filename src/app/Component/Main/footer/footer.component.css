@@ -1,63 +1,88 @@
+/* Footer Styles */
 .container-fluid {
-    margin-top: 50px;
-    background-color: #f8f9fa; /* خلفية فاتحة لتحسين التباين */
+    background-color: #f8f9fa; /* Light background color */
+    padding: 2rem 0; /* Vertical padding */
+}
+
+.section-footer {
+    border-top: 1px solid #dee2e6; /* Light border for separation */
 }
 
 .footer-top {
-    padding: 30px 0;
+    padding: 2rem 1rem; /* Padding for the footer top section */
+}
 
+.title {
+    font-weight: bold; /* Bold titles */
+    margin-bottom: 1rem; /* Space below titles */
+}
+
+.list-unstyled li {
+    margin-bottom: 0.5rem; /* Space between list items */
+}
+
+.list-unstyled a {
+    color: #343a40; /* Dark text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.list-unstyled a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #007bff; /* Change color on hover */
+}
+
+.description {
+    font-size: 0.9rem; /* Slightly smaller text */
+    color: #6c757d; /* Muted text color */
+    margin-top: 0; /* Reset margin on top */
+    margin-bottom: 1rem; /* Add space below the description */
+    line-height: 1.5; /* Increase line height for readability */
+}
+
+.logo-footer {
+    max-width: 150px; /* Limit logo width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 1rem; /* Space between logo and description */
+}
+
+.btn-icon {
+    margin-right: 0.5rem; /* Space between icons */
+}
+
+.btn-icon:hover {
+    color: #007bff; /* Change icon color on hover */
+}
+
+.footer-copyright {
+    padding: 1rem 0; /* Padding for copyright section */
+    text-align: center;
+    margin: 0 23px; /* Centered text */
+}
+
+.float-left {
+    float: left; /* Align to the left */
+}
+
+.float-right {
+    float: right; /* Align to the right */
 }
 .row{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; /* Stack columns on smaller screens */
+    }
 
-.footer-copyright {
-    margin-top: 13px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0; /* padding لتحسين المظهر */
-    background-color: #e9ecef; /* لون خلفية مختلف للقسم السفلي */
-}
+    .float-left,
+    .float-right {
+        float: none; /* Remove float on smaller screens */
+        text-align: center; /* Center text on small screens */
+    }
 
-.logo-footer {
-    background-image: url("src/assets/luxury (2).png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 50px; /* تعديل الارتفاع ليكون مناسب */
-}
-
-a {
-    text-decoration: none !important;
-    color: #007bff; /* لون أزرق للروابط */
-}
-
-.description {
-    font-size: 14px; /* زيادة حجم الخط قليلاً */
-    color: #6c757d; /* لون رمادي فاتح للنص */
-}
-
-.btn-icon {
-    color: #fff; /* لون النص للأزرار */
-}
-
-.footer-copyright p {
-    margin-top: 10px;
-    font-size: 12px; /* حجم خط أصغر للقسم السفلي */
-}
-
-/* ألوان الأيقونات الاجتماعية */
-[data-feather="facebook"] {
-    color: #3b5999;
-}
-[data-feather="instagram"] {
-    color: #e4405f;
-}
-[data-feather="youtube"] {
-    color: #cd201f;
-}
-[data-feather="twitter"] {
-    color: #55acee;
+    .footer-top {
+        text-align: center; /* Center content on small screens */
+    }
 }

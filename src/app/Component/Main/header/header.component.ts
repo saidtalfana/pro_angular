@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/service/auth.service';
 export class HeaderComponent implements OnInit {
 
   isLoggedIn: boolean = false;
-
+  activeLink: string = 'home'; // Default active link
 
   constructor(private authService: AuthService) { }
 
@@ -21,6 +21,10 @@ export class HeaderComponent implements OnInit {
 
   onLogout() {
     this.authService.logout();
+  }
+
+  setActiveLink(link: string) {
+    this.activeLink = link; // Update the active link when clicked
   }
 
 }

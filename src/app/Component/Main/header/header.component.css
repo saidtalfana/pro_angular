@@ -4,52 +4,59 @@
 /* Navbar custom styling */
 .navbar {
     padding: 3px 30px;
-    background-color: #00008B; /* أزرق سماوي للـ Navbar */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف لتحسين الشكل */
-    font-family: 'Poppins', sans-serif; /* استخدام خط Poppins لجعل النص أكثر أناقة */
+    background-color: #4169E1; /* Darker shade for a more elegant look */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for better depth */
+    font-family: 'Poppins', sans-serif; /* Using Poppins font for elegance */
 }
 
-/* Logo size adjustment */
-.navbar-brand .logo {
-    width: 75px;
-    height: 50px;
-    background-color: #1b642a;
-    background-image: url("src/assets/luxury_service.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+/* Logo styling */
+.logo {
+    width: auto; /* Auto width to fit text */
+    height: 50px; /* Height for logo */
+    color: #ECF0F1; /* Light color for text */
+    font-size: 24px; /* Font size for logo name */
+    font-weight: bold; /* Bold for visibility */
+    margin-right: 8px; /* Space between logo and text */
+    display: flex; /* Flex for centering */
+    align-items: center; /* Center vertically */
 }
 
 /* Navbar Links */
 .navbar-nav .nav-link {
     margin-left: 20px;
     font-size: 16px;
-    font-weight: 600; /* تكبير الخط لجعله يبدو أكثر ثباتًا */
-    color: #FFFFFF; /* النص الأبيض */
-    transition: color 0.3s ease, background-color 0.3s ease;
+    font-weight: 600; /* Bold for better visibility */
+    color: #ECF0F1; /* Light color for better contrast */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover */
     padding: 10px 20px;
-    border-radius: 8px; /* زوايا مستديرة */
+    border-radius: 8px; /* Rounded corners for modern look */
 }
 
 .navbar-nav .nav-link:hover {
-    color: black; /* لون أخضر عند التمرير */
-    background-color: rgba(255, 255, 255, 0.15); /* خلفية شفافة عند التمرير */
+    color: #FFFFFF; /* Change text color to white on hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent background on hover */
 }
 
 /* Navbar Links - Active */
 .navbar-nav .nav-link.active {
-    color: black; /* لون ثابت للروابط النشطة */
-    background-color: white; /* خلفية زرقاء داكنة */
+    color: #FFFFFF; /* Active link text color */
+    background-color: #2980B9; /* Light blue background for active links */
+}
+
+/* Add a class for clicked state */
+.navbar-nav .nav-link.active.clicked {
+    background-color: #1F618D; /* Darker blue for clicked state */
 }
 
 /* Icon Styling */
 .navbar-nav .nav-link i {
-    margin-right: 8px; /* مسافة بين الأيقونة والنص */
-    font-size: 18px; /* تكبير الأيقونة */
+    margin-right: 8px; /* Space between icon and text */
+    font-size: 18px; /* Larger icon size */
 }
 
 /* Button (Toggler) */
 .navbar-toggler {
-    border: none;
+    border: none; /* Remove border for a cleaner look */
 }
 
 .navbar-toggler-icon {
@@ -58,18 +65,18 @@
 
 /* Buttons and Interactive Elements */
 .btn-primary {
-    background-color: #2ECC71; /* أخضر زمردي للأزرار */
-    border-color: #27AE60;
-    color: #FFFFFF;
+    background-color: #27AE60; /* Emerald green for buttons */
+    border-color: #219653; /* Darker green for button border */
+    color: #FFFFFF; /* White text */
 }
 
 .btn-primary:hover {
-    background-color: #27AE60; /* أخضر داكن عند التمرير */
-    border-color: #1E8449;
+    background-color: #219653; /* Darker green on hover */
+    border-color: #1E8449; /* Darker border on hover */
 }
 
 /* Footer or Secondary Section */
 .footer {
-    background-color: #BDC3C7; /* الرمادي الجميل */
-    color: #2C3E50; /* النصوص بالرمادي الداكن */
+    background-color: #BDC3C7; /* Light gray for footer */
+    color: #2C3E50; /* Dark gray for text */
 }
