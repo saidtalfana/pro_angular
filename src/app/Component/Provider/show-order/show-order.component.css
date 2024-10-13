@@ -1,8 +1,14 @@
-.custom-table {
+.mat-table {
     width: 100%;
     border-collapse: collapse;
+    background: #000;
   }
-  
+  .parent{
+    border: 1px solid gold;
+    background-color: #b82e2e;
+    width: 770px;
+
+  }
   .mat-header-cell {
     background-color: #f8f9fa;
     font-weight: bold;

@@ -1,21 +1,21 @@
 <div class="main">
     <div id="logo">
-        <h3>ProServise</h3>
+        <h3>ProService</h3>
     </div>
-    <div id="search">
-        <div id="search_input_btn">
-            <input type="search" class="search_input" placeholder="search">
-            <button class="search_btn"><i class="fas fa-search fa-lg"></i></button>
-        </div>
+    <div id="div_product">
+        <ul>
+            <li routerLink="/provider/show_product">
+                <i class="fas fa-box"></i> Product
+            </li>
+            <li routerLink="/provider/product_inf">
+                <i class="fas fa-info-circle"></i> Product Info
+            </li>
+        </ul>
     </div>
     <div id="right">
-        <div id="notification" class="i"><i class="fa-solid fa-bell fa-beat fa-lg"></i></div>
-        <div id="mode" class="i">
-            <i class="fas fa-moon fa-lg"></i>
-        </div>
         <div id="profile">
-            <div class="i">
-                <i class="fas fa-user fa-lg"></i>
+            <div class="icon">
+                <i class="fas fa-user-circle fa-2x"></i>
             </div>
             <div id="welc">Welcome {{name}}</div>
         </div>

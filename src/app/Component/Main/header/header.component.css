@@ -23,12 +23,12 @@
 
 /* Navbar Links */
 .navbar-nav .nav-link {
-    margin-left: 20px;
+    margin-left: 7px;
     font-size: 16px;
-    font-weight: 600; /* Bold for better visibility */
+    font-weight: 400; /* Bold for better visibility */
     color: #ECF0F1; /* Light color for better contrast */
     transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover */
-    padding: 10px 20px;
+    /* padding: 10px 7px; */
     border-radius: 8px; /* Rounded corners for modern look */
 }
 
@@ -50,8 +50,8 @@
 
 /* Icon Styling */
 .navbar-nav .nav-link i {
-    margin-right: 8px; /* Space between icon and text */
-    font-size: 18px; /* Larger icon size */
+    margin-right: 4px; /* Space between icon and text */
+    font-size: 14px; /* Larger icon size */
 }
 
 /* Button (Toggler) */

@@ -36,10 +36,12 @@ this.productService.getAllProductByEnterpriseId(this.enterpriseId).subscribe((re
 
   delete(id : number){
     this.productService.deleteProduct(id).subscribe()
-    this.fetchEntrpriseId()
+    this.fetchProduct()
   }
 
- 
+  update(productId: number): void {
+    this.router.navigate(['provider/edit-product', productId]);
+  }
   getProductId(id:number){
  this.router.navigate(['/product_id',id]);
  this.selectedProductId = this.selectedProductId === id ? null :id;

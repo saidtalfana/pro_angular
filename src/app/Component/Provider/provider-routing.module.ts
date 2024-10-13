@@ -21,6 +21,7 @@ const routes: Routes = [
     {path: 'show_order', component: ShowOrderComponent},
     {path: 'show_product', component: ShowProductComponent},
     { path: 'update_enterprise/:id', component: AddEnterpriseComponent },
+    { path: 'edit-product/:id', component: AddProductComponent },
     { path: 'product_inf', component: ProductChartComponent }]},
 
     { path: '', redirectTo: '/provider', pathMatch: 'full' },

@@ -14,9 +14,11 @@ export class ProductChartComponent implements OnInit, OnDestroy {
   numberOfProduct!: ProductDto;
   enterpriseId!: number;
 
-  availableCount: number = 0;
-  comingSoonCount: number = 0;
-  outOfStockCount: number = 0;
+  activeCount: number = 0;
+  in_progressCount: number = 0;
+  unavailableCount: number = 0;
+
+  
 
   productNames: string[] = [];
   orderCounts: number[] = [];
@@ -51,13 +53,14 @@ export class ProductChartComponent implements OnInit, OnDestroy {
       next: (counts: ProductCount) => {
         console.log('Counts Response:', counts);
 
-        this.availableCount = counts.AVAILABLE || 0;
-        this.comingSoonCount = counts.COMING_SOON || 0;
-        this.outOfStockCount = counts.OUT_OF_STOCK || 0;
+    
+        this.activeCount = counts.ACTIVE || 0;
+        this.in_progressCount = counts.IN_PROGRESS || 0;
+        this.unavailableCount = counts.UNAVAILABLE || 0;
 
-        console.log('Available Count:', this.availableCount);
-        console.log('Coming Soon Count:', this.comingSoonCount);
-        console.log('Out of Stock Count:', this.outOfStockCount);
+        console.log('Available Count:', this.activeCount);
+        console.log('Coming Soon Count:', this.in_progressCount);
+        console.log('Out of Stock Count:', this.unavailableCount);
 
         this.createChart();
       },
@@ -92,14 +95,13 @@ export class ProductChartComponent implements OnInit, OnDestroy {
     if (this.chart) {
       this.chart.destroy();
     }
-
     this.chart = new Chart('productChart', {
       type: 'bar',
       data: {
-        labels: ['Available', 'Coming Soon', 'Out of Stock'],
+        labels: ['active', 'in_progress', 'unavailable'],
         datasets: [{
           label: 'Product Count',
-          data: [this.availableCount, this.comingSoonCount, this.outOfStockCount],
+          data: [this.activeCount, this.in_progressCount, this.unavailableCount],
           backgroundColor: ['#4CAF50', '#FF9800', '#F44336'],
           borderColor: ['#388E3C', '#F57C00', '#D32F2F'],
           borderWidth: 1

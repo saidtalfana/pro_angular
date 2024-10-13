@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
   activeLink: string = 'home'; // Default active link
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,private router : Router) { }
 
   ngOnInit(): void {
     this.authService.isLoggedIn.subscribe((status: boolean) => {
@@ -21,6 +22,9 @@ export class HeaderComponent implements OnInit {
 
   onLogout() {
     this.authService.logout();
+    localStorage.removeItem("jwt")
+    localStorage.removeItem("enterprise_id")
+     this.router.navigateByUrl("")
   }
 
   setActiveLink(link: string) {

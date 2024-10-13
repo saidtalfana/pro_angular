@@ -20,8 +20,8 @@ export class EnterpriseService {
         //  <?----------------------------------Enterprise -------------------------------------->
                     
                      //  <?--------------add  ------------------->
-                     addEnterprise(enterpriseDto :EnterpriseDto,provider_id : number):Observable<EnterpriseDto>{
-                        return this.http.post<EnterpriseDto>(`${this.API_ENTERPRISE}/add_enterprise?provider_id=${provider_id}`,enterpriseDto)
+                     addEnterprise(enterpriseDto :EnterpriseDto,providerId : number):Observable<EnterpriseDto>{
+                        return this.http.post<EnterpriseDto>(`${this.API_ENTERPRISE}/add_enterprise?providerId=${providerId}`,enterpriseDto)
                           }
   
                      

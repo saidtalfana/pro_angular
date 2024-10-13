@@ -12,8 +12,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AddEnterpriseComponent implements OnInit {
   enterpriseForm !: FormGroup;
-  provider_id !: number
-  enterprise_id!:number
+  providerId !: number
+  enterpriseId!:number
 
   constructor(private fb: FormBuilder,
     private enterpriseService:EnterpriseService,
@@ -37,7 +37,6 @@ this.getIdProviderFromJwt()
       enterpriseDescription: ['', [Validators.required]],
       enterpriseLogo: ['', [Validators.required]],
       activityName: ['', [Validators.required]],
-      activityDescription: ['', [Validators.required]],
       phoneNumber: ['', [Validators.required]],
       email: ['', [Validators.required]]
     });
@@ -48,21 +47,21 @@ this.getIdProviderFromJwt()
     if(token){
       const decodeToken :any = jwtDecode(token)
       console.log("this is it",decodeToken);
-      this.provider_id = decodeToken.id;
-      console.log(this.provider_id);
+      this.providerId = decodeToken.id;
+      console.log(this.providerId);
       
       }
   }
   onSubmit(): void {
 
-    if (this.enterpriseForm.valid && this.provider_id && !this.enterprise_id) {
+    if (this.enterpriseForm.valid && this.providerId && !this.enterpriseId) {
       const value = this.enterpriseForm.value
       localStorage.setItem('enterpriseId',this.enterpriseForm.value.enterpriseName)
-     this.enterpriseService.addEnterprise(value,this.provider_id).subscribe()
+     this.enterpriseService.addEnterprise(value,this.providerId).subscribe()
       console.log('Form Submitted', value);
       this.Enterprise()
 
-    } else if (this.enterpriseForm.valid && this.enterprise_id){
+    } else if (this.enterpriseForm.valid && this.enterpriseId){
         const updateValue = this.enterpriseForm.value
         this.enterpriseService.updateEnterprise(updateValue).subscribe((res:EnterpriseDto)=>{
           console.log("enterprise updated ",res);
@@ -83,15 +82,15 @@ this.getIdProviderFromJwt()
 
   fetchEnterpriseId(){
     this.route.params.subscribe(params => {
-      this.enterprise_id = +params['id'];
-      if (this.enterprise_id) {
+      this.enterpriseId = +params['id'];
+      if (this.enterpriseId) {
         this.loadEnterprise();
       }
     })
   }
 
   loadEnterprise(): void {
-    this.enterpriseService.getEnterprise(this.enterprise_id)
+    this.enterpriseService.getEnterprise(this.enterpriseId)
     .subscribe((res:EnterpriseDto)=>{
       this.enterpriseForm.patchValue(res);
       console.log('this is res of update enterprise ',res);

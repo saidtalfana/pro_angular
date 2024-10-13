@@ -14,6 +14,7 @@ import { RatingComponent } from './rating/rating.component';
 import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ServiceComponent } from './service/service.component';
+import { ArticlesComponent } from './articles/articles.component';
 
 
 const routes: Routes = [
@@ -24,9 +25,10 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'contact_us', component: ContactUsComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'orders', component: OrdersComponent },
+  { path: 'orders', component: OrdersComponent,canActivate:[AuthGuard] },
   { path: 'shop', component: ProductComponent },
   { path: 'service', component: ServiceComponent },
+  { path: 'article', component: ArticlesComponent },
   { path: 'product_details', component: ProductDatailsComponent },
   { path: 'article_details/:id', component: ArticleDetailesComponent },
   { path: 'article_details', component: ArticleDetailesComponent },
@@ -34,7 +36,6 @@ const routes: Routes = [
   { path: 'product_id/:id', component: AddOrderComponent ,canActivate:[AuthGuard]},
   { path: 'product_details/:productId/ratings', component: RatingComponent },
   { path: 'product_details/:id', component: ProductDatailsComponent  },
-//   { path: 'datail_product_id/:id', component: ProductDatailsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }]}
 
 ];

@@ -4,7 +4,6 @@ import { ProviderRoutingModule } from './provider-routing.module';
 import { AddProductComponent } from './add-product/add-product.component';
 import { DashboardProviderComponent } from './dashboard-provider/dashboard-provider.component';
 import { ShowProductComponent } from './show-product/show-product.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddEnterpriseComponent } from './add-enterprise/add-enterprise.component';
@@ -15,14 +14,11 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { ProductChartComponent } from './product-chart/product-chart.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgChartsModule } from 'ng2-charts';
-import { ProductReportComponent } from './product-report/product-report.component';
-import { LogoutComponent } from '../Shared/logout/logout.component'; // Import LogoutComponent
 import { LogoutModule } from '../Shared/logout/logout.module';
 import { MaterialModule } from 'src/app/shared/material.module';
 
 @NgModule({
   declarations: [
-    SidebarComponent,
     AddProductComponent,
     DashboardProviderComponent,
     ShowProductComponent,
@@ -32,7 +28,6 @@ import { MaterialModule } from 'src/app/shared/material.module';
     NavBarComponent,
     SideBarComponent,
     ProductChartComponent,
-    ProductReportComponent,
   ],
   imports: [
     CommonModule,

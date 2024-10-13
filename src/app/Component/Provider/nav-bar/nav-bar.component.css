@@ -1,127 +1,93 @@
-/* Main container styling */
+/* Main container */
 .main {
-    width: 100%;
-    height: 47px; /* Ajustement de la hauteur pour une meilleure esthétique */
-    background-color: #F9F9F9; /* Couleur de fond douce */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Espacement latéral */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    padding: 4px 30px;
+    background: linear-gradient(135deg, #3a3a3a, #5c5c5c);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    margin-bottom: 20px;
+    transition: background 0.3s ease;
 }
 
-/* Logo styling */
-#logo {
-    text-align: center;
+.main:hover {
+    background: linear-gradient(135deg, #5c5c5c, #3a3a3a);
+}
+
+/* Logo */
+#logo h3 {
+    font-size: 16px;
     font-weight: bold;
-    font-size: 26px; /* Taille de police agrandie */
-    color: #333; /* Couleur sombre pour le logo */
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0;
 }
 
-/* Search bar styling */
-#search {
-    flex-grow: 1; /* Permet au champ de recherche de prendre l'espace restant */
+/* Product section */
+#div_product ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 25px;
 }
 
-/* Search input and button */
-#search_input_btn {
-    display: flex;
-    align-items: center;
-    border-radius: 20px; /* Coins arrondis pour un look moderne */
-    border: 1px solid #ccc; /* Couleur de bordure douce */
-    background-color: #ffffff; /* Fond blanc pour le champ de recherche */
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* Ombre pour le champ de recherche */
-    transition: border-color 0.3s;
-}
-
-#search_input_btn:hover {
-    border-color: #007BFF; /* Bordure bleue au survol */
-}
-
-.search_input {
-    width: 250px; /* Largeur fixe */
-    height: 40px; /* Ajustement de la hauteur */
-    border: none;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    padding: 0 15px; /* Espacement interne */
-    font-size: 16px; /* Taille de police pour le texte */
-}
-
-.search_btn {
-    width: 50px; /* Largeur fixe pour le bouton */
-    height: 40px; /* Ajustement de la hauteur */
-    border: none;
-    border-top-right-radius: 20px; /* Coins arrondis à droite */
-    border-bottom-right-radius: 20px;
-    background-color: #007BFF; /* Couleur de fond bleue */
-    color: white; /* Texte blanc */
+#div_product li {
+    font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
 }
 
-.search_btn:hover {
-    background-color: #0056b3; /* Couleur bleue foncée au survol */
+#div_product li i {
+    margin-right: 10px;
+    color: #ffffff; /* Gold color for icons */
 }
 
-/* Right section styling */
+#div_product li:hover {
+    background-color: #6c757d;
+}
+
+/* Right profile section */
 #right {
     display: flex;
     align-items: center;
 }
 
-/* Icon styling */
-.i {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 36px; /* Légèrement plus grand pour le confort */
-    height: 36px;
-    border-radius: 50%;
-    background-color: white;
-    cursor: pointer;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-    margin-left: 15px; /* Espacement entre les icônes */
-    transition: background-color 0.3s;
-}
-
-.i:hover {
-    background-color: #E0E0E0; /* Couleur de fond au survol */
-}
-
-/* Profile styling */
 #profile {
     display: flex;
     align-items: center;
-    margin-left: 15px; /* Espacement entre les icônes */
+    gap: 15px;
 }
 
-/* Welcome message styling */
-#welc {
-    font-weight: 600; /* Texte en gras */
-    color: #333; /* Couleur du texte */
-    margin-left: 8px; /* Espacement entre l'icône et le texte */
+#profile .icon i {
+    color: #ffffff;
+    transition: transform 0.3s ease;
 }
 
-/* Light mode styles */
-body.light-mode {
-    background-color: white;
-    color: black;
+#profile .icon i:hover {
+    transform: scale(1.2);
 }
 
-/* Dark mode styles */
-body.dark-mode {
-    background-color: black;
-    color: white;
+#profile #welc {
+    font-size: 14px;
+    color: #fff;
+    font-weight:    300;
 }
 
-/* Optional: Button styles */
-button {
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+/* Responsive design */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #div_product ul {
+        flex-direction: column;
+        gap: 15px;
+    }
 }

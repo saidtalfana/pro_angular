@@ -70,15 +70,15 @@ export class ProductService {
     }
 
     /** Delete a product */
-    deleteProduct(product_id: number): Observable<Product> {
-        return this.http.delete<Product>(`${this.API_PRODUCT}/delete_product/${product_id}`).pipe(
+    deleteProduct(productId: number): Observable<Product> {
+        return this.http.delete<Product>(`${this.API_PRODUCT}/delete_product/${productId}`).pipe(
             tap(() => this.refreshProducts()) // Refresh product list after deletion
         );
     }
 
     /** Get a product by ID */
-    getProductById(product_id: number): Observable<ProductDto> {
-        return this.http.get<ProductDto>(`${this.API_PRODUCT}/get_product/${product_id}`);
+    getProductById(productId: number): Observable<ProductDto> {
+        return this.http.get<ProductDto>(`${this.API_PRODUCT}/get_product/${productId}`);
     }
 
     /** Fetch all products */

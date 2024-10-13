@@ -37,14 +37,6 @@
   <div class="right">
     <div fxFlex="50%">
       <mat-form-field appearance="outline" class="form-field">
-        <textarea matInput formControlName="activityDescription" placeholder="Enter Activity Description" required></textarea>
-        <mat-error *ngIf="enterpriseForm.get('activityDescription')?.invalid && enterpriseForm.get('activityDescription')?.touched">
-          Activity Description is required.
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div fxFlex="50%">
-      <mat-form-field appearance="outline" class="form-field">
         <input matInput formControlName="phoneNumber" placeholder="Enter enterprise phone" required />
         <mat-error *ngIf="enterpriseForm.get('phoneNumber')?.invalid && enterpriseForm.get('phoneNumber')?.touched">
           Enterprise Phone is required.

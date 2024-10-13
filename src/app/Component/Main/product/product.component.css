@@ -62,10 +62,7 @@
     border: 1px solid gold;
 
 }
-/* .mask{
-    width: 100%;
-    background-color: #31bc22;
-} */ 
+
 .pag{
     margin: 0;
  
@@ -75,7 +72,10 @@
 margin: 0 7px;
 }
 .pag_num{
-border-radius: 50%;}
+border-radius: 50%;
+background-color: rgb(227, 223, 223)
+
+}
 
 .products{
     width: 100%;
@@ -138,17 +138,17 @@ border-radius: 50%;}
   
 .btn_view{
     width: 200px;
-    height: 12%;
+    height: 10%;
     color: #000;
-    font-size: 7px;
-    background-color: none;
+    font-size: 5px;
+    background-color:cornflowerblue;
     border: 1px solid black;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: box-shadow 0.3s ease-in-out;
-    border: 1px solid gold;
+    border: 1px solid #4169E1;
     margin-bottom: 5px;
     border-radius: 5px;
     font-size: 16px;

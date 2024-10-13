@@ -77,6 +77,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { ProductDto } from 'src/app/dto/ProductDto';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -89,11 +91,17 @@ export class AddProductComponent implements OnInit {
       formProduct !: FormGroup;
       enterpriseId !: number;
       selectedImage!: File;
-  constructor(private productService:ProductService , private fb:FormBuilder) { }
+      productId!:number;
+  constructor(private productService:ProductService ,
+     private fb:FormBuilder,
+     private route: ActivatedRoute)
+      { }
 
   ngOnInit(): void {
     this.getEnterpriseId()
     this.Product()
+    this.getProductId()
+    this.fetchProduct()
   
   }
 
@@ -131,5 +139,27 @@ onFileChange(event: any) {
     }
     this.Product()
   }
+
+
+  getProductId(){
+    this.route.params.subscribe(params => {
+      this.productId = +params['id'];
+      if (this.productId) {
+        this.fetchProduct();
+      }
+    })
+  }
+
+  fetchProduct(){
+    this.productService.getProductById(this.productId).subscribe(
+      (product: ProductDto) => {
+        this.formProduct.patchValue(product);
+      },
+      error => {
+        console.error('Error fetching product', error);
+      }
+    );
+  }
+
 
 }

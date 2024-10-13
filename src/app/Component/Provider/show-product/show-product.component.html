@@ -12,7 +12,7 @@
             <img [src]="'data:image/png;base64,'+product.image" alt="{{product.name}} image" class="product-image">
         </div>
         <div class="button-g">
-            <button class="btn btn-outline-primary">Update</button>
+            <button class="btn btn-outline-primary" (click)="update(product.productId)">Update</button>
             <button class="btn btn-outline-danger" (click)="delete(product.productId)">Delete</button>
         </div>
     </div>

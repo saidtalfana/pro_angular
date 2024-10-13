@@ -22,6 +22,7 @@ import { RatingComponent } from './rating/rating.component';
 import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ServiceComponent } from './service/service.component';
+import { LogoutModule } from '../Shared/logout/logout.module';
 
 
 
@@ -53,6 +54,7 @@ import { ServiceComponent } from './service/service.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    LogoutModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] 
 })
