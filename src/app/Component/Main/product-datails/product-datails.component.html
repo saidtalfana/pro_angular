@@ -59,7 +59,7 @@
       <div id="enterprise" *ngIf="enterpriseDetails; else noData">
         <div id="logo">
           <div id="logo_img">
-            <!-- <img [src]="'data:image/png;base64,' + enterpriseDetails.enterpriseLogo" alt="" style="width: 100%; height: 100%"> -->
+           <img [src]="enterpriseDetails.enterpriseLogo" style="width: 100%; height: 100%">
           </div>
         </div>
 
@@ -84,7 +84,7 @@
     </div>
   </div>
 
-  <h3>Recommended Products</h3>
+  <h3 id="Recommend">Recommended Products</h3>
   <div class="products" *ngIf="recommendedProducts && recommendedProducts.length > 0; else noRecommendations">
     <div class="product" *ngFor="let product of recommendedProducts">
       <div class="product_image">

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
 import { EnterpriseDto } from 'src/app/dto/EnterpriseDto';
 import { EnterpriseService } from 'src/app/service/enterprise.service';

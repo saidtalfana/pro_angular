@@ -81,11 +81,19 @@
 
 .right {
     width: 35%; /* Adjusted width for balance */
-    background-color: #FCF4F8; /* Light background */
+    background-color: #f4f4fc; /* Light background */
     padding: 15px; /* Added padding */
     border-radius: 8px; /* Rounded corners */
 }
-
+#Recommend{
+    background-color: #ffffff;
+    border-bottom: 2px solid gold;
+    margin: 4px 0;
+    width: 60%;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+}
 #enterprise {
     background-color: #FFFFFF; /* White background */
     padding: 15px; /* Added padding */
