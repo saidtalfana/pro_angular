@@ -3,7 +3,7 @@
         <div class="img">
             <img [src]="'data:image/png;base64,'+article.articleImage" alt="Article Image" />
         </div>
-        <span>{{ article.articleAuthor }}</span>
+        <span>{{ article.articleType }}</span>
         <h4 class="h4">{{ article.articleTitle }}</h4>
         <button class="btn_article" (click)="showDetails(article.articleId)">View Article</button>
     </div>

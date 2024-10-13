@@ -1,53 +1,72 @@
 <div class="container mt-4">
-  <div class="article-container">
-      <h2 class="mb-4">Add Product</h2>
-      <form [formGroup]="formProduct" (ngSubmit)="onSubmit()">
-          <div class="row mb-3">
-              <div class="col-md-4">
-                  <label for="name" class="form-label">Product Name</label>
-                  <input type="text" id="name" class="form-control" formControlName="name" required />
-              </div>
-              <div class="col-md-4">
-                  <label for="description" class="form-label">Description</label>
-                  <textarea id="description" class="form-control" formControlName="description" placeholder="Enter product description" required></textarea>
-              </div>
-              <div class="col-md-4">
-                  <label for="price" class="form-label">Start Price</label>
-                  <input type="number" id="price" class="form-control" formControlName="price" required />
-              </div>
-          </div>
-          <div class="row mb-3">
-              <div class="col-md-4">
-                  <label for="category" class="form-label">Category</label>
-                  <select id="category" class="form-select" formControlName="category" required>
-                      <option value="" disabled selected>Select a category</option>
-                      <option value="WEB_DEVELOPMENT">WEB DEVELOPMENT</option>
-                      <option value="DIGITAL_MARKETING">DIGITAL MARKETING</option>
-                      <option value="CONSULTING">CONSULTING</option>
-                      <option value="MOBILE_APP_DEVELOPMENT">MOBILE APP DEVELOPMENT</option>
-                      <option value="CLOUD_SOLUTIONS">CLOUD SOLUTIONS</option>
-                      <option value="COMPUTER_HARDWARE">COMPUTER HARDWARE</option>
-                      <option value="SOFTWARE">SOFTWARE</option>
-                      <option value="ELECTRONICS">ELECTRONICS</option>
-                      <option value="FURNITURE">FURNITURE</option>
-                  </select>
-              </div>
-              <div class="col-md-4">
-                  <label for="productStatus" class="form-label">Product Status</label>
-                  <select id="productStatus" class="form-select" formControlName="productStatus" required>
-                      <option value="" disabled selected>Select status</option>
-                      <option value="ACTIVE">ACTIVE</option>
-                      <option value="IN_PROGRESS">COMING SOON</option>
-                      <option value="UNAVAILABLE">UNAVAILABLE</option>
-                  </select>
-              </div>
-              <div class="col-md-4">
-                  <label for="image" class="form-label">Image</label>
-                  <input type="file" id="image" class="form-control" (change)="onFileChange($event)" formControlName="image" required />
-              </div>
-          </div>
-
-          <button type="submit" class="btn btn-primary" [disabled]="formProduct.invalid">Submit Product</button>
-      </form>
+    <div class="article-container">
+        <h2 class="mb-4">Add Product</h2>
+        <form [formGroup]="formProduct" (ngSubmit)="onSubmit()">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="name" class="form-label">Product Name</label>
+                    <input type="text" id="name" class="form-control" formControlName="name" required />
+                    <div *ngIf="formProduct.get('name')?.invalid && (formProduct.get('name')?.touched || formProduct.get('name')?.dirty)" class="error-message">
+                        <small>Product name is required.</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea id="description" class="form-control" formControlName="description" placeholder="Enter product description" required></textarea>
+                    <div *ngIf="formProduct.get('description')?.invalid && (formProduct.get('description')?.touched || formProduct.get('description')?.dirty)" class="error-message">
+                        <small>Description is required.</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="price" class="form-label">Start Price</label>
+                    <input type="number" id="price" class="form-control" formControlName="price" required />
+                    <div *ngIf="formProduct.get('price')?.invalid && (formProduct.get('price')?.touched || formProduct.get('price')?.dirty)" class="error-message">
+                        <small>Start price is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="category" class="form-label">Category</label>
+                    <select id="category" class="form-select" formControlName="category" required>
+                        <option value="" disabled selected>Select a category</option>
+                        <option value="WEB_DEVELOPMENT">WEB DEVELOPMENT</option>
+                        <option value="DIGITAL_MARKETING">DIGITAL MARKETING</option>
+                        <option value="CONSULTING">CONSULTING</option>
+                        <option value="MOBILE_APP_DEVELOPMENT">MOBILE APP DEVELOPMENT</option>
+                        <option value="CLOUD_SOLUTIONS">CLOUD SOLUTIONS</option>
+                        <option value="COMPUTER_HARDWARE">COMPUTER HARDWARE</option>
+                        <option value="SOFTWARE">SOFTWARE</option>
+                        <option value="ELECTRONICS">ELECTRONICS</option>
+                        <option value="FURNITURE">FURNITURE</option>
+                    </select>
+                    <div *ngIf="formProduct.get('category')?.invalid && (formProduct.get('category')?.touched || formProduct.get('category')?.dirty)" class="error-message">
+                        <small>Category is required.</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="productStatus" class="form-label">Product Status</label>
+                    <select id="productStatus" class="form-select" formControlName="productStatus" required>
+                        <option value="" disabled selected>Select status</option>
+                        <option value="ACTIVE">ACTIVE</option>
+                        <option value="IN_PROGRESS">COMING SOON</option>
+                        <option value="UNAVAILABLE">UNAVAILABLE</option>
+                    </select>
+                    <div *ngIf="formProduct.get('productStatus')?.invalid && (formProduct.get('productStatus')?.touched || formProduct.get('productStatus')?.dirty)" class="error-message">
+                        <small>Product status is required.</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" id="image" class="form-control" (change)="onFileChange($event)" formControlName="image" required />
+                    <div *ngIf="formProduct.get('image')?.invalid && (formProduct.get('image')?.touched || formProduct.get('image')?.dirty)" class="error-message">
+                        <small>Image is required.</small>
+                    </div>
+                </div>
+            </div>
+  
+            <button type="submit" class="btn btn-primary" [disabled]="formProduct.invalid">Submit Product</button>
+        </form>
+    </div>
   </div>
-</div>
+  

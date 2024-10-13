@@ -70,13 +70,6 @@ h2 {
     background-color: #d6d6d6; /* Disabled button color */
     cursor: not-allowed; /* Not-allowed cursor */
 }
-
-/* Error Message Styles */
-.error-message {
-    color: red; /* Red for error messages */
-    font-size: 14px; /* Font size for error messages */
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
     .container {
@@ -90,4 +83,8 @@ h2 {
     .btn {
         width: 100%; /* Full-width button on mobile */
     }
+}
+.error-message {
+    color: red; /* Error text color */
+    font-size: 12px; /* Font size for error messages */
 }

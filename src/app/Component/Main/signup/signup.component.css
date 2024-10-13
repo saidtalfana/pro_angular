@@ -16,10 +16,7 @@
     border: 1px solid gold;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
-.error {
-    color: red;
-    font-size: 0.8rem;
-  }
+
   
 .right_img{
     background-color: #00008B;
@@ -87,8 +84,7 @@ a{
     cursor: pointer;
 }
 
-/* .btn :hover{
-   
-    background-color: #ffffff;
-    
-    } */
+.error-message {
+    color: red; /* Error text color */
+    font-size: 12px; /* Font size for error messages */
+}

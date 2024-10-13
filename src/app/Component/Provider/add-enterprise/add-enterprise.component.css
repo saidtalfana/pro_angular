@@ -1,76 +1,101 @@
-/* Global Styles */
-body {
-    font-family: 'Georgia', serif; /* Elegant serif font */
-    background-color: #f2f2f2; /* Light gray background for softness */
-    color: #333; /* Dark text for contrast */
-}
-
-/* Wrap Form Styles */
+/* General styles for the form */
 .wrap_form {
-    max-width: 800px; /* Limit the width of the form */
-    padding: 30px; /* Ample padding */
-    border-radius: 8px; /* Rounded corners */
-    background-color: #faf3f3; /* White background for the form */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 800px;          /* Maximum width for the form */
+    margin: auto;              /* Center the form on the page */
+    padding: 20px;             /* Inner padding for the form */
+    border: 1px solid #ccc;    /* Light gray border */
+    border-radius: 8px;        /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
 }
 
-/* Column Styles */
-.column {
-    display: flex; /* Flexbox for layout */
-    flex-direction: row; /* Align items in a row */
-    justify-content: space-between; /* Space between left and right */
+/* Container for the two columns */
+.form-container {
+    display: flex;              /* Use flexbox for layout */
+    justify-content: space-between; /* Space between columns */
 }
 
-/* Left and Right Sections */
-.left, .right {
-    flex: 1; /* Flex-grow for both sections */
-    padding: 10px; /* Padding around the sections */
+/* Styling for the left and right columns */
+.left-column, .right-column {
+    flex: 1;                   /* Equal width for both columns */
+    margin: 0 10px;           /* Space between columns */
 }
 
-/* Form Field Styles */
-.form-field {
-    width: 100%; /* Full width for form fields */
-    margin-bottom: 20px; /* Space between fields */
+/* Styling for labels */
+label {
+    font-weight: bold;         /* Make labels bold */
+    display: block;            /* Block display for proper spacing */
+    margin-bottom: 5px;       /* Space below labels */
 }
 
-/* Input and Textarea Styles */
-.mat-input-element {
-    padding: 12px; /* Inner padding for inputs */
+/* General input and textarea styles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;              /* Full width */
+    padding: 10px;            /* Padding inside the input */
+    margin-bottom: 15px;      /* Space below each input */
+    border: 1px solid #ccc;   /* Light gray border */
+    border-radius: 4px;       /* Rounded corners */
+    box-sizing: border-box;    /* Include padding and border in the element's total width */
 }
 
-/* Button Styles */
-button {
-    width: 100%; /* Full-width button */
-    padding: 12px; /* Padding for the button */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Font size for button */
-    background-color: #007BFF; /* Classic blue */
-    color: white; /* White text */
-    transition: background-color 0.3s ease; /* Smooth transition */
+/* Specific styles for textarea */
+textarea {
+    resize: vertical;         /* Allow vertical resizing */
+    min-height: 100px;       /* Minimum height for the textarea */
 }
 
-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+/* Error message styles */
+.error-message {
+    color: red;               /* Red color for error messages */
+    font-size: 12px;         /* Smaller font size */
+    margin-top: -10px;       /* Position it closer to the input */
+    margin-bottom: 10px;      /* Space below error messages */
 }
 
-button:disabled {
-    background-color: #d6d6d6; /* Disabled button color */
-    cursor: not-allowed; /* Not-allowed cursor */
+/* Button styles */
+.btn {
+    background-color: #007bff; /* Primary color for the button */
+    color: white;              /* White text color */
+    padding: 10px 15px;        /* Padding for the button */
+    border: none;              /* Remove border */
+    border-radius: 4px;        /* Rounded corners */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    font-size: 16px;          /* Font size for the button */
+    margin-top: 20px;         /* Space above the button */
 }
 
-/* Error Message Styles */
-.mat-error {
-    color: red; /* Red for error messages */
-    font-size: 14px; /* Font size for error messages */
-    margin-top: 5px; /* Space above error messages */
+/* Button hover effect */
+.btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
 }
 
-/* Responsive Styles */
+/* Responsive styles */
 @media (max-width: 768px) {
-    .column {
-        flex-direction: column; /* Stack fields on mobile */
+    .wrap_form {
+        padding: 15px;          /* Less padding on smaller screens */
     }
-}
-.hidden {
-    display: none;
+
+    .form-container {
+        flex-direction: column; /* Stack columns on smaller screens */
+    }
+
+    .left-column, .right-column {
+        margin: 0;             /* Remove margin on smaller screens */
+        margin-bottom: 15px;   /* Space between stacked columns */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        padding: 8px;           /* Smaller padding for inputs */
+    }
+
+    .btn {
+        width: 100%;           /* Full width for button on small screens */
+    }
 }

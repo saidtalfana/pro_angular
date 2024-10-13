@@ -35,4 +35,7 @@
     font-size: 24px;
     cursor: pointer;
   }
-  
+  .error-message {
+    color: red; /* Error text color */
+    font-size: 12px; /* Font size for error messages */
+}

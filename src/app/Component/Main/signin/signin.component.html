@@ -1,41 +1,33 @@
-
 <div class="wrapper">
   <div class="main">
     <div class="right_img">
+      <!-- Optional: You can add an image or background here -->
     </div>
     <div class="left_signup">  
-      <form   [formGroup]="loginForm" (ngSubmit)=" onSubmit()">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="username">username </label>
-          <br>
-          <input class="input" type="text" formControlName="username" class="form-control" placeholder="Enter your username">
+          <label for="username">Username:</label>
+          <input class="input form-control" type="text" formControlName="username" placeholder="Enter your username" required />
+          <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.touched || loginForm.get('username')?.dirty)" class="error-message">
+            <small *ngIf="loginForm.get('username')?.errors?.['required']">Username is required.</small>
+          </div>
         </div>
+
         <div class="form-group">
-          <label for="password">password </label>
-          <br>
-          <input type="password" formControlName="password" class="form-control" placeholder="Enter your username">
+          <label for="password">Password:</label>
+          <input class="input form-control" type="password" formControlName="password" placeholder="Enter your password" required />
+          <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)" class="error-message">
+            <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
+          </div>
         </div>
         
-        <button type="submit" class="btn">Login</button>
-    </form>
+        <button type="submit" class="btn" [disabled]="loginForm.invalid">Login</button>
+      </form>
 
-    <h6>By continuing, you agree to the <i>Terms of use</i> and <i>Privacy Policy.</i> </h6>
-        <button class="create_account" routerLink="/main/signup">
-          Create an account
-        </button>
-    </div>
+      <h6>By continuing, you agree to the <i>Terms of Use</i> and <i>Privacy Policy.</i></h6>
+      <button class="create_account" routerLink="/main/signup">
+        Create an account
+      </button>
     </div>
   </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+</div>

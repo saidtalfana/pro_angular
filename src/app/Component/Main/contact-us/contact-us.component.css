@@ -86,3 +86,7 @@ button:hover:not(:disabled) {
     background-color: #007bff; /* Blue line */
     margin: 15px 0; /* Space above and below the line */
 }
+.error-message {
+    color: red; /* Error text color */
+    font-size: 12px; /* Font size for error messages */
+}

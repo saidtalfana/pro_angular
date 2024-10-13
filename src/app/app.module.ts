@@ -5,13 +5,13 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { Interciptor } from './interciptor/interciptor';
-import { MaterialModule } from './shared/material.module';
+import { MaterialModule } from './shared/material.module'; // Make sure this is correctly set up
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
-    AppComponent // Remove LogoutComponent from here
+    AppComponent // Correctly includes the main component
   ],
   imports: [
     BrowserModule,
@@ -21,7 +21,7 @@ import { NgChartsModule } from 'ng2-charts';
     FormsModule,
     MaterialModule,
     NgbModule,
-    NgChartsModule
+    NgChartsModule,
   ],
   providers: [
     {

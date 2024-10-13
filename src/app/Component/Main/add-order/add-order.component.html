@@ -3,27 +3,43 @@
   <form [formGroup]="formOrder" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Name:</label>
-      <input id="name" formControlName="name" class="form-control" />
+      <input id="name" formControlName="name" class="form-control" required />
+      <div *ngIf="formOrder.get('name')?.invalid && (formOrder.get('name')?.touched || formOrder.get('name')?.dirty)" class="error-message">
+        <small *ngIf="formOrder.get('name')?.errors?.['required']">Name is required.</small>
+      </div>
     </div>
 
     <div class="form-group">
       <label for="address">Address:</label>
-      <input id="address" formControlName="address" class="form-control" />
+      <input id="address" formControlName="address" class="form-control" required />
+      <div *ngIf="formOrder.get('address')?.invalid && (formOrder.get('address')?.touched || formOrder.get('address')?.dirty)" class="error-message">
+        <small *ngIf="formOrder.get('address')?.errors?.['required']">Address is required.</small>
+      </div>
     </div>
 
     <div class="form-group">
       <label for="email">Email:</label>
-      <input id="email" formControlName="email" class="form-control" />
+      <input id="email" formControlName="email" class="form-control" required />
+      <div *ngIf="formOrder.get('email')?.invalid && (formOrder.get('email')?.touched || formOrder.get('email')?.dirty)" class="error-message">
+        <small *ngIf="formOrder.get('email')?.errors?.['required']">Email is required.</small>
+        <small *ngIf="formOrder.get('email')?.errors?.['email']">Invalid email format.</small>
+      </div>
     </div>
 
     <div class="form-group">
       <label for="phoneNumber">Phone Number:</label>
-      <input id="phoneNumber" formControlName="phoneNumber" class="form-control" />
+      <input id="phoneNumber" formControlName="phoneNumber" class="form-control" required />
+      <div *ngIf="formOrder.get('phoneNumber')?.invalid && (formOrder.get('phoneNumber')?.touched || formOrder.get('phoneNumber')?.dirty)" class="error-message">
+        <small *ngIf="formOrder.get('phoneNumber')?.errors?.['required']">Phone number is required.</small>
+      </div>
     </div>
 
     <div class="form-group">
       <label for="customerRequest">Customer Request:</label>
-      <textarea id="customerRequest" formControlName="customerRequest" class="form-control"></textarea>
+      <textarea id="customerRequest" formControlName="customerRequest" class="form-control" required></textarea>
+      <div *ngIf="formOrder.get('customerRequest')?.invalid && (formOrder.get('customerRequest')?.touched || formOrder.get('customerRequest')?.dirty)" class="error-message">
+        <small *ngIf="formOrder.get('customerRequest')?.errors?.['required']">Request is required.</small>
+      </div>
     </div>
 
     <button type="submit" class="btn btn-primary" [disabled]="formOrder.invalid">Submit Order</button>
@@ -37,10 +53,13 @@
       <form [formGroup]="ratingForm" (ngSubmit)="submitRating()">
         <div class="form-group">
           <label for="stars">Rate the product:</label>
-          <select id="stars" formControlName="stars" class="form-control">
+          <select id="stars" formControlName="stars" class="form-control" required>
             <option value="0" disabled>Select stars</option>
             <option *ngFor="let star of [1, 2, 3, 4, 5]" [value]="star">{{ star }} Star(s)</option>
           </select>
+          <div *ngIf="ratingForm.get('stars')?.invalid && (ratingForm.get('stars')?.touched || ratingForm.get('stars')?.dirty)" class="error-message">
+            <small *ngIf="ratingForm.get('stars')?.errors?.['required']">Rating is required.</small>
+          </div>
         </div>
 
         <div class="form-group">

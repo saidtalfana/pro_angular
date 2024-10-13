@@ -1,42 +1,58 @@
 <div class="wrapper">
-<div class="main">
-  <div class="right_img">
+  <div class="main">
+    <div class="right_img">
+      <!-- Optional: You can add an image or background here -->
+    </div>
+    <div class="left_signup">
+      <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <div class="form-group">
+          <label for="role">Role:</label>
+          <select id="role" formControlName="role" required>
+            <option value="" disabled>Select role</option>
+            <option value="USER">USER</option>
+            <option value="PROVIDER">PROVIDER</option>
+          </select>
+          <div *ngIf="signUpForm.get('role')?.invalid && (signUpForm.get('role')?.touched || signUpForm.get('role')?.dirty)" class="error-message">
+            <small>Role is required.</small>
+          </div>
+        </div>
 
-  </div>
-  <div class="left_signup">
-<form [formGroup]="signUpForm" (ngSubmit)="signUp()" >
-    <div class="form-group">
-      <label for="role">role:</label>
-      <select id="role" formControlName="role"  required>
-        <option value="USER">USER</option>
-        <option value="PROVIDER">PROVIDER</option>
-      </select>
-      </div>
-  
-  
-      <div class="form-group">
-        <label for="name">name</label>
-        <input type="text" id="name" formControlName="name" placeholder="enter name" />
-      </div>
-      <div class="form-group">
-        <label for="username">username</label>
-        <input type="text" id="username" formControlName="username" placeholder="enter your user name" />
-      </div>
-  
-      <div class="form-group">
-        <label for="email">email</label>
-        <input type="email" id="email" formControlName="email" placeholder="enter your user email" />
-      </div>
-  
-      <div class="form-group">
-        <label for="password">password</label>
-        <input type="password" id="password" formControlName="password" placeholder="enter your user password" />
-      </div>
-  
-        <button type="submit" class="btn btn-primary">Sign up</button>
-    </form>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" formControlName="name" placeholder="Enter your name" required />
+          <div *ngIf="signUpForm.get('name')?.invalid && (signUpForm.get('name')?.touched || signUpForm.get('name')?.dirty)" class="error-message">
+            <small>Name is required.</small>
+          </div>
+        </div>
 
-    <p>Already have an ccount? <a routerLink="/main/signin">Log in</a>  </p>
-  </div>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" formControlName="username" placeholder="Enter your username" required />
+          <div *ngIf="signUpForm.get('username')?.invalid && (signUpForm.get('username')?.touched || signUpForm.get('username')?.dirty)" class="error-message">
+            <small>Username is required.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" formControlName="email" placeholder="Enter your email" required />
+          <div *ngIf="signUpForm.get('email')?.invalid && (signUpForm.get('email')?.touched || signUpForm.get('email')?.dirty)" class="error-message">
+            <small>Email is required.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" formControlName="password" placeholder="Enter your password" required />
+          <div *ngIf="signUpForm.get('password')?.invalid && (signUpForm.get('password')?.touched || signUpForm.get('password')?.dirty)" class="error-message">
+            <small>Password is required.</small>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="signUpForm.invalid">Sign Up</button>
+      </form>
+
+      <p>Already have an account? <a routerLink="/main/signin">Log in</a></p>
+    </div>
   </div>
 </div>

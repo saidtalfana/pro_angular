@@ -34,6 +34,7 @@ import { LogoutModule } from '../Shared/logout/logout.module';
     MaterialModule,
     LogoutModule
     
+    
   ]
 })
 export class AdminModule { }

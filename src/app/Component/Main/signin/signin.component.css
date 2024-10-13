@@ -78,8 +78,7 @@ input{
     cursor: pointer;
 
 }
-/* .btn :hover{
-   
-    background-color: #ffffff;
-    
-    } */
+.error-message {
+    color: red; /* Error text color */
+    font-size: 12px; /* Font size for error messages */
+}

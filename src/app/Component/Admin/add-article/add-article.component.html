@@ -7,16 +7,25 @@
         <div class="form-group">
           <label for="articleTitle">Article Title: <span class="badge-required">Required</span></label>
           <input type="text" id="articleTitle" formControlName="articleTitle" placeholder="Enter Article Title" />
+          <div *ngIf="formArticle.get('articleTitle')?.invalid && (formArticle.get('articleTitle')?.touched || formArticle.get('articleTitle')?.dirty)" class="error-message">
+            <small *ngIf="formArticle.get('articleTitle')?.errors?.['required']">Article Title is required.</small>
+          </div>
         </div>
 
         <div class="form-group">
           <label for="articleAuthor">Article Author: <span class="badge-required">Required</span></label>
           <input type="text" id="articleAuthor" formControlName="articleAuthor" placeholder="Enter Article Author" />
+          <div *ngIf="formArticle.get('articleAuthor')?.invalid && (formArticle.get('articleAuthor')?.touched || formArticle.get('articleAuthor')?.dirty)" class="error-message">
+            <small *ngIf="formArticle.get('articleAuthor')?.errors?.['required']">Article Author is required.</small>
+          </div>
         </div>
 
         <div class="form-group">
           <label for="articleType">Article Type: <span class="badge-required">Required</span></label>
           <input type="text" id="articleType" formControlName="articleType" placeholder="Enter Article Type" />
+          <div *ngIf="formArticle.get('articleType')?.invalid && (formArticle.get('articleType')?.touched || formArticle.get('articleType')?.dirty)" class="error-message">
+            <small *ngIf="formArticle.get('articleType')?.errors?.['required']">Article Type is required.</small>
+          </div>
         </div>
       </div>
 
@@ -25,11 +34,17 @@
         <div class="form-group">
           <label for="articleContent">Article Content: <span class="badge-required">Required</span></label>
           <textarea id="articleContent" formControlName="articleContent" placeholder="Enter Article Content"></textarea>
+          <div *ngIf="formArticle.get('articleContent')?.invalid && (formArticle.get('articleContent')?.touched || formArticle.get('articleContent')?.dirty)" class="error-message">
+            <small *ngIf="formArticle.get('articleContent')?.errors?.['required']">Article Content is required.</small>
+          </div>
         </div>
 
         <div class="form-group">
           <label for="articleImage">Image <span class="badge-required">Required</span></label>
           <input type="file" id="articleImage" (change)="onFileChange($event)" formControlName="articleImage" required />
+          <div *ngIf="formArticle.get('articleImage')?.invalid && (formArticle.get('articleImage')?.touched || formArticle.get('articleImage')?.dirty)" class="error-message">
+            <small *ngIf="formArticle.get('articleImage')?.errors?.['required']">An image is required.</small>
+          </div>
         </div>
       </div>
     </div>
