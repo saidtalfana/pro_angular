@@ -7,7 +7,6 @@ ServiceLink is the front-end application for the ServiceLink platform, designed 
 - **User Registration**: Easy sign-up and profile management for clients.
 - **Service Search**: Efficient search functionality with filtering options to find relevant services.
 - **Quotation Requests**: Clients can request personalized quotations for services.
-- **Project Management Dashboard**: Track and manage ongoing projects with real-time updates.
 - **Rating and Feedback**: Users can leave feedback and rate services received.
 
 ## Technologies Used
