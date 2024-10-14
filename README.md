@@ -1,27 +1,30 @@
-# ProBusiness
+# ServiceLink - Front End
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+## Overview
+ServiceLink is the front-end application for the ServiceLink platform, designed to connect clients with businesses offering various services. Built with Angular, the application provides a dynamic and responsive user interface for seamless interaction.
 
-## Development server
+## Features
+- **User Registration**: Easy sign-up and profile management for clients.
+- **Service Search**: Efficient search functionality with filtering options to find relevant services.
+- **Quotation Requests**: Clients can request personalized quotations for services.
+- **Project Management Dashboard**: Track and manage ongoing projects with real-time updates.
+- **Rating and Feedback**: Users can leave feedback and rate services received.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies Used
+- **Framework**: Angular
+- **Styling**: Bootstrap, Angular Material
+- **Language**: TypeScript
+- **CSS**: CSS3
+- **Responsiveness**: Designed with responsive web principles for optimal viewing on all devices.
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/)
+- [Angular CLI](https://angular.io/cli)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/saidtalfana/pro_angular.git
