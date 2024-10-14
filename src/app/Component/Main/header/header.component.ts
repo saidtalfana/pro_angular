@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
   activeLink: string = 'home'; // Default active link
 
-  constructor(private authService: AuthService,private router : Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.authService.isLoggedIn.subscribe((status: boolean) => {
@@ -22,13 +22,14 @@ export class HeaderComponent implements OnInit {
 
   onLogout() {
     this.authService.logout();
-    localStorage.removeItem("jwt")
-    localStorage.removeItem("enterprise_id")
-     this.router.navigateByUrl("")
+    localStorage.removeItem("jwt");
+    localStorage.removeItem("enterprise_id");
+    this.router.navigateByUrl("").then(() => {
+      window.location.reload(); // Reload the page after logout
+    });
   }
 
   setActiveLink(link: string) {
     this.activeLink = link; // Update the active link when clicked
   }
-
 }

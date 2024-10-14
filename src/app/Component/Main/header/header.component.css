@@ -69,7 +69,9 @@
     border-color: #219653; /* Darker green for button border */
     color: #FFFFFF; /* White text */
 }
-
+#link{
+    color: gold;
+}
 .btn-primary:hover {
     background-color: #219653; /* Darker green on hover */
     border-color: #1E8449; /* Darker border on hover */

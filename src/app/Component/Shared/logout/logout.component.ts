@@ -20,6 +20,7 @@ if(check){
   localStorage.removeItem("jwt")
   localStorage.removeItem("enterprise_id")
    this.router.navigateByUrl("")
+
 }
 else{
   alert("something wrong")

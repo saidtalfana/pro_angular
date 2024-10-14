@@ -70,6 +70,8 @@ export class AddOrderComponent implements OnInit {
         this.openRatingModal(); // Open the rating modal after successful order
       });
       this.formOrder.reset();
+      alert('Order submitted successfully');
+
     }
   }
 
@@ -85,7 +87,7 @@ export class AddOrderComponent implements OnInit {
     const ratingValue = this.ratingForm.value;
     if (this.ratingForm.valid) {
       this.ratingService.submitRating(ratingValue, this.productId, this.userId).subscribe(() => {
-        console.log('Rating submitted successfully');
+        alert('Rating submitted successfully');
         this.closeRatingModal(); // Close the modal after submitting the rating
       });
     }

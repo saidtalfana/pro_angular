@@ -21,7 +21,7 @@
     <div class="right-column">
       <div class="form-group">
         <label for="activityName">Activity Name</label>
-        <input type="text" id="activityName" formControlName="activityName" placeholder="Enter Activity Name" required />
+        <input type="text" id="activityName" formControlName="activity" placeholder="Enter Activity Name" required />
         <span *ngIf="enterpriseForm.get('activityName')?.invalid && enterpriseForm.get('activityName')?.touched" class="error-message">Activity Name is required.</span>
       </div>
       <div class="form-group">

@@ -36,7 +36,7 @@ this.getIdProviderFromJwt()
       enterpriseName: ['', [Validators.required]],
       enterpriseDescription: ['', [Validators.required]],
       enterpriseLogo: ['', [Validators.required]],
-      activityName: ['', [Validators.required]],
+      activity: ['', [Validators.required]],
       phoneNumber: ['', [Validators.required]],
       email: ['', [Validators.required]]
     });
